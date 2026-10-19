@@ -16,7 +16,7 @@ CSS = r"""
   size: A4;
   margin: 15mm 13mm 16mm 13mm;
   @top-right {
-    content: "Opção 2  ·  MIP-RS + Análise espacial";
+    content: "Opção 2  ·  MIP Ipea + MIP-RS";
     font-family: "Liberation Sans", sans-serif;
     font-size: 8pt;
     color: #5c6b73;
@@ -196,22 +196,22 @@ def build() -> None:
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<title>Relatório final — Opção 2. MIP-RS + Análise Espacial</title>
+<title>Relatório final — Opção 2. MIP Ipea + MIP-RS</title>
 <style>{CSS}</style>
 </head>
 <body>
 <section class="capa">
   <p class="kicker">Relatório final</p>
   <h1>Impacto econômico da operação de nicotina sem fumaça em Santa Cruz do Sul</h1>
-  <p class="opcao">Opção 2. MIP-RS + Análise Espacial (áreas de influência)</p>
+  <p class="opcao">Opção 2. MIP Ipea + MIP-RS</p>
   <ul>
     <li>Santa Cruz do Sul</li>
     <li>Ano cheio 2037</li>
     <li>R$ de 2025</li>
-    <li>MIP-RS 2019, 117 produtos × 52 atividades</li>
+    <li>MIP Ipea 2018, 27 UFs × 68 atividades, com a MIP-RS 2019 na coluna de checagem</li>
     <li>Outubro de 2026</li>
   </ul>
-  <p class="para">Para o Governo do Rio Grande do Sul e a equipe econômica. A obra de 2026–2027 fica em bloco separado. A cor do mapa é o transbordamento.</p>
+  <p class="para">Para o Governo do Rio Grande do Sul e a equipe econômica. A manchete é o tipo I da MIP Ipea. A obra de 2026–2027 fica em bloco separado. A cor do mapa é o transbordamento no RS.</p>
 </section>
 <nav id="sumario">
   <h2>Sumário</h2>

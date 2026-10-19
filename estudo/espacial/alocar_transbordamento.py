@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Regionalização contábil do transbordamento da operação de nicotina sem fumaça.
 
-Reparte, entre os municípios do Rio Grande do Sul, o valor adicionado da cadeia
-e o valor adicionado induzido já calculados na MIP-RS (cenário base). Não
-reestima a matriz e não estima um ρ de econometria espacial.
+Reparte, entre os municípios do Rio Grande do Sul, o valor adicionado indireto
+e o valor adicionado induzido já calculados na MIP Ipea (tipo I no RS e a
+camada induzida separada). Não reestima a matriz e não estima um ρ de
+econometria espacial.
 
 O direto da planta fica 100% em Santa Cruz do Sul e fora da escala do mapa.
 
@@ -36,8 +37,8 @@ import matplotlib.patheffects as pe
 
 ROOT = Path("/workspace")
 ESP = ROOT / "estudo" / "espacial"
-RES_JSON = ROOT / "estudo" / "resultados" / "resultados.json"
-CADEIA_CSV = ROOT / "estudo" / "resultados" / "cadeia_por_atividade.csv"
+IPEA_JSON = ROOT / "estudo" / "resultados" / "ipea_totais.json"
+IPEA_ATV = ROOT / "estudo" / "resultados" / "ipea_va_rs_atividade.csv"
 TMP = Path("/tmp/espacial_rs")
 
 # Albers equivalente sobre o elipsoide GRS80 (SIRGAS 2000).
@@ -338,20 +339,26 @@ def gravity_from_mass(
     return dest / total
 
 
+GRUPOS_ESPACIAIS = [
+    "folha", "pecuaria", "madeira", "papel", "refino", "quim", "plast",
+    "eletro", "eletrico", "extrativa", "energia", "construcao", "demais_ind",
+    "comercio", "transporte", "aloj_alim", "informacao", "financeira",
+    "imobiliario", "profissionais", "administrativo", "publico", "sociais",
+]
+
+
 def activity_values(cadeia_reais: float) -> dict[str, float]:
-    frame = pd.read_csv(CADEIA_CSV)
-    csv_sum_mi = float(frame["va_cadeia_mi_2025"].sum())
-    scale = cadeia_reais / (csv_sum_mi * 1_000_000.0)
-    out = {}
-    for _, row in frame.iterrows():
-        out[row["codigo"]] = float(row["va_cadeia_mi_2025"]) * 1_000_000.0 * scale
+    """VA indireto no RS, por grupo espacial, na escala do total Ipea."""
+    frame = pd.read_csv(IPEA_ATV)
+    por_grupo = frame.groupby("grupo_espacial")["va_2025"].sum().to_dict()
+    total = float(sum(por_grupo.values()))
+    if total <= 0:
+        raise RuntimeError("VA indireto por atividade da MIP Ipea veio vazio.")
+    scale = cadeia_reais / total
+    out = {nome: float(por_grupo.get(nome, 0.0)) * scale for nome in GRUPOS_ESPACIAIS}
     if abs(sum(out.values()) - cadeia_reais) > 1.0:
-        raise RuntimeError("VA da cadeia por atividade não fecha com o JSON.")
+        raise RuntimeError("VA indireto por grupo não fecha com o total Ipea.")
     return out
-
-
-def _take(values: dict[str, float], codes: list[str]) -> float:
-    return float(sum(values[c] for c in codes))
 
 
 def allocate(
@@ -364,50 +371,14 @@ def allocate(
     lam_c: float = LAMBDA_C_KM,
     lam_g: float = LAMBDA_G_KM,
 ) -> dict:
-    base = json.loads(RES_JSON.read_text())["base"]
-    va_direto = float(base["direto"]["va"])
-    va_cadeia = float(base["cadeia"]["va_2025"])
-    va_induzido = float(base["induzido"]["va_2025"])
-    rem_direto = float(base["direto"]["remuneracoes"])
-    rem_cadeia = float(base["cadeia"]["rem_2025"])
+    ipea = json.loads(IPEA_JSON.read_text())
+    va_direto = float(ipea["direto"]["va"])
+    va_cadeia = float(ipea["indireto_rs"]["va_2025"])
+    va_induzido = float(ipea["induzido_rs"]["va_2025"])
+    rem_direto = float(ipea["direto"]["remuneracoes"])
+    rem_cadeia = float(ipea["indireto_rs"]["rem_2025"])
     s_dir = rem_direto / (rem_direto + rem_cadeia)
-    at = activity_values(va_cadeia)
-
-    groups = {
-        "folha": ["AT01"],
-        "pecuaria": ["AT02"],
-        "madeira": ["AT03", "AT13"],
-        "papel": ["AT14", "AT15"],
-        "refino": ["AT16", "AT17"],
-        "quim": ["AT18", "AT19", "AT20"],
-        "plast": ["AT21"],
-        "eletro": ["AT25"],
-        "eletrico": ["AT26"],
-        "extrativa": ["AT04", "AT05"],
-        "energia": ["AT33", "AT34"],
-        "construcao": ["AT35"],
-        "demais_ind": [
-            "AT06", "AT07", "AT08", "AT09", "AT10", "AT11", "AT12",
-            "AT22", "AT23", "AT24", "AT27", "AT28", "AT29", "AT30", "AT31", "AT32",
-        ],
-        "comercio": ["AT36"],
-        "transporte": ["AT37", "AT38", "AT39", "AT40"],
-        "aloj_alim": ["AT41", "AT42"],
-        "informacao": ["AT43", "AT44"],
-        "financeira": ["AT45"],
-        "imobiliario": ["AT46"],
-        "profissionais": ["AT47"],
-        "administrativo": ["AT48"],
-        "publico": ["AT49"],
-        "sociais": ["AT50", "AT51", "AT52"],
-    }
-    assigned = [c for codes in groups.values() for c in codes]
-    if sorted(assigned) != sorted(at):
-        missing = sorted(set(at) - set(assigned))
-        extra = sorted(set(assigned) - set(at))
-        raise RuntimeError(f"Atividades sem bloco {missing} extra {extra}")
-
-    pot = {name: _take(at, codes) for name, codes in groups.items()}
+    pot = activity_values(va_cadeia)
     n = len(gdf)
     d_sede = dist[idx]
     pop = gdf["pop"].to_numpy()
@@ -528,8 +499,8 @@ def allocate(
         "rem_direto": rem_direto,
         "rem_cadeia": rem_cadeia,
         "pot": pot,
-        "alpha_local": float(base["alpha"]),
-        "com_exportacao": bool(base["com_exportacao"]),
+        "alpha_local": float(ipea["choque"]["conteudo_local_nao_folha"]),
+        "com_exportacao": True,
         "lam": lam,
         "alpha": alpha,
         "share_servico_pend": share_servico_pend,
@@ -737,7 +708,7 @@ def render_state(path_png: Path, path_pdf: Path, gdf, column, cmap, norm, bounds
     fig.text(
         0.015, 0.016,
         "Malha IBGE 2022, SIRGAS 2000, Albers equivalente (GRS80).  "
-        "Cenário base vigente: abertura estimada do BOM, conteúdo local implícito de 9,9%, com exportação.  "
+        "MIP Ipea 2018, origem do insumo pela NF-e, abertura estimada do BOM.  "
         f"λ = {int(LAMBDA_KM)} km.  Cinza = menos de R$ 50 mil.  Azul = valor positivo, classes do estado.",
         fontsize=7.3, color="#444444", ha="left", va="bottom",
     )
@@ -864,7 +835,7 @@ def render_prancha(path_pdf: Path, gdf, column, cmap, norm, bounds, colors, tota
     axn.set_ylim(0, 1)
     axn.axis("off")
     axn.text(0.0, 0.98, _fmt_rs_mi(total_mi), fontsize=18, fontweight="bold", color=NAVY, va="top")
-    axn.text(0.0, 0.86, "transbordamento no RS   ·   cadeia + induzido", fontsize=8.2, color="#333333", va="top")
+    axn.text(0.0, 0.86, "transbordamento no RS   ·   indireto Ipea + induzido", fontsize=8.2, color="#333333", va="top")
     axn.text(0.0, 0.74, _fmt_rs_mi(corede_mi), fontsize=15, fontweight="bold", color=OCRE, va="top")
     pct_c = 100.0 * corede_mi / total_mi
     axn.text(0.0, 0.62, f"no COREDE   ·   {_fmt_mi(pct_c, 1)}%".replace(".", ","), fontsize=8.2, color="#333", va="top")
@@ -1052,7 +1023,7 @@ def main() -> None:
 
     resumo = {
         "cenario": {
-            "fonte": "estudo/resultados/resultados.json chave base",
+            "fonte": "estudo/resultados/ipea_totais.json — indireto no RS mais induzido no RS",
             "alpha_conteudo_local": result["alpha_local"],
             "com_exportacao": result["com_exportacao"],
             "va_direto": result["va_direto"],
@@ -1124,7 +1095,9 @@ def main() -> None:
             for r in corede.itertuples()
         ],
     }
-    (TMP / "resumo.json").write_text(json.dumps(resumo, ensure_ascii=False, indent=2), encoding="utf-8")
+    texto = json.dumps(resumo, ensure_ascii=False, indent=2)
+    (TMP / "resumo.json").write_text(texto, encoding="utf-8")
+    (ESP / "resumo_alocacao.json").write_text(texto, encoding="utf-8")
     print(json.dumps({
         "transbordo_mi": round(total_mi, 3),
         "corede_mi": round(summary["corede"]["va_transbordo_mi"], 3),
