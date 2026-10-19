@@ -1,0 +1,295 @@
+{
+  "matriz": {
+    "nome": "MIP inter-regional Ipea–Receita Federal",
+    "ano_base": 2018,
+    "dimensao": "27 UFs × 68 atividades",
+    "release": "https://github.com/provictorludwig/mip-dados/releases/tag/v1",
+    "unidade_matriz": "R$ milhões de 2018",
+    "tipo": "I — consumo das famílias fora de A",
+    "chave_origem": "TRU Usos, oferta de cada produto ao consumo intermediário do RS, por UF de origem. Não é a produção nacional sem destino e não é a coluna de uma atividade compradora. A matriz de recursos reparte o produto entre as atividades produtoras da UF de origem.",
+    "erro_linha_mi": 1.1641532182693481e-10,
+    "erro_coluna_mi": 2.3283064365386963e-10,
+    "erro_leontief_abs_mi": 2.9103830456733704e-10,
+    "erro_leontief_rel": 4.9992470142984485e-15,
+    "max_soma_coluna_A": 0.9570370839428393,
+    "n_colunas_x_zero": 0,
+    "producao_total_mi_2018": 11997340.766791843,
+    "conferencia": "Antes do choque, (I−A)⁻¹ vezes a demanda final doméstica reproduz o valor da produção de cada coluna. O erro relativo máximo está no json."
+  },
+  "precos": {
+    "dez_2018": 5100.61,
+    "dez_2025": 7403.29,
+    "phi": 0.6889653113683241,
+    "fonte": "IBGE SIDRA tabela 1737, variável 2266, número-índice, dezembro"
+  },
+  "direto": {
+    "vbp": 15830000000.0,
+    "va": 7830000000.0,
+    "ocupacoes": 4060.0,
+    "remuneracoes": 609000000.0,
+    "bom": 8000000000.0,
+    "onde": "Santa Cruz do Sul, uma vez. Fora do vetor f."
+  },
+  "folha": {
+    "total": 114200000.0,
+    "rs": 52800000.0,
+    "sc": 32974074.074074075,
+    "pr": 28425925.925925925,
+    "toneladas_rs": 3007.0,
+    "regra": "RS na âncora de R$ 52,8 mi. SC e PR repartem os R$ 61,4 mi restantes em 29:25."
+  },
+  "choque": {
+    "bom_linhas_nao_folha": 7885770333.417945,
+    "rs_nao_folha": 3521701610.7550664,
+    "conteudo_local_nao_folha": 0.44658942143305463,
+    "rs_total_com_folha": 3574501610.7550664,
+    "soma_f_2025": 7999970333.417947,
+    "fumo_rs_sc_pr_2018_mi": 0.0,
+    "nota_fumo": "A atividade fabricação de produtos do fumo não recebe a receita. O valor aqui é só o que a matriz de recursos atribui, se atribuir, a algum produto do BOM."
+  },
+  "conteudo_local_grupos": [
+    {
+      "grupo": "Dispositivo e eletrônico",
+      "valor_2025": 6294717424.51,
+      "valor_rs_2025": 2549556595.4760556,
+      "participacao_rs": 0.4050311433439001
+    },
+    {
+      "grupo": "Químicos",
+      "valor_2025": 192543451.53,
+      "valor_rs_2025": 102741142.31991877,
+      "participacao_rs": 0.5335997745106942
+    },
+    {
+      "grupo": "Papel, filtro e embalagem",
+      "valor_2025": 1186240516.8500001,
+      "valor_rs_2025": 732735702.6077806,
+      "participacao_rs": 0.6176957305028848
+    },
+    {
+      "grupo": "Energia",
+      "valor_2025": 39493707.243226,
+      "valor_rs_2025": 6682949.078807868,
+      "participacao_rs": 0.16921554205206032
+    },
+    {
+      "grupo": "Água",
+      "valor_2025": 1943911.0447189999,
+      "valor_rs_2025": 1934725.467977609,
+      "participacao_rs": 0.9952746928588398
+    },
+    {
+      "grupo": "Frete interno",
+      "valor_2025": 51500000.0,
+      "valor_rs_2025": 8719173.56452589,
+      "participacao_rs": 0.16930434105875514
+    },
+    {
+      "grupo": "Manutenção",
+      "valor_2025": 119331322.24000001,
+      "valor_rs_2025": 119331322.24000001,
+      "participacao_rs": 1.0
+    },
+    {
+      "grupo": "Folha",
+      "valor_2025": 114200000.0,
+      "valor_rs_2025": 52800000.0,
+      "participacao_rs": 0.46234676007005254
+    }
+  ],
+  "indireto_rs": {
+    "va_2025": 1772908816.0382934,
+    "rem_2025": 1002795321.1581122,
+    "ocupacoes": 15702.881990721418,
+    "producao_2025": 4383955468.623437
+  },
+  "indireto_resto": {
+    "va_2025": 3384626304.9981756,
+    "rem_2025": 1701974380.9366472,
+    "ocupacoes": 32721.20424310542,
+    "producao_2025": 10413272239.624582
+  },
+  "tipo_I_rs": {
+    "va_2025": 9602908816.038294,
+    "rem_2025": 1611795321.158112,
+    "ocupacoes": 19762.88199072142
+  },
+  "induzido_rs": {
+    "consumo_2025": 967077192.6948671,
+    "massa_salarial_rs_2025": 1611795321.158112,
+    "va_2025": 627761135.9073793,
+    "rem_2025": 227547612.0443985,
+    "ocupacoes": 8022.366223231983,
+    "producao_2025": 1174479376.7156303,
+    "va_fora_do_rs_2025": 195623243.43080944,
+    "nota": "Uma rodada. 60% da massa salarial gerada no RS (direto da planta mais remuneração indireta que cai no RS) vira consumo no perfil da oferta gaúcha às famílias do RS. O valor adicionado induzido da manchete é o que cai no RS. O pedaço que a rodada gera fora do RS fica registrado e fora da manchete."
+  },
+  "tipo_I_rs_mais_induzido_nao_e_manchete": {
+    "va_2025": 10230669951.945673,
+    "nota": "Soma só para leitura. A manchete principal é o tipo I."
+  },
+  "mip_rs_checagem": {
+    "compra_rs": 830039006.82,
+    "va_cadeia": 498881989.23,
+    "va_induzido": 370800852.43,
+    "va_tipo_I": 8328881989.23,
+    "va_tipo_II": 8699682841.67,
+    "rem_cadeia": 187146442.92,
+    "rem_induzido": 144396191.18,
+    "occ_cadeia": 4554.975001,
+    "occ_induzido": 4202.135952,
+    "occ_tipo_II": 12817.110953
+  },
+  "comparacao": {
+    "indireto_ipea_rs": 1772908816.0382934,
+    "cadeia_mip_rs": 498881989.23,
+    "diferenca": 1274026826.8082933,
+    "diferenca_pct": 2.553763924760426,
+    "banda_10_20": "As premissas tratavam 10% a 20% de conteúdo local como a faixa típica de sensibilidade.",
+    "diferenca_dentro_da_banda_10_20": false,
+    "conteudo_local_nao_folha_nfe": 0.44658942143305463,
+    "conteudo_local_antigo": 0.0985622170007082,
+    "conteudo_dentro_da_banda_10_20": false,
+    "frase": "A origem do insumo agora é a NF-e; a abertura do que a planta compra continua estimada."
+  },
+  "obra_2026_2027": {
+    "capex_total": 1634714532.58,
+    "capex_rs": 483875501.65,
+    "capex_importado": 1150839030.94,
+    "producao_2025": 740356286.67,
+    "va_2025": 341755847.54,
+    "rem_2025": 125478246.33,
+    "ocupacoes_leontief": 4356.901637,
+    "postos_temporarios_construcao": 2639.483276,
+    "origem_do_numero": "MIP-RS 2019 (DEE/SPGG e UFRJ), já calculado. Não foi reestimado na MAI.",
+    "mai": {
+      "coluna": "RS_1200",
+      "descricao": "Fabricação de produtos do fumo, absorção de investimento, RS",
+      "total_mi_2018": 182.76620187428574,
+      "participacao_construcao_4180": 0.10548727802897902,
+      "participacao_maquinas_2800": 0.40394076300588916,
+      "participacao_veiculos_2991": 0.15957818507106078,
+      "participacao_manutencao_3300": 0.006957041036308182,
+      "participacao_engenharia_7180": 0.0032288617768066285,
+      "participacao_resto_do_mundo": 0.3854216587555716,
+      "top_setores": [
+        {
+          "codigo": "2800",
+          "nome": "Fabricação de máquinas e equipamentos mecânicos",
+          "participacao": 0.40394076300588916
+        },
+        {
+          "codigo": "2991",
+          "nome": "Fabricação de automóveis, caminhões e ônibus, exceto peças",
+          "participacao": 0.15957818507106078
+        },
+        {
+          "codigo": "4180",
+          "nome": "Construção",
+          "participacao": 0.10548727802897902
+        },
+        {
+          "codigo": "2600",
+          "nome": "Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",
+          "participacao": 0.09386272546712474
+        },
+        {
+          "codigo": "2500",
+          "nome": "Fabricação de produtos de metal, exceto máquinas e equipamentos",
+          "participacao": 0.05112565258875903
+        },
+        {
+          "codigo": "2700",
+          "nome": "Fabricação de máquinas e equipamentos elétricos",
+          "participacao": 0.04195117073674526
+        },
+        {
+          "codigo": "hh",
+          "nome": "Famílias",
+          "participacao": 0.03319859665127512
+        },
+        {
+          "codigo": "2992",
+          "nome": "Fabricação de peças e acessórios para veículos automotores",
+          "participacao": 0.02063725360363898
+        }
+      ],
+      "decisao": "A coluna de investimento do fumo no RS é uma receita geral de FBCF: máquinas mecânicas e veículos somam mais da metade, construção fica em cerca de 10%, e há origem 'resto do mundo'. A parcela local já estimada (R$ 484 mi) é obra civil, montagem e engenharia, com a máquina importada fora. A MAI não reparte esse pedaço. A obra permanece o número já calculado na MIP-RS 2019, bloco 2026–2027, sem somar a 2037."
+    },
+    "nao_soma_com_2037": true
+  },
+  "top_atividades_rs": [
+    {
+      "nome": "Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",
+      "codigo": "A29",
+      "va_2025": 375885776.31049025,
+      "ocupacoes": 2112.167799548566
+    },
+    {
+      "nome": "Fabricação de celulose, papel e produtos de papel",
+      "codigo": "A16",
+      "va_2025": 323338244.45457315,
+      "ocupacoes": 1414.3998449364558
+    },
+    {
+      "nome": "Fabricação de máquinas e equipamentos elétricos",
+      "codigo": "A30",
+      "va_2025": 308416029.5112227,
+      "ocupacoes": 2103.5818741657504
+    },
+    {
+      "nome": "Comércio por atacado e a varejo, exceto veículos automotores",
+      "codigo": "A41",
+      "va_2025": 219259097.9085621,
+      "ocupacoes": 3592.326402007396
+    },
+    {
+      "nome": "Fabricação de produtos de borracha e de material plástico",
+      "codigo": "A24",
+      "va_2025": 109740389.09766306,
+      "ocupacoes": 1133.9873998102682
+    },
+    {
+      "nome": "Agricultura, inclusive o apoio à agricultura e a pós-colheita",
+      "codigo": "A00",
+      "va_2025": 58563100.65364538,
+      "ocupacoes": 1287.9079180012468
+    },
+    {
+      "nome": "Manutenção, reparação e instalação de máquinas e equipamentos",
+      "codigo": "A36",
+      "va_2025": 56371199.35498339,
+      "ocupacoes": 725.4094899373098
+    },
+    {
+      "nome": "Fabricação de produtos de metal, exceto máquinas e equipamentos",
+      "codigo": "A28",
+      "va_2025": 52827290.544930495,
+      "ocupacoes": 730.7865979279317
+    },
+    {
+      "nome": "Outras atividades administrativas e serviços complementares",
+      "codigo": "A58",
+      "va_2025": 32864873.111634243,
+      "ocupacoes": 535.5929421103318
+    },
+    {
+      "nome": "Fabricação de peças e acessórios para veículos automotores",
+      "codigo": "A33",
+      "va_2025": 19732110.73055579,
+      "ocupacoes": 137.91882983745464
+    },
+    {
+      "nome": "Transporte terrestre",
+      "codigo": "A42",
+      "va_2025": 17790372.33776483,
+      "ocupacoes": 302.4361372591317
+    },
+    {
+      "nome": "Produção de ferro-gusa/ferroligas, siderurgia e tubos de aço sem costura",
+      "codigo": "A26",
+      "va_2025": 16973035.69503094,
+      "ocupacoes": 42.02006053574991
+    }
+  ]
+}

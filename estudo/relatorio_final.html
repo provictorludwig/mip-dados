@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Relatório final — Opção 2. MIP Ipea + MIP-RS</title>
+<style>
+@page {
+  size: A4;
+  margin: 15mm 13mm 16mm 13mm;
+  @top-right {
+    content: "Opção 2  ·  MIP Ipea + MIP-RS";
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    color: #5c6b73;
+  }
+  @bottom-left {
+    content: "Santa Cruz do Sul  ·  ano cheio 2037  ·  R$ de 2025";
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 8pt;
+    color: #5c6b73;
+  }
+  @bottom-right {
+    content: counter(page);
+    font-family: "Liberation Sans", sans-serif;
+    font-size: 9pt;
+    color: #1B3A4B;
+  }
+}
+@page:first {
+  margin: 16mm 16mm 16mm 16mm;
+  @top-right { content: none; }
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+html { hyphens: auto; hyphenate-limit-chars: 6 3 3; }
+* { box-sizing: border-box; }
+body {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  font-size: 10.6pt;
+  line-height: 1.42;
+  color: #1B3A4B;
+  margin: 0;
+}
+.capa {
+  break-after: page;
+  min-height: 250mm;
+  padding-top: 28mm;
+}
+.capa .kicker {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 11pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1F7A6B;
+  margin: 0 0 10mm;
+}
+.capa h1 {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 22pt;
+  line-height: 1.2;
+  margin: 0 0 8mm;
+  border: none;
+  padding: 0;
+}
+.capa .opcao {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 13pt;
+  line-height: 1.35;
+  margin: 0 0 12mm;
+}
+.capa ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14mm;
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 12pt;
+}
+.capa li {
+  border-top: 0.4pt solid #E0DCD3;
+  padding: 2.2mm 0;
+}
+.capa .para {
+  font-size: 11pt;
+  margin-top: 8mm;
+}
+#sumario {
+  break-after: page;
+}
+#sumario h2 {
+  border: none;
+  margin-top: 0;
+}
+#sumario ul { list-style: none; padding: 0; margin: 4mm 0 0; }
+#sumario li { margin: 0; padding: 1.6mm 0; border-bottom: 0.3pt solid #E0DCD3; }
+#sumario a {
+  color: #1B3A4B;
+  text-decoration: none;
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 11pt;
+}
+#sumario a::after {
+  content: leader(".") target-counter(attr(href), page);
+  font-variant-numeric: tabular-nums;
+}
+h1, h2, h3 { font-family: "Liberation Sans", sans-serif; }
+h2 {
+  font-size: 13.2pt;
+  line-height: 1.25;
+  margin: 1.15em 0 0.4em;
+  padding-bottom: 0.12em;
+  border-bottom: 0.7pt solid #1F7A6B;
+  break-after: avoid;
+  bookmark-level: 1;
+}
+h3 {
+  font-size: 11.4pt;
+  margin: 0.95em 0 0.28em;
+  break-after: avoid;
+  bookmark-level: 2;
+}
+p { margin: 0.35em 0 0.55em; }
+strong { font-weight: 700; }
+a { color: #1B3A4B; overflow-wrap: anywhere; }
+ol, ul { margin: 0.3em 0 0.7em; padding-left: 1.15em; }
+li { margin: 0.18em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.45em 0 0.8em;
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 8pt;
+  line-height: 1.28;
+}
+th, td {
+  border-bottom: 0.4pt solid #E0DCD3;
+  padding: 2.5px 4px;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: break-word;
+  hyphens: manual;
+}
+th { background: #F4F7F5; font-weight: 700; }
+tr { break-inside: avoid; }
+thead { display: table-header-group; }
+code {
+  font-family: "Liberation Mono", "DejaVu Sans Mono", monospace;
+  font-size: 8.4pt;
+}
+figure {
+  margin: 0.5em 0 0.9em;
+  break-inside: avoid;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+figcaption {
+  font-family: "Liberation Sans", sans-serif;
+  font-size: 8.2pt;
+  line-height: 1.3;
+  color: #3d4f5a;
+  margin-top: 1.5mm;
+}
+figure.grafico img { width: 96%; }
+figure.mapa {
+  break-before: page;
+  break-inside: avoid;
+  margin-top: 0;
+}
+figure.mapa img { width: 100%; max-height: 232mm; object-fit: contain; }
+</style>
+</head>
+<body>
+<section class="capa">
+  <p class="kicker">Relatório final</p>
+  <h1>Impacto econômico da operação de nicotina sem fumaça em Santa Cruz do Sul</h1>
+  <p class="opcao">Opção 2. MIP Ipea + MIP-RS</p>
+  <ul>
+    <li>Santa Cruz do Sul</li>
+    <li>Ano cheio 2037</li>
+    <li>R$ de 2025</li>
+    <li>MIP Ipea 2018, 27 UFs × 68 atividades, com a MIP-RS 2019 na coluna de checagem</li>
+    <li>Outubro de 2026</li>
+  </ul>
+  <p class="para">Para o Governo do Rio Grande do Sul e a equipe econômica. A manchete é o tipo I da MIP Ipea. A obra de 2026–2027 fica em bloco separado. A cor do mapa é o transbordamento no RS.</p>
+</section>
+<nav id="sumario">
+  <h2>Sumário</h2>
+  <div class="toc">
+<ul>
+<li><a href="#1-para-o-leitor">1. Para o leitor</a></li>
+<li><a href="#2-o-projeto-e-as-premissas-contabeis">2. O projeto e as premissas contábeis</a><ul>
+<li><a href="#ficha-por-unidade-herdada-do-v6">Ficha por unidade, herdada do v6</a></li>
+<li><a href="#a-rampa-ate-2037-so-na-planta">A rampa até 2037, só na planta</a></li>
+<li><a href="#o-que-a-conta-usa-em-2037">O que a conta usa em 2037</a></li>
+<li><a href="#leitura-salarial-com-a-premissa-mantida">Leitura salarial, com a premissa mantida</a></li>
+</ul>
+</li>
+<li><a href="#3-abertura-estimada-dos-insumos">3. Abertura estimada dos insumos</a><ul>
+<li><a href="#o-que-a-fisica-explica-e-o-que-o-dispositivo-absorve">O que a física explica e o que o dispositivo absorve</a></li>
+<li><a href="#energia-agua-frete-e-manutencao">Energia, água, frete e manutenção</a></li>
+<li><a href="#a-abertura-e-a-origem-que-a-nf-e-implica">A abertura e a origem que a NF-e implica</a></li>
+</ul>
+</li>
+<li><a href="#4-como-a-mip-ipea-foi-aplicada">4. Como a MIP Ipea foi aplicada</a><ul>
+<li><a href="#ponte-do-produto-do-bom-para-a-atividade-ipea">Ponte do produto do BOM para a atividade Ipea</a></li>
+</ul>
+</li>
+<li><a href="#5-resultados-do-ano-cheio-de-2037">5. Resultados do ano cheio de 2037</a><ul>
+<li><a href="#onde-o-indireto-no-rs-acrescenta-valor">Onde o indireto no RS acrescenta valor</a></li>
+<li><a href="#o-vazamento-medido-por-estado">O vazamento medido, por estado</a></li>
+<li><a href="#a-coluna-mip-rs-mesma-planta">A coluna MIP-RS, mesma planta</a></li>
+</ul>
+</li>
+<li><a href="#6-a-obra-de-20262027-em-bloco-separado">6. A obra de 2026–2027, em bloco separado</a></li>
+<li><a href="#7-retorno-fiscal-bruto-e-a-hipotese-fundopem">7. Retorno fiscal bruto e a hipótese FUNDOPEM</a></li>
+<li><a href="#8-analise-espacial-areas-de-influencia">8. Análise espacial: áreas de influência</a><ul>
+<li><a href="#o-metodo-com-de-100-km">O método, com λ de 100 km</a></li>
+<li><a href="#o-zoom-do-vale">O zoom do Vale</a></li>
+<li><a href="#os-quinze-municipios-mais-azuis">Os quinze municípios mais azuis</a></li>
+<li><a href="#corede-sede-e-resto-do-estado">COREDE, sede e resto do Estado</a></li>
+</ul>
+</li>
+<li><a href="#9-limites">9. Limites</a><ul>
+<li><a href="#onde-cada-numero-se-confere">Onde cada número se confere</a></li>
+<li><a href="#fontes">Fontes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</nav>
+<h1 id="impacto-economico-da-operacao-de-nicotina-sem-fumaca-em-santa-cruz-do-sul">Impacto econômico da operação de nicotina sem fumaça em Santa Cruz do Sul</h1>
+<p>Relatório final. Opção 2: MIP Ipea + MIP-RS. Santa Cruz do Sul. Ano cheio 2037. Reais de 2025. Matriz principal: MIP inter-regional Ipea–Receita Federal, 2018, 27 UFs × 68 atividades, release v1, feita com notas fiscais eletrônicas. Coluna de checagem: MIP-RS 2019, DEE/SPGG e UFRJ. Outubro de 2026.</p>
+<p>Este documento reúne a conta de insumo-produto e a regionalização do transbordamento no Rio Grande do Sul. A planilha que reproduz cada número de manchete é <code>estudo/planilha_final_opcao2.xlsx</code>.</p>
+<h2 id="1-para-o-leitor">1. Para o leitor</h2>
+<p>O objeto medido é a operação, em 2037, de uma planta de produtos de nicotina sem fumaça na fábrica já existente da Philip Morris Brasil em Santa Cruz do Sul. Os produtos são sticks de tabaco aquecido, e-líquido com nicotina de folha brasileira e sachês só de exportação.</p>
+<p>A matriz que propaga o choque é a MIP inter-regional do Ipea com a Receita Federal, ano-base 2018. A MIP-RS 2019 fica ao lado, com os números já calculados, para checar a ordem de grandeza. As duas contas usam a mesma planta e o mesmo ano. Elas não se somam.</p>
+<table>
+<thead>
+<tr>
+<th>Leitura, 2037, R$ de 2025</th>
+<th style="text-align: right;">MIP Ipea, tipo I</th>
+<th style="text-align: right;">MIP-RS 2019, checagem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valor adicionado direto da planta</td>
+<td style="text-align: right;">R$ 7.830,0 mi</td>
+<td style="text-align: right;">R$ 7.830,0 mi</td>
+</tr>
+<tr>
+<td>Indireto que cai no RS</td>
+<td style="text-align: right;">R$ 1.772,9 mi</td>
+<td style="text-align: right;">R$ 498,9 mi (cadeia)</td>
+</tr>
+<tr>
+<td>Indireto que cai no resto do Brasil</td>
+<td style="text-align: right;">R$ 3.384,6 mi</td>
+<td style="text-align: right;">fora da inversa</td>
+</tr>
+<tr>
+<td>Tipo I no RS (direto + indireto no RS)</td>
+<td style="text-align: right;">R$ 9.602,9 mi</td>
+<td style="text-align: right;">R$ 8.328,9 mi</td>
+</tr>
+<tr>
+<td>Induzido, uma rodada, só no RS</td>
+<td style="text-align: right;">R$ 627,8 mi, à parte</td>
+<td style="text-align: right;">R$ 370,8 mi</td>
+</tr>
+<tr>
+<td>Total com a rodada de consumo</td>
+<td style="text-align: right;">fora da manchete</td>
+<td style="text-align: right;">R$ 8.699,7 mi (tipo II)</td>
+</tr>
+<tr>
+<td>Compra endereçada ao RS</td>
+<td style="text-align: right;">R$ 3.574,5 mi</td>
+<td style="text-align: right;">R$ 830,0 mi</td>
+</tr>
+</tbody>
+</table>
+<p>A manchete principal é a da MIP Ipea em tipo I: direto de R$ 7,83 bilhões mais indireto inter-regional que cai no Rio Grande do Sul, R$ 1,77 bilhão. O tipo I no RS é R$ 9,60 bilhões. O induzido de R$ 627,8 milhões é complemento e fica de fora dessa soma. O indireto que cai nos outros estados, R$ 3,38 bilhões, é o vazamento agora medido.</p>
+<p>O indireto Ipea no RS é 255% maior que a cadeia da MIP-RS (R$ 1.772,9 milhões contra R$ 498,9 milhões). Essa diferença fica fora da banda de 10% a 20% que as premissas tratavam como faixa típica de conteúdo local. O tipo I no RS, que carrega o mesmo direto de R$ 7,83 bilhões, fica 15,3% acima do tipo I da MIP-RS (R$ 9,60 bilhões contra R$ 8,33 bilhões). Essa segunda diferença cai dentro da banda, porque o direto é comum e grande. A origem do insumo agora é a NF-e; a abertura do que a planta compra continua estimada.</p>
+<p>A compra que a NF-e endereça ao RS é R$ 3,57 bilhões, dos quais R$ 3,52 bilhões não são folha. O conteúdo local dos insumos que não são folha passa a 44,7%. O percentual manual da rodada anterior era 9,9%, e a faixa de sensibilidade era 10%, 20% e 35%. 44,7% fica fora dessa banda. O dispositivo, sozinho, entra com 40,5% de oferta gaúcha na TRU, no lugar do 5% manual.</p>
+<p>O emprego direto permanece 4.060 ocupações. O indireto no RS soma 15.703 ocupações. O tipo I no RS soma 19.763 ocupações. O induzido, à parte, soma 8.022. O indireto no resto do Brasil soma 32.721 ocupações.</p>
+<p>O transbordamento que o mapa reparte é o indireto Ipea no RS mais o induzido no RS: R$ 2.400,7 milhões. A parcela no COREDE Vale do Rio Pardo é 26,8%. O direto de R$ 7,83 bilhões continua inteiro em Santa Cruz do Sul, fora da cor.</p>
+<p>A obra de conversão fica num bloco próprio, de 2026–2027, com o número já calculado na MIP-RS, e fica fora de 2037.</p>
+<h2 id="2-o-projeto-e-as-premissas-contabeis">2. O projeto e as premissas contábeis</h2>
+<p>A planta fica em Santa Cruz do Sul, na unidade já existente, CNAE 12.20-4. O cenário das premissas é de mercado nacional regulado, com 9,9 milhões de usuários no canal legal em 2037, mais exportação para onze países da América Latina. A premissa trata o mercado atual desses produtos como abastecido pelo canal ilegal.</p>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th>Destino em 2037</th>
+<th style="text-align: right;">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-líquido (pod de 11,36 mL; o custo inclui o dispositivo)</td>
+<td>Mercado interno e exportação</td>
+<td style="text-align: right;">3,074 bilhões de mL</td>
+</tr>
+<tr>
+<td>Sticks de tabaco aquecido</td>
+<td>Mercado interno e exportação</td>
+<td style="text-align: right;">12,338 bilhões de sticks</td>
+</tr>
+<tr>
+<td>Sachês de nicotina oral</td>
+<td>Só exportação</td>
+<td style="text-align: right;">0,138 bilhão de unidades</td>
+</tr>
+</tbody>
+</table>
+<p>A receita ex-fábrica a preço básico é de R$ 15,83 bilhões: R$ 12,56 bilhões no mercado interno e R$ 3,27 bilhões FOB, premissas da revisão 4. Essa receita é o teto contábil da planta. Ela permanece fora do vetor que entra na matriz. A coluna “fabricação de produtos do fumo” da MIP Ipea recebe choque zero.</p>
+<p>A fábrica compra a folha ao produtor, a preço de porteira. Em 2037 a compra no Sul é de 6,51 mil toneladas, R$ 114,2 milhões. A parcela gaúcha, na âncora já publicada, é de 3.007 toneladas e R$ 52,8 milhões. Pela regra de 5,5 toneladas por família, essa compra no RS equivale a 547 famílias. Família-equivalente é escala de compra. Ela fica ao lado das ocupações e fora da soma de empregos.</p>
+<p>A folha de Santa Catarina e do Paraná é o restante, R$ 61,4 milhões, repartido na proporção 29:25 já definida para os 54% do Sul que não são gaúchos. Santa Catarina fica com R$ 33,0 milhões e o Paraná com R$ 28,4 milhões. As duas parcelas entram na agricultura desses estados. Não entram na agricultura do RS.</p>
+<p>A capacidade de cigarros já instalada, cerca de 15 bilhões de cigarros por ano e cerca de 1,6 mil colaboradores, permanece fora do cenário. A depreciação e a despesa financeira também ficam fora do choque de produção.</p>
+<h3 id="ficha-por-unidade-herdada-do-v6">Ficha por unidade, herdada do v6</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">E-líquido</th>
+<th style="text-align: right;">Stick</th>
+<th style="text-align: right;">Sachê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Volume em 2037</td>
+<td style="text-align: right;">3,074 bi mL</td>
+<td style="text-align: right;">12,338 bi sticks</td>
+<td style="text-align: right;">0,138 bi sachês</td>
+</tr>
+<tr>
+<td>Dos quais exportação</td>
+<td style="text-align: right;">0,956 bi mL</td>
+<td style="text-align: right;">0,918 bi sticks</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>Insumo por unidade</td>
+<td style="text-align: right;">R$ 2,14 / mL</td>
+<td style="text-align: right;">R$ 0,111 / stick</td>
+<td style="text-align: right;">R$ 0,268 / sachê</td>
+</tr>
+<tr>
+<td>Folha por unidade</td>
+<td style="text-align: right;">0,90 g / mL</td>
+<td style="text-align: right;">0,30 g / stick</td>
+<td style="text-align: right;">0,27 g / sachê</td>
+</tr>
+<tr>
+<td>Preço da folha</td>
+<td style="text-align: right;">R$ 15 mil / t</td>
+<td style="text-align: right;">R$ 19,5 mil / t</td>
+<td style="text-align: right;">R$ 15 mil / t</td>
+</tr>
+<tr>
+<td>Ocupações por milhão de unidades</td>
+<td style="text-align: right;">0,92</td>
+<td style="text-align: right;">0,097</td>
+<td style="text-align: right;">0,20</td>
+</tr>
+<tr>
+<td>Remuneração por mil unidades</td>
+<td style="text-align: right;">R$ 138</td>
+<td style="text-align: right;">R$ 14,57</td>
+<td style="text-align: right;">R$ 30</td>
+</tr>
+</tbody>
+</table>
+<p>O e-líquido concentra o custo de insumos porque o dispositivo entra no custo do pod. A 0,90 g de folha por mL, com nicotina típica de 2% na folha, a formulação implícita é de cerca de 20 mg de nicotina por mL. Essa leitura calibra o custo de extração. Ela deixa a folha em R$ 114 milhões.</p>
+<h3 id="a-rampa-ate-2037-so-na-planta">A rampa até 2037, só na planta</h3>
+<p>O arquivo traz a trajetória direta da fábrica. Esta rodada multiplica o ano cheio de 2037. A rampa abaixo permanece fora da matriz. Fonte: premissas, revisão 4.</p>
+<table>
+<thead>
+<tr>
+<th>Indicador direto</th>
+<th style="text-align: right;">2028</th>
+<th style="text-align: right;">2032</th>
+<th style="text-align: right;">2037</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receita ex-fábrica</td>
+<td style="text-align: right;">R$ 4,70 bi</td>
+<td style="text-align: right;">R$ 10,68 bi</td>
+<td style="text-align: right;">R$ 15,83 bi</td>
+</tr>
+<tr>
+<td>Valor adicionado da planta</td>
+<td style="text-align: right;">R$ 2,39 bi</td>
+<td style="text-align: right;">R$ 5,07 bi</td>
+<td style="text-align: right;">R$ 7,83 bi</td>
+</tr>
+<tr>
+<td>Ocupações na planta</td>
+<td style="text-align: right;">1,19 mil</td>
+<td style="text-align: right;">2,81 mil</td>
+<td style="text-align: right;">4,06 mil</td>
+</tr>
+<tr>
+<td>Remunerações</td>
+<td style="text-align: right;">R$ 178 mi</td>
+<td style="text-align: right;">R$ 421 mi</td>
+<td style="text-align: right;">R$ 609 mi</td>
+</tr>
+<tr>
+<td>Folha comprada no RS</td>
+<td style="text-align: right;">R$ 16 mi</td>
+<td style="text-align: right;">R$ 35 mi</td>
+<td style="text-align: right;">R$ 53 mi</td>
+</tr>
+</tbody>
+</table>
+<p>A soma de ocupações-ano de 2028 a 2037 no arquivo, 28,2 mil, é a soma de dez estoques anuais. A manchete de emprego direto permanece o estoque de 2037, 4,06 mil ocupações.</p>
+<h3 id="o-que-a-conta-usa-em-2037">O que a conta usa em 2037</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align: right;">Com exportação</th>
+<th>Papel na conta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Receita ex-fábrica, preço básico</td>
+<td style="text-align: right;">R$ 15,83 bi</td>
+<td>Teto contábil. Fora do vetor de choque</td>
+</tr>
+<tr>
+<td>Insumos</td>
+<td style="text-align: right;">R$ 8,00 bi</td>
+<td>Base das compras</td>
+</tr>
+<tr>
+<td>Valor adicionado direto</td>
+<td style="text-align: right;">R$ 7,83 bi</td>
+<td>Gaveta direta, uma vez, em Santa Cruz do Sul</td>
+</tr>
+<tr>
+<td>Remunerações diretas</td>
+<td style="text-align: right;">R$ 609 mi</td>
+<td>R$ 150 mil por ocupação, com encargos</td>
+</tr>
+<tr>
+<td>Ocupações diretas</td>
+<td style="text-align: right;">4,06 mil</td>
+<td>Estoque de 2037</td>
+</tr>
+<tr>
+<td>Folha no RS</td>
+<td style="text-align: right;">3.007 t; R$ 52,8 mi</td>
+<td>Agricultura do RS</td>
+</tr>
+<tr>
+<td>Folha em SC e no PR</td>
+<td style="text-align: right;">R$ 33,0 mi e R$ 28,4 mi</td>
+<td>Agricultura desses estados</td>
+</tr>
+<tr>
+<td>Adicionalidade</td>
+<td style="text-align: right;">100%</td>
+<td>Premissa de capa</td>
+</tr>
+</tbody>
+</table>
+<p>Cargas de memória do cenário, nas premissas: 39% do preço de varejo no vape e no sachê e 51% no tabaco aquecido. A meta de tributos sobre o consumo no Brasil em 2037 é R$ 13,7 bilhões. A parcela do consumo no RS é cerca de 6,8%, R$ 0,93 bilhão, dos quais R$ 0,48 bilhão estaduais e municipais. O IRPJ/CSLL da planta, pela regra do arquivo (34% sobre 50% do excedente), é R$ 1,23 bilhão, federal. O tratamento fiscal está na seção 7.</p>
+<h3 id="leitura-salarial-com-a-premissa-mantida">Leitura salarial, com a premissa mantida</h3>
+<p>As 4.060 ocupações e os R$ 609 milhões permanecem. R$ 150 mil por ocupação, com encargos, é a premissa v6.</p>
+<p>O confronto usa duas fontes de folha de pagamento da indústria do fumo, trazidas a R$ de 2025 pelo IPCA (SIDRA 1737).</p>
+<table>
+<thead>
+<tr>
+<th>Fonte</th>
+<th>O que mede</th>
+<th style="text-align: right;">Em R$ do ano</th>
+<th style="text-align: right;">Em R$ de 2025</th>
+<th style="text-align: right;">Com encargos patronais de 36,8%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CEMPRE, IBGE, tabela 6450, 2021, Santa Cruz do Sul, divisão 12</td>
+<td>R$ 338 milhões de salários para 3.136 assalariados</td>
+<td style="text-align: right;">R$ 108 mil / pessoa</td>
+<td style="text-align: right;">R$ 130 mil</td>
+<td style="text-align: right;">R$ 178 mil</td>
+</tr>
+<tr>
+<td>PIA-Empresa, IBGE, tabela 1849, 2023, Rio Grande do Sul, divisão 12</td>
+<td>R$ 733 milhões para 6.165 pessoas ocupadas em 31/12</td>
+<td style="text-align: right;">R$ 119 mil / pessoa</td>
+<td style="text-align: right;">R$ 130 mil</td>
+<td style="text-align: right;">R$ 178 mil</td>
+</tr>
+<tr>
+<td>Premissa v6</td>
+<td>Ocupação com encargos</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">R$ 150 mil</td>
+</tr>
+</tbody>
+</table>
+<p>Os 36,8% são a soma das alíquotas legais que estão fora de “salários e outras remunerações”: INSS patronal 20%, RAT 3%, Sistema S e salário-educação cerca de 5,8%, FGTS 8%. É alíquota de referência. O 13º já está na rubrica anual do CEMPRE e da PIA.</p>
+<p>R$ 150 mil fica cerca de 16% abaixo dos R$ 178 mil. O sentido do viés é para baixo: a premissa aceita é baixa frente ao custo carregado da indústria do fumo gaúcha em 2021–2023. A premissa entra na conta como está.</p>
+<h2 id="3-abertura-estimada-dos-insumos">3. Abertura estimada dos insumos</h2>
+<p>O arquivo fixa o bolo: insumos de R$ 8,00 bilhões, dos quais a folha é R$ 114,2 milhões. O restante, R$ 7,89 bilhões, foi aberto por engenharia de porte e por preço público na rodada anterior. Esta conta reusa essa abertura de produtos. O que muda é a origem geográfica: cada real do produto vai para a UF que, na TRU Ipea, oferta esse produto ao consumo intermediário do Rio Grande do Sul.</p>
+<p>As linhas publicadas somam R$ 7.885,8 milhões fora da folha. Com a folha de R$ 114,2 milhões, o vetor fecha em R$ 7.999,97 milhões. A diferença de R$ 30 mil para a âncora de R$ 8.000 milhões já estava no fator de encaixe da abertura publicada. Ela não foi reaberta.</p>
+<h3 id="o-que-a-fisica-explica-e-o-que-o-dispositivo-absorve">O que a física explica e o que o dispositivo absorve</h3>
+<p>No pod, a química cabe em pouco. Com densidade de cerca de 1,15 g/mL, nicotina de 20 mg/mL, aroma a 10% da massa e o restante em partes iguais de glicerina e propilenoglicol, os preços industriais de ponto médio explicam cerca de R$ 128 milhões de químicos no e-líquido, incluída a extração de nicotina além da folha. São cerca de R$ 0,50 por pod.</p>
+<p>O custo de insumos do pod é de cerca de R$ 24. O residual, R$ 6,29 bilhões no ano, é o dispositivo e a eletrônica. A R$ 5,59 por dólar, PTAX venda média de 2025, isso é cerca de US$ 4 por pod. A mão de obra está nos R$ 609 milhões de remuneração.</p>
+<p>No stick, a folha já saiu a R$ 19.500/t. O que sobra por stick é sobretudo papel, filtro e embalagem, R$ 1,12 bilhão. Glicerina do bastão, ligante e aroma somam R$ 47 milhões.</p>
+<h3 id="energia-agua-frete-e-manutencao">Energia, água, frete e manutenção</h3>
+<p>A intensidade de partida é a da manufatura da PMI em 2022: 7,56 GJ por milhão de cigarros-equivalentes. O resultado estimado é 72 mil MWh e R$ 39,5 milhões de energia, cerca de 130 mil m³ e R$ 1,9 milhão de água, R$ 51,5 milhões de frete interno até a planta e R$ 119,3 milhões de manutenção. São ordens de grandeza da abertura, declaradas como estimativa. A origem de cada uma, nesta rodada, deixa de ser o percentual manual e passa a ser a oferta observada na TRU.</p>
+<h3 id="a-abertura-e-a-origem-que-a-nf-e-implica">A abertura e a origem que a NF-e implica</h3>
+<p>Valores em R$ milhões de 2025. A parcela RS é a participação da oferta gaúcha no consumo intermediário do RS, lida na TRU, aplicada ao valor estimado da linha. A folha segue a âncora, não a TRU.</p>
+<table>
+<thead>
+<tr>
+<th>Linha</th>
+<th style="text-align: right;">Valor</th>
+<th style="text-align: right;">Parcela RS</th>
+<th style="text-align: right;">Valor no RS</th>
+<th style="text-align: right;">Resto do Brasil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dispositivo e eletrônico do pod</td>
+<td style="text-align: right;">6.294,7</td>
+<td style="text-align: right;">40,5%</td>
+<td style="text-align: right;">2.549,6</td>
+<td style="text-align: right;">3.745,1</td>
+</tr>
+<tr>
+<td>Químicos</td>
+<td style="text-align: right;">192,5</td>
+<td style="text-align: right;">53,4%</td>
+<td style="text-align: right;">102,7</td>
+<td style="text-align: right;">89,8</td>
+</tr>
+<tr>
+<td>Papel, filtro e embalagem</td>
+<td style="text-align: right;">1.186,2</td>
+<td style="text-align: right;">61,8%</td>
+<td style="text-align: right;">732,7</td>
+<td style="text-align: right;">453,5</td>
+</tr>
+<tr>
+<td>Energia</td>
+<td style="text-align: right;">39,5</td>
+<td style="text-align: right;">16,9%</td>
+<td style="text-align: right;">6,7</td>
+<td style="text-align: right;">32,8</td>
+</tr>
+<tr>
+<td>Água</td>
+<td style="text-align: right;">1,9</td>
+<td style="text-align: right;">99,5%</td>
+<td style="text-align: right;">1,9</td>
+<td style="text-align: right;">0,0</td>
+</tr>
+<tr>
+<td>Frete interno</td>
+<td style="text-align: right;">51,5</td>
+<td style="text-align: right;">16,9%</td>
+<td style="text-align: right;">8,7</td>
+<td style="text-align: right;">42,8</td>
+</tr>
+<tr>
+<td>Manutenção</td>
+<td style="text-align: right;">119,3</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">119,3</td>
+<td style="text-align: right;">0,0</td>
+</tr>
+<tr>
+<td>Insumos que não são folha</td>
+<td style="text-align: right;">7.885,8</td>
+<td style="text-align: right;">44,7%</td>
+<td style="text-align: right;">3.521,7</td>
+<td style="text-align: right;">4.364,1</td>
+</tr>
+<tr>
+<td>Folha no RS</td>
+<td style="text-align: right;">52,8</td>
+<td style="text-align: right;">âncora</td>
+<td style="text-align: right;">52,8</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td>Folha em SC</td>
+<td style="text-align: right;">33,0</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">33,0</td>
+</tr>
+<tr>
+<td>Folha no PR</td>
+<td style="text-align: right;">28,4</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">28,4</td>
+</tr>
+<tr>
+<td>Insumos no vetor</td>
+<td style="text-align: right;">7.999,97</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;">3.574,5</td>
+<td style="text-align: right;">4.425,5</td>
+</tr>
+</tbody>
+</table>
+<p>A soma das linhas com uma casa pode diferir em um décimo do total da coluna, que é o valor antes do arredondamento. O conteúdo local de 44,7% nos insumos que não são folha fica fora da banda de 10% a 20%. A origem do insumo agora é a NF-e; a abertura do que a planta compra continua estimada.</p>
+<p>Duas linhas merecem leitura explícita. Eletricidade e frete de carga, na oferta ao RS, têm só 16,9% de origem gaúcha: a TRU atribui parcela grande a São Paulo, Rio de Janeiro, Santa Catarina e Paraná, padrão compatível com a sede da empresa que fatura, não com o poste ou com o caminhão que chega a Santa Cruz. As duas linhas somam R$ 91 milhões. Elas não movem a manchete. Quem move é o dispositivo, R$ 6,29 bilhões com 40,5% de oferta gaúcha, e o papel, R$ 1,19 bilhão com 61,8%.</p>
+<p>A TRU não traz uma linha de importação por produto. A participação de cada UF é a participação na oferta doméstica ao RS, e a soma das 27 UFs é 100% do valor estimado da linha. O chute antigo de 85% importado no dispositivo sai da conta. O que a NF-e observa é a nota entre estabelecimentos brasileiros.</p>
+<h2 id="4-como-a-mip-ipea-foi-aplicada">4. Como a MIP Ipea foi aplicada</h2>
+<p>Quatro peças na operação de 2037, e um bloco de obra que permanece separado.</p>
+<p><strong>Peça 1, efeito direto.</strong> Valor adicionado, ocupações e remunerações da planta, uma vez, em Santa Cruz do Sul, com os números da revisão 4. A receita de R$ 15,83 bilhões não entra no vetor.</p>
+<p><strong>Peça 2, indireto inter-regional.</strong> O BOM, a preço básico, deflacionado a 2018, é demanda intermediária. Para cada produto da abertura há uma atividade da lista de 68. A origem é a oferta daquele produto ao consumo intermediário das 68 atividades gaúchas, por UF, na aba Usos da TRU. Dentro da UF de origem, a matriz de recursos reparte o produto entre as atividades que o produzem. O vetor f tem dimensão 1.836. A inversa é x = (I − A)⁻¹ f, com A tirada das transações inter-regionais divididas pelo valor da produção de cada coluna.</p>
+<p><strong>Peça 3, indireto no resto do Brasil.</strong> É a parte de x que cai fora do RS, convertida em valor adicionado pelo coeficiente de valor adicionado bruto da própria MIP. É vazamento medido.</p>
+<p><strong>Peça 4, induzido, à parte.</strong> A MIP Ipea é tipo I: o consumo das famílias está na demanda final, fora de A. A camada induzida pega 60% da massa salarial gerada no RS (os R$ 609 milhões da planta mais a remuneração indireta que cai no RS) e aplica uma rodada, só sobre a oferta gaúcha ao consumo das famílias do RS. O valor adicionado induzido da manchete é o que cai no RS. O pedaço dessa rodada que cai fora do RS, R$ 196 milhões, fica registrado e fora da manchete.</p>
+<p><strong>Bloco de obra, 2026–2027.</strong> Permanece o número já calculado na MIP-RS. A razão está na seção 6. Não se soma a 2037.</p>
+<p>O script é <code>estudo/scripts/calcular_impacto_ipea.py</code>. Ele baixa o release v1 para <code>/tmp/mip-ipea</code> e não versiona a planilha. Antes do choque da planta, a demanda final doméstica da própria MIP, passada pela inversa, reproduz o valor da produção de cada uma das 1.836 colunas. O erro relativo máximo dessa conferência é da ordem de 10⁻¹⁵. A soma do vetor f, trazida de volta a 2025, é R$ 8,00 bilhões.</p>
+<p>O fator de preço é o IPCA, SIDRA 1737, número-índice: 5.100,61 em dezembro de 2018 e 7.403,29 em dezembro de 2025. φ = 5.100,61 / 7.403,29 = 0,688965. O fluxo de 2025 entra na matriz multiplicado por φ. O resultado volta a reais de 2025 pela divisão por φ. Ocupação não se deflaciona. O coeficiente 0,7186 da rodada anterior era dezembro de 2019 sobre dezembro de 2025 e não foi reusado.</p>
+<h3 id="ponte-do-produto-do-bom-para-a-atividade-ipea">Ponte do produto do BOM para a atividade Ipea</h3>
+<table>
+<thead>
+<tr>
+<th>Linha do BOM</th>
+<th>Produto na TRU</th>
+<th>Atividade Ipea</th>
+<th style="text-align: right;">Parcela que fica nessa atividade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dispositivo e eletrônico do pod</td>
+<td>Material eletrônico e equipamentos de comunicações</td>
+<td>Equipamentos de informática, eletrônicos e ópticos</td>
+<td style="text-align: right;">70%</td>
+</tr>
+<tr>
+<td>Glicerina e propilenoglicol</td>
+<td>Produtos químicos orgânicos</td>
+<td>Químicos orgânicos e inorgânicos, resinas e elastômeros</td>
+<td style="text-align: right;">94%</td>
+</tr>
+<tr>
+<td>Aroma, extração, químicos do stick e do sachê</td>
+<td>Produtos químicos diversos</td>
+<td>Defensivos, desinfestantes, tintas e químicos diversos</td>
+<td style="text-align: right;">66%</td>
+</tr>
+<tr>
+<td>Papel, filtro e embalagem</td>
+<td>Papel, papelão, embalagens e artefatos</td>
+<td>Celulose, papel e produtos de papel</td>
+<td style="text-align: right;">98%</td>
+</tr>
+<tr>
+<td>Energia</td>
+<td>Eletricidade, gás e outras utilidades</td>
+<td>Energia elétrica, gás natural e outras utilidades</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>Água</td>
+<td>Água, esgoto, reciclagem e resíduos</td>
+<td>Água, esgoto e gestão de resíduos</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr>
+<td>Frete interno</td>
+<td>Transporte terrestre de carga</td>
+<td>Transporte terrestre</td>
+<td style="text-align: right;">99%</td>
+</tr>
+<tr>
+<td>Manutenção</td>
+<td>Manutenção e instalação de máquinas</td>
+<td>Manutenção, reparação e instalação de máquinas</td>
+<td style="text-align: right;">88%</td>
+</tr>
+<tr>
+<td>Folha</td>
+<td>Âncora do estudo, não a TRU</td>
+<td>Agricultura do RS, de SC e do PR</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+<p>A coluna da direita é a parcela que a matriz de recursos mantém na atividade da ponte, na média ponderada das UFs de origem. O restante do produto, na mesma UF, vai para outras atividades que também o produzem. A chave de origem é a oferta para o RS, não a produção nacional sem destino.</p>
+<h2 id="5-resultados-do-ano-cheio-de-2037">5. Resultados do ano cheio de 2037</h2>
+<p>Cenário com exportação. R$ de 2025. Uma casa nos milhões. O tipo I da MIP Ipea é a manchete. O induzido está na tabela para ser lido ao lado, e fora da soma principal.</p>
+<table>
+<thead>
+<tr>
+<th>Gaveta</th>
+<th style="text-align: right;">Valor adicionado</th>
+<th style="text-align: right;">Remunerações</th>
+<th style="text-align: right;">Ocupações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direto, planta, Santa Cruz do Sul</td>
+<td style="text-align: right;">R$ 7.830,0 mi</td>
+<td style="text-align: right;">R$ 609,0 mi</td>
+<td style="text-align: right;">4.060</td>
+</tr>
+<tr>
+<td>Indireto no RS</td>
+<td style="text-align: right;">R$ 1.772,9 mi</td>
+<td style="text-align: right;">R$ 1.002,8 mi</td>
+<td style="text-align: right;">15.703</td>
+</tr>
+<tr>
+<td>Indireto no resto do Brasil</td>
+<td style="text-align: right;">R$ 3.384,6 mi</td>
+<td style="text-align: right;">R$ 1.702,0 mi</td>
+<td style="text-align: right;">32.721</td>
+</tr>
+<tr>
+<td>Tipo I no RS</td>
+<td style="text-align: right;">R$ 9.602,9 mi</td>
+<td style="text-align: right;">R$ 1.611,8 mi</td>
+<td style="text-align: right;">19.763</td>
+</tr>
+<tr>
+<td>Induzido no RS, uma rodada, à parte</td>
+<td style="text-align: right;">R$ 627,8 mi</td>
+<td style="text-align: right;">R$ 227,5 mi</td>
+<td style="text-align: right;">8.022</td>
+</tr>
+</tbody>
+</table>
+<p>A produção indireta associada é R$ 4.384 milhões no RS e R$ 10.413 milhões no resto do Brasil. A massa salarial que alimenta o induzido é R$ 1.611,8 milhões. Sessenta por cento disso, R$ 967,1 milhões, entram como consumo sobre a oferta gaúcha.</p>
+<figure class="grafico">
+<img src="figuras/fig1_valor_adicionado.png" alt="Valor adicionado da MIP Ipea em 2037, tipo I e induzido à parte">
+<figcaption>Valor adicionado em 2037, reais de 2025. O tipo I no RS é direto mais indireto no RS. A barra do induzido não entra nessa soma. A barra do resto do Brasil é o vazamento medido.</figcaption>
+</figure>
+
+<h3 id="onde-o-indireto-no-rs-acrescenta-valor">Onde o indireto no RS acrescenta valor</h3>
+<p>As oito atividades com maior valor adicionado indireto no RS, em R$ milhões de 2025. A lista das 68, com a soma fechando R$ 1.772,9 milhões, está na planilha.</p>
+<table>
+<thead>
+<tr>
+<th>Atividade no RS</th>
+<th style="text-align: right;">Valor adicionado</th>
+<th style="text-align: right;">Ocupações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equipamentos de informática, eletrônicos e ópticos</td>
+<td style="text-align: right;">375,9</td>
+<td style="text-align: right;">2.112</td>
+</tr>
+<tr>
+<td>Celulose, papel e produtos de papel</td>
+<td style="text-align: right;">323,3</td>
+<td style="text-align: right;">1.414</td>
+</tr>
+<tr>
+<td>Máquinas e equipamentos elétricos</td>
+<td style="text-align: right;">308,4</td>
+<td style="text-align: right;">2.104</td>
+</tr>
+<tr>
+<td>Comércio por atacado e a varejo</td>
+<td style="text-align: right;">219,3</td>
+<td style="text-align: right;">3.592</td>
+</tr>
+<tr>
+<td>Borracha e material plástico</td>
+<td style="text-align: right;">109,7</td>
+<td style="text-align: right;">1.134</td>
+</tr>
+<tr>
+<td>Agricultura</td>
+<td style="text-align: right;">58,6</td>
+<td style="text-align: right;">1.288</td>
+</tr>
+<tr>
+<td>Manutenção e instalação de máquinas</td>
+<td style="text-align: right;">56,4</td>
+<td style="text-align: right;">725</td>
+</tr>
+<tr>
+<td>Produtos de metal</td>
+<td style="text-align: right;">52,8</td>
+<td style="text-align: right;">731</td>
+</tr>
+</tbody>
+</table>
+<p>Eletrônicos e papel lideram porque são os dois maiores endereços da oferta gaúcha ao que a planta compra. Máquinas elétricas aparecem sobretudo pelo encadeamento, não por uma linha própria do BOM. A agricultura entra pela folha de R$ 52,8 milhões: o valor adicionado agrícola no RS é R$ 58,6 milhões, porque o coeficiente da atividade é aplicado sobre a produção gerada, que inclui a folha e o encadeamento.</p>
+<figure class="grafico">
+<img src="figuras/fig2_cadeia_por_atividade.png" alt="Atividades com maior valor adicionado indireto no RS">
+<figcaption>Indireto no RS por atividade. MIP Ipea, tipo I, 2037.</figcaption>
+</figure>
+
+<table>
+<thead>
+<tr>
+<th>Origem</th>
+<th style="text-align: right;">Ocupações em 2037</th>
+<th>Como ler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Planta</td>
+<td style="text-align: right;">4.060</td>
+<td>Premissa v6. Estoque do ano cheio. Uma vez</td>
+</tr>
+<tr>
+<td>Indireto no RS</td>
+<td style="text-align: right;">15.703</td>
+<td>Fator trabalho da MIP Ipea sobre a produção gerada no RS</td>
+</tr>
+<tr>
+<td>Indireto no resto do Brasil</td>
+<td style="text-align: right;">32.721</td>
+<td>O mesmo fator, fora do RS</td>
+</tr>
+<tr>
+<td>Induzido no RS, à parte</td>
+<td style="text-align: right;">8.022</td>
+<td>Uma rodada de consumo. Fora do tipo I</td>
+</tr>
+<tr>
+<td>Famílias-equivalentes da folha no RS</td>
+<td style="text-align: right;">547</td>
+<td>3.007 t ÷ 5,5 t. Fora da soma</td>
+</tr>
+</tbody>
+</table>
+<figure class="grafico">
+<img src="figuras/fig5_ocupacoes.png" alt="Ocupações diretas, indiretas e induzidas em 2037">
+<figcaption>Ocupações em 2037. O direto entra uma vez. O induzido fica à parte do tipo I.</figcaption>
+</figure>
+
+<h3 id="o-vazamento-medido-por-estado">O vazamento medido, por estado</h3>
+<p>Valor adicionado indireto, R$ milhões de 2025. É a parte de x que cai em cada UF. O RS está na primeira linha para leitura; a manchete do vazamento é a soma dos outros 26.</p>
+<table>
+<thead>
+<tr>
+<th>UF</th>
+<th style="text-align: right;">Choque de origem</th>
+<th style="text-align: right;">Valor adicionado indireto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RS</td>
+<td style="text-align: right;">3.574,5</td>
+<td style="text-align: right;">1.772,9</td>
+</tr>
+<tr>
+<td>SP</td>
+<td style="text-align: right;">1.057,0</td>
+<td style="text-align: right;">1.139,0</td>
+</tr>
+<tr>
+<td>PR</td>
+<td style="text-align: right;">1.829,0</td>
+<td style="text-align: right;">630,7</td>
+</tr>
+<tr>
+<td>SC</td>
+<td style="text-align: right;">473,1</td>
+<td style="text-align: right;">331,8</td>
+</tr>
+<tr>
+<td>RJ</td>
+<td style="text-align: right;">199,1</td>
+<td style="text-align: right;">301,2</td>
+</tr>
+<tr>
+<td>MG</td>
+<td style="text-align: right;">209,1</td>
+<td style="text-align: right;">244,6</td>
+</tr>
+<tr>
+<td>AM</td>
+<td style="text-align: right;">416,0</td>
+<td style="text-align: right;">63,3</td>
+</tr>
+<tr>
+<td>Demais UFs</td>
+<td style="text-align: right;">242,3</td>
+<td style="text-align: right;">674,0</td>
+</tr>
+<tr>
+<td>Brasil sem o RS</td>
+<td style="text-align: right;">4.425,5</td>
+<td style="text-align: right;">3.384,6</td>
+</tr>
+</tbody>
+</table>
+<p>O Paraná recebe choque alto porque a folha paranaense, o papel e o eletrônico têm oferta paranaense relevante para o RS. O Amazonas recebe R$ 416 milhões de choque, sobretudo eletrônico, e R$ 63 milhões de valor adicionado: o coeficiente de valor adicionado dessa oferta é baixo. São Paulo é o maior vazamento em valor adicionado, R$ 1,14 bilhão.</p>
+<h3 id="a-coluna-mip-rs-mesma-planta">A coluna MIP-RS, mesma planta</h3>
+<p>A MIP-RS 2019, 117 produtos × 52 atividades, DEE/SPGG e UFRJ, foi a matriz da rodada anterior. Os números abaixo são os já publicados. Eles não foram reestimados e não entram na soma da MIP Ipea.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: right;">MIP-RS 2019</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compra no RS, com o percentual manual</td>
+<td style="text-align: right;">R$ 830,0 mi</td>
+</tr>
+<tr>
+<td>Cadeia (indireto estadual)</td>
+<td style="text-align: right;">R$ 498,9 mi</td>
+</tr>
+<tr>
+<td>Induzido, uma rodada</td>
+<td style="text-align: right;">R$ 370,8 mi</td>
+</tr>
+<tr>
+<td>Tipo I no RS</td>
+<td style="text-align: right;">R$ 8.328,9 mi</td>
+</tr>
+<tr>
+<td>Tipo II no RS</td>
+<td style="text-align: right;">R$ 8.699,7 mi</td>
+</tr>
+<tr>
+<td>Ocupações do tipo II</td>
+<td style="text-align: right;">12.817</td>
+</tr>
+</tbody>
+</table>
+<p>A diferença do indireto no RS é R$ 1.274,0 milhões, 255% acima da cadeia da MIP-RS. Fora da banda de 10% a 20%. A diferença do tipo I é R$ 1.274,0 milhões sobre uma base de R$ 8.328,9 milhões, 15,3%, dentro da banda, porque os dois lados carregam os mesmos R$ 7,83 bilhões diretos. A origem do insumo agora é a NF-e; a abertura do que a planta compra continua estimada.</p>
+<figure class="grafico">
+<img src="figuras/fig3_faixa_e_exportacao.png" alt="Parcela da oferta gaúcha por grande linha do BOM">
+<figcaption>Parcela produzida no RS, pela oferta da TRU ao consumo intermediário gaúcho. As linhas tracejadas marcam 10% e 20%, a banda que as premissas tratavam como típica.</figcaption>
+</figure>
+
+<figure class="grafico">
+<img src="figuras/fig4_comparacao_bloco_ii.png" alt="Tipo I da MIP Ipea ao lado da checagem MIP-RS e do bloco II">
+<figcaption>Mesma planta. As barras não se somam. O bloco II do contratante, R$ 8,85 bilhões no RS, é comparação de ordem de grandeza, não insumo desta conta.</figcaption>
+</figure>
+
+<p>O bloco II do contratante, no tipo I deles, traz R$ 8,85 bilhões e 12.760 ocupações no RS, e R$ 15,55 bilhões e 67.350 ocupações no Brasil. O tipo I desta conta no RS, R$ 9,60 bilhões e 19.763 ocupações, fica na mesma ordem de grandeza de valor do bloco II e acima em ocupação: o fator trabalho da MIP Ipea incide sobre uma compra gaúcha de R$ 3,57 bilhões. No Brasil, o indireto desta conta soma R$ 5,16 bilhões de valor adicionado (RS mais resto) e 48.424 ocupações indiretas, além das 4.060 diretas.</p>
+<h2 id="6-a-obra-de-20262027-em-bloco-separado">6. A obra de 2026–2027, em bloco separado</h2>
+<p>O terreno vale zero: a unidade já existe. O galpão também. O projeto é linha nova de sem fumaça dentro da planta, com operação a partir de 2028 e obra hipotética em 2026–2027. Este bloco permanece fora do ano cheio de 2037.</p>
+<table>
+<thead>
+<tr>
+<th>Pedaço</th>
+<th style="text-align: right;">Valor</th>
+<th>Origem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAPEX da conversão</td>
+<td style="text-align: right;">R$ 1.634,7 mi</td>
+<td>Estimativa calibrada por anúncio, já publicada</td>
+</tr>
+<tr>
+<td>Dos quais máquinas importadas</td>
+<td style="text-align: right;">R$ 1.150,8 mi</td>
+<td>Fora do choque</td>
+</tr>
+<tr>
+<td>Parcela gaúcha</td>
+<td style="text-align: right;">R$ 483,9 mi</td>
+<td>Obra civil, montagem e engenharia</td>
+</tr>
+<tr>
+<td>Produção gerada no RS</td>
+<td style="text-align: right;">R$ 740,4 mi</td>
+<td>MIP-RS 2019</td>
+</tr>
+<tr>
+<td>Valor adicionado no RS</td>
+<td style="text-align: right;">R$ 341,8 mi</td>
+<td>MIP-RS 2019</td>
+</tr>
+<tr>
+<td>Remunerações</td>
+<td style="text-align: right;">R$ 125,5 mi</td>
+<td>MIP-RS 2019</td>
+</tr>
+<tr>
+<td>Ocupações do Leontief da obra</td>
+<td style="text-align: right;">4.357</td>
+<td>MIP-RS 2019</td>
+</tr>
+<tr>
+<td>Das quais postos temporários na construção</td>
+<td style="text-align: right;">2.639</td>
+<td>MIP-RS 2019</td>
+</tr>
+</tbody>
+</table>
+<p>A MAI inter-regional de 2018 foi inspecionada na coluna de investimento da fabricação de produtos do fumo no RS (RS_1200, R$ 183 milhões de 2018). Máquinas mecânicas são 40,4% dessa coluna, veículos 16,0%, construção 10,5%, manutenção 0,7%, engenharia 0,3%, e a origem “resto do mundo” é 38,5%. A parcela local já estimada é outra composição: obra civil cerca de 61%, montagem 28%, engenharia 11%, com a máquina importada já retirada. A MAI não reparte esse pedaço. O número da obra permanece o da MIP-RS 2019, com esse rótulo, e não se soma a 2037.</p>
+<h2 id="7-retorno-fiscal-bruto-e-a-hipotese-fundopem">7. Retorno fiscal bruto e a hipótese FUNDOPEM</h2>
+<p>O incentivo não foi concedido à Philip Morris Brasil. O que segue é uma política hipotética de referência. Fonte do desenho: Lei 15.642/2021 e a Resolução Normativa do FUNDOPEM/INTEGRAR consolidada até a RN 11/2025.</p>
+<p><strong>Hipótese de referência.</strong> Financiamento de 30% do ICMS incremental atribuível ao consumo no Rio Grande do Sul, por 96 meses, sem abatimento do INTEGRAR. É hipótese de cálculo.</p>
+<table>
+<thead>
+<tr>
+<th>Canal em 2037</th>
+<th style="text-align: right;">Valor</th>
+<th>Esfera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tributos sobre o consumo no Brasil</td>
+<td style="text-align: right;">R$ 13,7 bi</td>
+<td>Federal R$ 6,58 bi; estados e municípios do Brasil R$ 7,12 bi</td>
+</tr>
+<tr>
+<td>Tributos sobre o consumo no RS</td>
+<td style="text-align: right;">R$ 0,93 bi</td>
+<td>Dos quais R$ 0,45 bi federais e R$ 0,48 bi de ICMS</td>
+</tr>
+<tr>
+<td>ICMS estadual, líquido da cota</td>
+<td style="text-align: right;">R$ 360 mi</td>
+<td>Estado</td>
+</tr>
+<tr>
+<td>Cota-parte municipal do ICMS do consumo no RS</td>
+<td style="text-align: right;">R$ 120 mi</td>
+<td>Municípios gaúchos</td>
+</tr>
+<tr>
+<td>Bruto estadual e municipal no RS</td>
+<td style="text-align: right;">R$ 480 mi</td>
+<td>Antes da hipótese</td>
+</tr>
+<tr>
+<td>IRPJ/CSLL da planta</td>
+<td style="text-align: right;">R$ 1,23 bi</td>
+<td>Federal</td>
+</tr>
+<tr>
+<td>Diferimento da hipótese (30% de R$ 480 mi)</td>
+<td style="text-align: right;">R$ 144 mi</td>
+<td>Caixa adiado</td>
+</tr>
+<tr>
+<td>Líquido de caixa no ano em que a fruição vigora</td>
+<td style="text-align: right;">R$ 336 mi</td>
+<td>R$ 480 mi menos R$ 144 mi</td>
+</tr>
+<tr>
+<td>ISS da obra em Santa Cruz do Sul</td>
+<td style="text-align: right;">R$ 4,8 mi</td>
+<td>Uma vez, em 2026–2027</td>
+</tr>
+</tbody>
+</table>
+<p>O ISS usa a alíquota de 2% sobre metade da parcela local do CAPEX. Base de R$ 242 milhões × 2% = R$ 4,8 milhões, estimativa, município-sede, biênio da obra.</p>
+<p>O tributo de R$ 480 milhões admite uma leitura pela população residente do Censo 2022. O COREDE tem 3,9% da população do Estado, o que lê R$ 18,7 milhões no Conselho e R$ 461,3 milhões no resto. Essa leitura não é cota-parte, VAF nem ISS.</p>
+<h2 id="8-analise-espacial-areas-de-influencia">8. Análise espacial: áreas de influência</h2>
+<p>O transbordamento que esta seção reparte é o indireto Ipea no RS mais o induzido no RS: R$ 1.772,9 milhões mais R$ 627,8 milhões, R$ 2.400,7 milhões. A soma dos 497 municípios é esse mesmo valor. A conta municipal reparte esse total pela regra já escrita: λ de 100 km, PAM para a folha, emprego do CEMPRE para o fornecedor, pendularidade para a casa de quem trabalha na sede. O direto de R$ 7,83 bilhões permanece inteiro em Santa Cruz do Sul, fora da cor.</p>
+<p>A remuneração indireta no RS, R$ 1.002,8 milhões, supera a remuneração direta, R$ 609 milhões. Por isso a parcela do induzido que segue a residência de quem trabalha na planta é 37,8%, e o restante segue o núcleo gravitacional da massa já alocada na cadeia. Na rodada anterior, com a cadeia menor, essa parcela era 76,5%. A mancha induzida acompanha mais o fornecedor.</p>
+<figure class="mapa">
+<img src="espacial/mapa_transbordamento_rs.png" alt="Mapa do transbordamento de valor adicionado nos municípios do Rio Grande do Sul em 2037">
+<figcaption>Transbordamento nos municípios do RS, 2037. Indireto Ipea no RS mais induzido. Cinza: menos de R$ 50 mil. Azul: valor positivo, classes do estado. O direto não entra na cor.</figcaption>
+</figure>
+
+<p>A peça auxiliar soma o direto à cor, de propósito. As classes vão de R$ 500 milhões até o máximo, Santa Cruz do Sul com direto mais transbordamento. O Estado cai na classe clara e a sede fica isolada. A figura explica a escala. A peça de decisão é o mapa anterior.</p>
+<figure class="mapa">
+<img src="espacial/mapa_com_direto.png" alt="Peça auxiliar com o valor adicionado direto na mesma escala do mapa">
+<figcaption>Peça auxiliar. O direto de R$ 7,83 bilhões na mesma escala apaga o transbordamento do resto do Estado.</figcaption>
+</figure>
+
+<h3 id="o-metodo-com-de-100-km">O método, com λ de 100 km</h3>
+<p>A malha é a municipal do IBGE 2022, 497 municípios, em Albers equivalente sobre o elipsoide GRS80. A distância é a euclidiana entre centroides, em quilômetros. A folha usa a PAM 2025, SIDRA 1612, fumo em folha: 349.928 toneladas no Estado, e a fração de 0,86% em 2037, que produz 3.009 toneladas contra a âncora de 3.007. O valor adicionado agrícola segue o peso da PAM e fecha no valor adicionado, não nas toneladas.</p>
+<p>O fornecedor usa o pessoal ocupado do CEMPRE 2021, com decaimento exp(−d / 100 km), emprego elevado a 0,5, e raio de 260 km. A residência de quem trabalha na sede usa o Censo 2022: quem mora e trabalha no município, e quem trabalha em outro município repartido por um núcleo gravitacional de destinos concorrentes, com λ de 28 km e raio de 110 km. Na referência, 91,3% dessa massa mora em Santa Cruz do Sul.</p>
+<p>O consumo induzido parte da massa salarial já alocada e de um núcleo de população, com λ de 75 km e raio de 180 km.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">λ (km)</th>
+<th style="text-align: right;">Parcela do COREDE</th>
+<th style="text-align: right;">Transbordamento na sede</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">80</td>
+<td style="text-align: right;">29,0%</td>
+<td style="text-align: right;">R$ 484 mi</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">26,8%</td>
+<td style="text-align: right;">R$ 458 mi</td>
+</tr>
+<tr>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">24,5%</td>
+<td style="text-align: right;">R$ 431 mi</td>
+</tr>
+</tbody>
+</table>
+<p>Com α = 1 e λ = 100 km, o COREDE cai a 23,8% e a sede fica em R$ 426 milhões. O λ de referência permanece 100 km.</p>
+<h3 id="o-zoom-do-vale">O zoom do Vale</h3>
+<figure class="mapa">
+<img src="espacial/mapa_vale_zoom.png" alt="Zoom do Vale do Rio Pardo com as mesmas classes do mapa estadual">
+<figcaption>Vale do Rio Pardo e entorno, nas mesmas classes do mapa do estado. Contorno ocre: COREDE. Contorno azul-marinho: Santa Cruz do Sul.</figcaption>
+</figure>
+
+<h3 id="os-quinze-municipios-mais-azuis">Os quinze municípios mais azuis</h3>
+<p>Transbordamento em R$ milhões de 2025. A soma dos 497 fecha R$ 2.400,7 milhões.</p>
+<table>
+<thead>
+<tr>
+<th>Município</th>
+<th style="text-align: right;">Transbordamento</th>
+<th style="text-align: right;">Indústria</th>
+<th style="text-align: right;">Serviços</th>
+<th style="text-align: right;">Induzido</th>
+<th>COREDE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Santa Cruz do Sul</td>
+<td style="text-align: right;">458,1</td>
+<td style="text-align: right;">78,7</td>
+<td style="text-align: right;">154,8</td>
+<td style="text-align: right;">222,5</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>Porto Alegre</td>
+<td style="text-align: right;">88,2</td>
+<td style="text-align: right;">62,3</td>
+<td style="text-align: right;">8,2</td>
+<td style="text-align: right;">17,7</td>
+<td></td>
+</tr>
+<tr>
+<td>Caxias do Sul</td>
+<td style="text-align: right;">81,0</td>
+<td style="text-align: right;">69,2</td>
+<td style="text-align: right;">3,3</td>
+<td style="text-align: right;">8,6</td>
+<td></td>
+</tr>
+<tr>
+<td>Eldorado do Sul</td>
+<td style="text-align: right;">77,3</td>
+<td style="text-align: right;">72,1</td>
+<td style="text-align: right;">2,1</td>
+<td style="text-align: right;">3,2</td>
+<td></td>
+</tr>
+<tr>
+<td>Gravataí</td>
+<td style="text-align: right;">71,0</td>
+<td style="text-align: right;">61,2</td>
+<td style="text-align: right;">1,9</td>
+<td style="text-align: right;">8,0</td>
+<td></td>
+</tr>
+<tr>
+<td>Canoas</td>
+<td style="text-align: right;">70,2</td>
+<td style="text-align: right;">56,4</td>
+<td style="text-align: right;">3,5</td>
+<td style="text-align: right;">10,2</td>
+<td></td>
+</tr>
+<tr>
+<td>Venâncio Aires</td>
+<td style="text-align: right;">61,5</td>
+<td style="text-align: right;">47,5</td>
+<td style="text-align: right;">4,5</td>
+<td style="text-align: right;">5,9</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>Vera Cruz</td>
+<td style="text-align: right;">56,4</td>
+<td style="text-align: right;">41,3</td>
+<td style="text-align: right;">5,9</td>
+<td style="text-align: right;">7,8</td>
+<td>sim</td>
+</tr>
+<tr>
+<td>São Leopoldo</td>
+<td style="text-align: right;">56,0</td>
+<td style="text-align: right;">45,3</td>
+<td style="text-align: right;">2,5</td>
+<td style="text-align: right;">8,2</td>
+<td></td>
+</tr>
+<tr>
+<td>Guaíba</td>
+<td style="text-align: right;">52,1</td>
+<td style="text-align: right;">46,0</td>
+<td style="text-align: right;">1,6</td>
+<td style="text-align: right;">4,4</td>
+<td></td>
+</tr>
+<tr>
+<td>Cachoeirinha</td>
+<td style="text-align: right;">51,1</td>
+<td style="text-align: right;">42,8</td>
+<td style="text-align: right;">2,1</td>
+<td style="text-align: right;">6,2</td>
+<td></td>
+</tr>
+<tr>
+<td>Bento Gonçalves</td>
+<td style="text-align: right;">48,6</td>
+<td style="text-align: right;">40,7</td>
+<td style="text-align: right;">2,6</td>
+<td style="text-align: right;">5,3</td>
+<td></td>
+</tr>
+<tr>
+<td>Lajeado</td>
+<td style="text-align: right;">46,1</td>
+<td style="text-align: right;">34,3</td>
+<td style="text-align: right;">5,5</td>
+<td style="text-align: right;">6,3</td>
+<td></td>
+</tr>
+<tr>
+<td>Estrela</td>
+<td style="text-align: right;">39,8</td>
+<td style="text-align: right;">33,7</td>
+<td style="text-align: right;">2,5</td>
+<td style="text-align: right;">3,5</td>
+<td></td>
+</tr>
+<tr>
+<td>Farroupilha</td>
+<td style="text-align: right;">37,8</td>
+<td style="text-align: right;">32,1</td>
+<td style="text-align: right;">1,7</td>
+<td style="text-align: right;">4,0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>A sede concentra salário e serviço. A mancha seguinte é metropolitana e da Serra, porque o indireto agora é sobretudo eletrônico, papel e máquina elétrica, e esses empregos estão em Eldorado do Sul, Gravataí, Canoas, Caxias do Sul e Porto Alegre. O anel do Vale — Venâncio Aires e Vera Cruz — continua azul, abaixo da região metropolitana.</p>
+<h3 id="corede-sede-e-resto-do-estado">COREDE, sede e resto do Estado</h3>
+<table>
+<thead>
+<tr>
+<th>Recorte</th>
+<th style="text-align: right;">Transbordamento</th>
+<th style="text-align: right;">Parcela</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COREDE Vale do Rio Pardo, 23 municípios</td>
+<td style="text-align: right;">R$ 644,4 mi</td>
+<td style="text-align: right;">26,8%</td>
+</tr>
+<tr>
+<td>Dos quais Santa Cruz do Sul</td>
+<td style="text-align: right;">R$ 458,1 mi</td>
+<td style="text-align: right;">19,1%</td>
+</tr>
+<tr>
+<td>COREDE sem a sede</td>
+<td style="text-align: right;">R$ 186,3 mi</td>
+<td style="text-align: right;">7,8%</td>
+</tr>
+<tr>
+<td>Resto do Estado</td>
+<td style="text-align: right;">R$ 1.756,3 mi</td>
+<td style="text-align: right;">73,2%</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td style="text-align: right;">R$ 2.400,7 mi</td>
+<td style="text-align: right;">100%</td>
+</tr>
+</tbody>
+</table>
+<p>A parcela do COREDE caiu em relação à rodada em que a cadeia gaúcha era R$ 499 milhões, porque o indireto adicional é indústria de eletrônico e de papel, com peso fora do Vale. Dentro dos R$ 2.400,7 milhões, a folha agrícola é R$ 58,6 milhões, a indústria R$ 1.360,7 milhões, os serviços da cadeia R$ 353,6 milhões e o induzido R$ 627,8 milhões.</p>
+<p>Sessenta e seis municípios ficam abaixo de R$ 50 mil e somam R$ 1,1 milhão. No mapa são cinza. No CSV entram na soma. Dois fecham em zero: Barra do Quaraí e Chuí. A conferência da planilha, soma municipal menos indireto menos induzido, é zero em reais.</p>
+<p>A prancha de leitura está em <code>estudo/espacial/prancha_governador.pdf</code>.</p>
+<h2 id="9-limites">9. Limites</h2>
+<p>A abertura do que a planta compra continua estimada: dispositivo, papel, químicos, energia, água, frete e manutenção são engenharia de porte, não a nota fiscal da planta. A origem geográfica é que passou a ser observada.</p>
+<p>A TRU mede a oferta doméstica ao consumo intermediário médio do RS. Ela não é o caderno de compras de uma planta de nicotina sem fumaça. Um pod pode ser mais importado do que a média do material eletrônico usado no Estado. Essa diferença não está na matriz, e por isso o conteúdo local de 44,7% pode estar alto para o dispositivo. O número fica publicado, com essa ressalva, no lugar do chute de 5%.</p>
+<p>Eletricidade e frete herdam a geografia da sede de quem fatura. As linhas são pequenas.</p>
+<p>O fator trabalho e o valor adicionado são os coeficientes médios de 2018 de cada atividade, em cada UF. Ocupação indireta não é um posto levantado na planta.</p>
+<p>A adicionalidade de 100% é premissa de capa. A linha de cigarros já instalada permanece fora do choque.</p>
+<p>A obra não se soma a 2037. A MIP Ipea não se soma à MIP-RS. O induzido não se soma ao tipo I na manchete principal.</p>
+<h3 id="onde-cada-numero-se-confere">Onde cada número se confere</h3>
+<table>
+<thead>
+<tr>
+<th>Número</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Âncoras da planta</td>
+<td>Aba <code>01_premissas</code> da planilha e a revisão 4</td>
+</tr>
+<tr>
+<td>Abertura de produtos</td>
+<td><code>estudo/resultados/bom_abertura.csv</code> e a aba <code>02_bom</code></td>
+</tr>
+<tr>
+<td>Ponte e origem por UF</td>
+<td><code>ipea_ponte_bom.csv</code>, <code>ipea_origem_uf.csv</code>, abas <code>03</code> e <code>04</code></td>
+</tr>
+<tr>
+<td>Totais Ipea</td>
+<td><code>estudo/resultados/ipea_totais.json</code></td>
+</tr>
+<tr>
+<td>Inversa conferida</td>
+<td>erro relativo máximo da ordem de 10⁻¹⁵, no json</td>
+</tr>
+<tr>
+<td>Municípios</td>
+<td><code>estudo/espacial/va_por_municipio.csv</code>; conferência da aba <code>08</code> igual a zero</td>
+</tr>
+<tr>
+<td>Coluna MIP-RS</td>
+<td><code>estudo/resultados/resultados.json</code>, chave <code>base</code>, sem recálculo</td>
+</tr>
+<tr>
+<td>Script</td>
+<td><code>estudo/scripts/calcular_impacto_ipea.py</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fontes">Fontes</h3>
+<p>MIP, TRU e MAI inter-regionais, 2018, 68 atividades e 27 UFs: release v1, https://github.com/provictorludwig/mip-dados/releases/tag/v1 . Feitas com notas fiscais eletrônicas. Unidade da matriz: R$ milhões de 2018.</p>
+<p>MIP-RS 2019, DEE/SPGG e UFRJ, 117 × 52: coluna de checagem e bloco da obra. https://dee.rs.gov.br/upload/arquivos/202409/11100149-20240906162755mip-rs-2019-117-52-v2-1.xlsx</p>
+<p>IPCA: IBGE, SIDRA 1737, variável 2266. Dezembro de 2018: 5.100,61. Dezembro de 2025: 7.403,29.</p>
+<p>PAM, CEMPRE, Censo 2022 e malha municipal: IBGE, como na nota <code>estudo/espacial/nota_metodo.md</code>.</p>
+</body>
+</html>

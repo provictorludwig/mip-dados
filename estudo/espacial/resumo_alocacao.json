@@ -1,0 +1,725 @@
+{
+  "cenario": {
+    "fonte": "estudo/resultados/ipea_totais.json — indireto no RS mais induzido no RS",
+    "alpha_conteudo_local": 0.44658942143305463,
+    "com_exportacao": true,
+    "va_direto": 7830000000.0,
+    "va_cadeia": 1772908816.0382934,
+    "va_induzido": 627761135.9073793,
+    "va_transbordo": 2400669951.9456725,
+    "rem_direto": 609000000.0,
+    "rem_cadeia": 1002795321.1581122,
+    "s_dir": 0.3778395383121099
+  },
+  "parametros": {
+    "alpha": 0.5,
+    "lambda_km": 100.0,
+    "lambda_c_km": 28.0,
+    "lambda_g_km": 75.0,
+    "dmax_fornecedor_km": 260.0,
+    "dmax_comute_km": 110.0,
+    "dmax_gravidade_km": 180.0,
+    "share_servico_pendular": 0.5,
+    "fracao_folha": 0.0086
+  },
+  "fechamento": {
+    "soma_municipal_mi": 2400.669951945673,
+    "esperado_mi": 2400.6699519456724,
+    "zeros": 2,
+    "classe_cinza": 66,
+    "pam_t_2025": 349928.0,
+    "folha_nova_t_regra": 3009.3808,
+    "folha_nova_t_estudo": 3007.0,
+    "residual_toneladas": 2.3807999999999083,
+    "quebras_mi": [
+      0.5,
+      2.0,
+      6.0,
+      15.0,
+      30.0,
+      459.0
+    ],
+    "n_municipios": 497
+  },
+  "blocos_mi": {
+    "folha": 58.56310065364537,
+    "pecuaria": 0.597452026744309,
+    "madeira": 10.222065981580672,
+    "papel": 334.8316371963105,
+    "refino": 8.508633090903565,
+    "quim": 28.020168781177993,
+    "plast": 109.74038909766304,
+    "eletro": 375.88577631049026,
+    "eletrico": 308.41602951122263,
+    "extrativa": 0.12089382198297305,
+    "energia": 14.854433049327,
+    "construcao": 1.9536316320531393,
+    "demais_ind": 167.5896451940812,
+    "comercio": 224.6044302792054,
+    "transporte": 23.96321423466718,
+    "aloj_alim": 2.1922895322393123,
+    "informacao": 4.363364756615016,
+    "financeira": 9.48587519378104,
+    "imobiliario": 14.055349694294787,
+    "profissionais": 21.240884812280793,
+    "administrativo": 46.329876501998015,
+    "publico": 0.21229248718541077,
+    "sociais": 7.15738219884363
+  },
+  "recortes": {
+    "corede": {
+      "va_transbordo_mi": 644.394260948715,
+      "va_folha_mi": 24.199402920644133,
+      "va_industria_mi": 178.72317226897673,
+      "va_servicos_mi": 181.35758162106794,
+      "va_induzido_mi": 260.1141041380261,
+      "pct": 26.842267943848437
+    },
+    "corede_sem_sede": {
+      "va_transbordo_mi": 186.27316177897396,
+      "va_folha_mi": 22.089023930559122,
+      "va_industria_mi": 100.016665595526,
+      "va_servicos_mi": 26.529541327976226,
+      "va_induzido_mi": 37.63793092491263,
+      "pct": 7.7592157817448
+    },
+    "sede_transbordo": {
+      "va_transbordo_mi": 458.1210991697409,
+      "va_folha_mi": 2.110378990085012,
+      "va_industria_mi": 78.70650667345073,
+      "va_servicos_mi": 154.82804029309173,
+      "va_induzido_mi": 222.47617321311347,
+      "pct": 19.08305216210363
+    },
+    "resto": {
+      "va_transbordo_mi": 1756.275690996958,
+      "va_folha_mi": 34.363697733001246,
+      "va_industria_mi": 1182.0175834245606,
+      "va_servicos_mi": 172.24737807004254,
+      "va_induzido_mi": 367.64703176935353,
+      "pct": 73.15773205615157
+    },
+    "direto_sede_mi": 7830.0
+  },
+  "poa_40km_pct": 23.22648793765451,
+  "poa_mi": 88.2185734018429,
+  "top15": [
+    {
+      "nome": "Santa Cruz do Sul",
+      "mi": 458.1210991697409,
+      "pct": 19.08305216210363,
+      "folha": 2.110378990085012,
+      "industria": 78.70650667345073,
+      "servicos": 154.82804029309173,
+      "induzido": 222.47617321311347,
+      "corede": true,
+      "dist_km": 0.0
+    },
+    {
+      "nome": "Porto Alegre",
+      "mi": 88.2185734018429,
+      "pct": 3.6747480981442,
+      "folha": 0.0,
+      "industria": 62.27161899184811,
+      "servicos": 8.205969051683981,
+      "induzido": 17.740985358310823,
+      "corede": false,
+      "dist_km": 129.881706302214
+    },
+    {
+      "nome": "Caxias do Sul",
+      "mi": 80.98885784451954,
+      "pct": 3.37359401607374,
+      "folha": 0.0,
+      "industria": 69.15040394618667,
+      "servicos": 3.2802672655616574,
+      "induzido": 8.558186632771204,
+      "corede": false,
+      "dist_km": 147.16822091292195
+    },
+    {
+      "nome": "Eldorado do Sul",
+      "mi": 77.33657579638171,
+      "pct": 3.22145806564133,
+      "folha": 0.002343006015954811,
+      "industria": 72.07241970472265,
+      "servicos": 2.0686458025302774,
+      "induzido": 3.1931672831128397,
+      "corede": false,
+      "dist_km": 99.91862561667264
+    },
+    {
+      "nome": "Gravataí",
+      "mi": 71.04302021063837,
+      "pct": 2.959299763512268,
+      "folha": 0.0,
+      "industria": 61.16455825026854,
+      "servicos": 1.8692030908419301,
+      "induzido": 8.009258869527905,
+      "corede": false,
+      "dist_km": 143.6442382750365
+    },
+    {
+      "nome": "Canoas",
+      "mi": 70.15007925255753,
+      "pct": 2.922104273255178,
+      "folha": 0.0,
+      "industria": 56.447297878704376,
+      "servicos": 3.4956272227770953,
+      "induzido": 10.207154151076056,
+      "corede": false,
+      "dist_km": 122.22423457982237
+    },
+    {
+      "nome": "Venâncio Aires",
+      "mi": 61.44818101848053,
+      "pct": 2.559626364660356,
+      "folha": 3.5550095564937214,
+      "industria": 47.54066718909316,
+      "servicos": 4.457933037504564,
+      "induzido": 5.894571235389084,
+      "corede": true,
+      "dist_km": 21.84734649170945
+    },
+    {
+      "nome": "Vera Cruz",
+      "mi": 56.429841174176524,
+      "pct": 2.3505872237223526,
+      "folha": 1.3599476346891999,
+      "industria": 41.31817818929626,
+      "servicos": 5.931593882939611,
+      "induzido": 7.820121467251455,
+      "corede": true,
+      "dist_km": 14.7377574020568
+    },
+    {
+      "nome": "São Leopoldo",
+      "mi": 56.03656256961615,
+      "pct": 2.334205188189245,
+      "folha": 0.0,
+      "industria": 45.310958568440824,
+      "servicos": 2.5460783362884047,
+      "induzido": 8.179525664886919,
+      "corede": false,
+      "dist_km": 122.66892747183414
+    },
+    {
+      "nome": "Guaíba",
+      "mi": 52.12379898929022,
+      "pct": 2.171218869426237,
+      "folha": 0.0,
+      "industria": 46.03415555167311,
+      "servicos": 1.64735708611272,
+      "induzido": 4.442286351504392,
+      "corede": false,
+      "dist_km": 110.85181531530758
+    },
+    {
+      "nome": "Cachoeirinha",
+      "mi": 51.07567270361412,
+      "pct": 2.1275591283266064,
+      "folha": 0.0,
+      "industria": 42.75405441188039,
+      "servicos": 2.116879472556295,
+      "induzido": 6.204738819177433,
+      "corede": false,
+      "dist_km": 130.34569604870808
+    },
+    {
+      "nome": "Bento Gonçalves",
+      "mi": 48.60454371579794,
+      "pct": 2.0246241544534422,
+      "folha": 0.0,
+      "industria": 40.73627802407173,
+      "servicos": 2.5630766732151296,
+      "induzido": 5.3051890185110775,
+      "corede": false,
+      "dist_km": 101.11160675602831
+    },
+    {
+      "nome": "Lajeado",
+      "mi": 46.132874583629516,
+      "pct": 1.9216666808463267,
+      "folha": 0.0,
+      "industria": 34.34518057072372,
+      "servicos": 5.470410386551258,
+      "induzido": 6.317283626354536,
+      "corede": false,
+      "dist_km": 44.75573396988902
+    },
+    {
+      "nome": "Estrela",
+      "mi": 39.7886547055911,
+      "pct": 1.6573979556558183,
+      "folha": 0.0,
+      "industria": 33.74455100321624,
+      "servicos": 2.5148497630507243,
+      "induzido": 3.529253939324136,
+      "corede": false,
+      "dist_km": 49.57490170081281
+    },
+    {
+      "nome": "Farroupilha",
+      "mi": 37.804184349973546,
+      "pct": 1.5747347659904003,
+      "folha": 0.0,
+      "industria": 32.07426139857679,
+      "servicos": 1.6910874470057176,
+      "induzido": 4.038835504391042,
+      "corede": false,
+      "dist_km": 111.94703603455804
+    }
+  ],
+  "top_folha": [
+    {
+      "nome": "Canguçu",
+      "va_folha_mi": 4.3774046680938605,
+      "folha_pam_t_2025": 26156.0,
+      "folha_nova_t_2037": 224.9416
+    },
+    {
+      "nome": "São Lourenço do Sul",
+      "va_folha_mi": 3.6149235674731375,
+      "folha_pam_t_2025": 21600.0,
+      "folha_nova_t_2037": 185.76
+    },
+    {
+      "nome": "Venâncio Aires",
+      "va_folha_mi": 3.5550095564937214,
+      "folha_pam_t_2025": 21242.0,
+      "folha_nova_t_2037": 182.6812
+    },
+    {
+      "nome": "Candelária",
+      "va_folha_mi": 2.2593272296707108,
+      "folha_pam_t_2025": 13500.0,
+      "folha_nova_t_2037": 116.1
+    },
+    {
+      "nome": "Arroio do Tigre",
+      "va_folha_mi": 2.253302357058256,
+      "folha_pam_t_2025": 13464.0,
+      "folha_nova_t_2037": 115.7904
+    },
+    {
+      "nome": "Dom Feliciano",
+      "va_folha_mi": 2.221671775842866,
+      "folha_pam_t_2025": 13275.0,
+      "folha_nova_t_2037": 114.165
+    },
+    {
+      "nome": "Camaquã",
+      "va_folha_mi": 2.178995594837975,
+      "folha_pam_t_2025": 13020.0,
+      "folha_nova_t_2037": 111.972
+    },
+    {
+      "nome": "Vale do Sol",
+      "va_folha_mi": 2.171297146499837,
+      "folha_pam_t_2025": 12974.0,
+      "folha_nova_t_2037": 111.5764
+    }
+  ],
+  "pendularidade": [
+    {
+      "nome": "Santa Cruz do Sul",
+      "pct": 91.35,
+      "dist_km": 0.0
+    },
+    {
+      "nome": "Vera Cruz",
+      "pct": 2.34,
+      "dist_km": 14.7
+    },
+    {
+      "nome": "Rio Pardo",
+      "pct": 0.77,
+      "dist_km": 41.9
+    },
+    {
+      "nome": "Venâncio Aires",
+      "pct": 0.68,
+      "dist_km": 21.8
+    },
+    {
+      "nome": "Lajeado",
+      "pct": 0.54,
+      "dist_km": 44.8
+    },
+    {
+      "nome": "Vale do Sol",
+      "pct": 0.31,
+      "dist_km": 28.2
+    },
+    {
+      "nome": "Candelária",
+      "pct": 0.31,
+      "dist_km": 39.7
+    },
+    {
+      "nome": "Cruzeiro do Sul",
+      "pct": 0.25,
+      "dist_km": 38.0
+    },
+    {
+      "nome": "Sinimbu",
+      "pct": 0.22,
+      "dist_km": 27.3
+    },
+    {
+      "nome": "Estrela",
+      "pct": 0.21,
+      "dist_km": 49.6
+    },
+    {
+      "nome": "Cachoeira do Sul",
+      "pct": 0.21,
+      "dist_km": 83.6
+    },
+    {
+      "nome": "Santa Clara do Sul",
+      "pct": 0.16,
+      "dist_km": 34.1
+    }
+  ],
+  "pend_detail": {
+    "ocupados_modelo": 70139.33250203024,
+    "moram_na_sede": 64071.0,
+    "share_sede": 0.913481747180092,
+    "entrantes": 6068.3325020302345
+  },
+  "sensibilidade_lambda": [
+    {
+      "lambda_km": 80.0,
+      "corede_pct": 29.0,
+      "sede_mi": 483.68,
+      "top5": [
+        {
+          "nome": "Santa Cruz do Sul",
+          "mi": 483.68
+        },
+        {
+          "nome": "Porto Alegre",
+          "mi": 83.09
+        },
+        {
+          "nome": "Eldorado do Sul",
+          "mi": 77.32
+        },
+        {
+          "nome": "Caxias do Sul",
+          "mi": 73.0
+        },
+        {
+          "nome": "Venâncio Aires",
+          "mi": 72.57
+        }
+      ]
+    },
+    {
+      "lambda_km": 100.0,
+      "corede_pct": 26.84,
+      "sede_mi": 458.12,
+      "top5": [
+        {
+          "nome": "Santa Cruz do Sul",
+          "mi": 458.12
+        },
+        {
+          "nome": "Porto Alegre",
+          "mi": 88.22
+        },
+        {
+          "nome": "Caxias do Sul",
+          "mi": 80.99
+        },
+        {
+          "nome": "Eldorado do Sul",
+          "mi": 77.34
+        },
+        {
+          "nome": "Gravataí",
+          "mi": 71.04
+        }
+      ]
+    },
+    {
+      "lambda_km": 150.0,
+      "corede_pct": 24.45,
+      "sede_mi": 431.19,
+      "top5": [
+        {
+          "nome": "Santa Cruz do Sul",
+          "mi": 431.19
+        },
+        {
+          "nome": "Porto Alegre",
+          "mi": 93.55
+        },
+        {
+          "nome": "Caxias do Sul",
+          "mi": 91.04
+        },
+        {
+          "nome": "Gravataí",
+          "mi": 79.29
+        },
+        {
+          "nome": "Eldorado do Sul",
+          "mi": 75.49
+        }
+      ]
+    }
+  ],
+  "sensibilidade_alpha": [
+    {
+      "alpha": 0.5,
+      "corede_pct": 26.84,
+      "sede_mi": 458.12
+    },
+    {
+      "alpha": 1.0,
+      "corede_pct": 23.84,
+      "sede_mi": 425.98
+    }
+  ],
+  "leitura_tributo_480": {
+    "chave": "população residente do Censo 2022",
+    "corede_mi": 18.71,
+    "corede_pct_pop": 3.9,
+    "resto_mi": 461.29,
+    "nota": "Leitura do tributo estadual e municipal de R$ 480 mi sobre o consumo do produto no RS. Não é VAF nem cota-parte."
+  },
+  "corede_municipios": [
+    {
+      "nome": "Santa Cruz do Sul",
+      "mi": 458.121099,
+      "folha": 2.110379,
+      "industria": 78.706507,
+      "servicos": 154.82804,
+      "induzido": 222.476173,
+      "pam_t": 12610.0,
+      "folha_t": 108.446
+    },
+    {
+      "nome": "Venâncio Aires",
+      "mi": 61.448181,
+      "folha": 3.55501,
+      "industria": 47.540667,
+      "servicos": 4.457933,
+      "induzido": 5.894571,
+      "pam_t": 21242.0,
+      "folha_t": 182.681
+    },
+    {
+      "nome": "Vera Cruz",
+      "mi": 56.429841,
+      "folha": 1.359948,
+      "industria": 41.318178,
+      "servicos": 5.931594,
+      "induzido": 7.820121,
+      "pam_t": 8126.0,
+      "folha_t": 69.884
+    },
+    {
+      "nome": "Rio Pardo",
+      "mi": 9.216364,
+      "folha": 0.916115,
+      "industria": 1.536555,
+      "servicos": 2.785544,
+      "induzido": 3.97815,
+      "pam_t": 5474.0,
+      "folha_t": 47.076
+    },
+    {
+      "nome": "Candelária",
+      "mi": 8.584583,
+      "folha": 2.259327,
+      "industria": 1.778042,
+      "servicos": 2.0937,
+      "induzido": 2.453514,
+      "pam_t": 13500.0,
+      "folha_t": 116.1
+    },
+    {
+      "nome": "Vale do Sol",
+      "mi": 5.773384,
+      "folha": 2.171297,
+      "industria": 0.412765,
+      "servicos": 1.266103,
+      "induzido": 1.923218,
+      "pam_t": 12974.0,
+      "folha_t": 111.576
+    },
+    {
+      "nome": "Sinimbu",
+      "mi": 5.013158,
+      "folha": 1.265223,
+      "industria": 0.967071,
+      "servicos": 1.071767,
+      "induzido": 1.709096,
+      "pam_t": 7560.0,
+      "folha_t": 65.016
+    },
+    {
+      "nome": "Arroio do Tigre",
+      "mi": 4.506975,
+      "folha": 2.253302,
+      "industria": 0.620661,
+      "servicos": 0.776071,
+      "induzido": 0.856941,
+      "pam_t": 13464.0,
+      "folha_t": 115.79
+    },
+    {
+      "nome": "Passo do Sobrado",
+      "mi": 4.04142,
+      "folha": 0.685831,
+      "industria": 0.726509,
+      "servicos": 1.13775,
+      "induzido": 1.49133,
+      "pam_t": 4098.0,
+      "folha_t": 35.243
+    },
+    {
+      "nome": "Sobradinho",
+      "mi": 3.753902,
+      "folha": 0.572363,
+      "industria": 0.745589,
+      "servicos": 1.24324,
+      "induzido": 1.192709,
+      "pam_t": 3420.0,
+      "folha_t": 29.412
+    },
+    {
+      "nome": "Mato Leitão",
+      "mi": 3.530151,
+      "folha": 0.029288,
+      "industria": 1.065195,
+      "servicos": 0.971919,
+      "induzido": 1.46375,
+      "pam_t": 175.0,
+      "folha_t": 1.505
+    },
+    {
+      "nome": "Boqueirão do Leão",
+      "mi": 3.364284,
+      "folha": 1.323129,
+      "industria": 0.347467,
+      "servicos": 0.592795,
+      "induzido": 1.100893,
+      "pam_t": 7906.0,
+      "folha_t": 67.992
+    },
+    {
+      "nome": "Pantano Grande",
+      "mi": 2.715381,
+      "folha": 0.001172,
+      "industria": 0.888323,
+      "servicos": 0.767983,
+      "induzido": 1.057904,
+      "pam_t": 7.0,
+      "folha_t": 0.06
+    },
+    {
+      "nome": "General Câmara",
+      "mi": 2.446338,
+      "folha": 0.191457,
+      "industria": 0.266396,
+      "servicos": 0.563738,
+      "induzido": 1.424747,
+      "pam_t": 1144.0,
+      "folha_t": 9.838
+    },
+    {
+      "nome": "Segredo",
+      "mi": 2.421005,
+      "folha": 1.190749,
+      "industria": 0.173573,
+      "servicos": 0.377313,
+      "induzido": 0.67937,
+      "pam_t": 7115.0,
+      "folha_t": 61.189
+    },
+    {
+      "nome": "Encruzilhada do Sul",
+      "mi": 2.22529,
+      "folha": 0.087193,
+      "industria": 0.821028,
+      "servicos": 0.580694,
+      "induzido": 0.736374,
+      "pam_t": 521.0,
+      "folha_t": 4.481
+    },
+    {
+      "nome": "Passa Sete",
+      "mi": 2.060214,
+      "folha": 0.920467,
+      "industria": 0.167558,
+      "servicos": 0.290572,
+      "induzido": 0.681618,
+      "pam_t": 5500.0,
+      "folha_t": 47.3
+    },
+    {
+      "nome": "Vale Verde",
+      "mi": 1.925213,
+      "folha": 0.321327,
+      "industria": 0.329318,
+      "servicos": 0.356408,
+      "induzido": 0.918161,
+      "pam_t": 1920.0,
+      "folha_t": 16.512
+    },
+    {
+      "nome": "Ibarama",
+      "mi": 1.704814,
+      "folha": 0.847331,
+      "industria": 0.251035,
+      "servicos": 0.199846,
+      "induzido": 0.406601,
+      "pam_t": 5063.0,
+      "folha_t": 43.542
+    },
+    {
+      "nome": "Herveiras",
+      "mi": 1.624611,
+      "folha": 0.64098,
+      "industria": 0.001739,
+      "servicos": 0.309168,
+      "induzido": 0.672725,
+      "pam_t": 3830.0,
+      "folha_t": 32.938
+    },
+    {
+      "nome": "Estrela Velha",
+      "mi": 1.253917,
+      "folha": 0.562321,
+      "industria": 0.054015,
+      "servicos": 0.303615,
+      "induzido": 0.333965,
+      "pam_t": 3360.0,
+      "folha_t": 28.896
+    },
+    {
+      "nome": "Tunas",
+      "mi": 1.148815,
+      "folha": 0.468601,
+      "industria": 0.003767,
+      "servicos": 0.238401,
+      "induzido": 0.438046,
+      "pam_t": 2800.0,
+      "folha_t": 24.08
+    },
+    {
+      "nome": "Lagoa Bonita do Sul",
+      "mi": 1.085319,
+      "folha": 0.466593,
+      "industria": 0.001214,
+      "servicos": 0.213386,
+      "induzido": 0.404127,
+      "pam_t": 2788.0,
+      "folha_t": 23.977
+    }
+  ]
+}
