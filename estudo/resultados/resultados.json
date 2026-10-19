@@ -1,0 +1,453 @@
+{
+  "matriz": {
+    "nome": "MIP-RS 2019",
+    "fonte": "DEE/SPGG e UFRJ (MAEP)",
+    "agregacao": "117 produtos x 52 atividades",
+    "arquivo": "https://dee.rs.gov.br/upload/arquivos/202409/11100149-20240906162755mip-rs-2019-117-52-v2-1.xlsx",
+    "unidade_matriz": "R$ milhões correntes de 2019",
+    "leontief": "L = (I − A)^(−1) calculada da tabela 13 e conferida com a tabela 14",
+    "erro_max_L_vs_tabela14": 5.551115123125783e-15,
+    "erro_max_identidade": 1.1102230246251565e-15,
+    "erro_max_DxB_vs_A": 8.049116928532385e-16,
+    "ipca_dez_2019": 5320.25,
+    "ipca_dez_2025": 7403.29,
+    "phi_2019_sobre_2025": 0.7186332022654792,
+    "formula": "fluxo_2019 = fluxo_2025 × (IPCA_dez2019 / IPCA_dez2025); resultado_2025 = resultado_2019 / phi"
+  },
+  "hipoteses": {
+    "conteudo_local_nao_agricola_base": 0.2,
+    "faixa": [
+      0.1,
+      0.2,
+      0.35
+    ],
+    "propensao_consumo_rs": 0.6,
+    "adicionalidade": 1.0,
+    "capex": "fora desta rodada",
+    "emprego_indireto": "coeficiente de ocupações por R$ milhão de produção da TRU-RS 2019, 16 atividades, aplicado a cada atividade do grupo"
+  },
+  "base": {
+    "alpha": 0.2,
+    "com_exportacao": true,
+    "direto": {
+      "vbp": 15830000000.0,
+      "va": 7830000000.0,
+      "ocupacoes": 4060.0,
+      "remuneracoes": 609000000.0,
+      "bom": 8000000000.0
+    },
+    "compras": {
+      "com_exportacao": true,
+      "alpha": 0.2,
+      "bom": 8000000000.0,
+      "folha_total": 114200000.0,
+      "folha_rs": 52800000.0,
+      "toneladas_rs": 3007.0,
+      "nao_folha": 7885800000.0,
+      "alvo_rs_nao_folha": 1577160000.0,
+      "dispositivo_nacional": 3294943750.0,
+      "rs_dispositivo": 329494375.0,
+      "rs_quimicos": 534713839.29,
+      "rs_papel": 712951785.71,
+      "compras_rs": 1629960000.0,
+      "vazamento": 6370040000.0,
+      "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
+      "share_folha_interna": 0.835119
+    },
+    "por_produto_2025": {
+      "PR004": 52800000.0,
+      "PR066": 329494375.0,
+      "PR051": 534713839.29,
+      "PR036": 712951785.71
+    },
+    "cadeia": {
+      "producao_2025": 2597442393.77,
+      "va_2025": 938184167.15,
+      "rem_2025": 368577269.97,
+      "ocupacoes": 8321.94923
+    },
+    "induzido": {
+      "consumo_2025": 586546361.98,
+      "producao_2025": 876492230.07,
+      "va_2025": 455301268.06,
+      "rem_2025": 177302097.65,
+      "ocupacoes": 5159.744955,
+      "k_realimentacao": 0.181369,
+      "fator_serie_fechada": 1.221551,
+      "va_serie_fechada_2025": 556173908.73
+    },
+    "total_tipo_I": {
+      "va_2025": 8768184167.15,
+      "rem_2025": 977577269.97,
+      "ocupacoes": 12381.94923,
+      "producao_2025": 18427442393.77
+    },
+    "total_tipo_II": {
+      "va_2025": 9223485435.21,
+      "rem_2025": 1154879367.62,
+      "ocupacoes": 17541.694185,
+      "producao_2025": 19303934623.84
+    },
+    "fiscal": {
+      "tributos_consumo_brasil": 13700000000.0,
+      "tributos_consumo_federal": 6580000000.0,
+      "tributos_consumo_subnacional_brasil": 7120000000.0,
+      "tributos_consumo_rs": 928000000.0,
+      "tributos_consumo_rs_estadual_municipal": 480000000.0,
+      "irpj_csll": 1227570000.0,
+      "incentivo": 0.0,
+      "retorno_liquido": null,
+      "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
+    }
+  },
+  "faixa": {
+    "0.1": {
+      "alpha": 0.1,
+      "com_exportacao": true,
+      "direto": {
+        "vbp": 15830000000.0,
+        "va": 7830000000.0,
+        "ocupacoes": 4060.0,
+        "remuneracoes": 609000000.0,
+        "bom": 8000000000.0
+      },
+      "compras": {
+        "com_exportacao": true,
+        "alpha": 0.1,
+        "bom": 8000000000.0,
+        "folha_total": 114200000.0,
+        "folha_rs": 52800000.0,
+        "toneladas_rs": 3007.0,
+        "nao_folha": 7885800000.0,
+        "alvo_rs_nao_folha": 788580000.0,
+        "dispositivo_nacional": 3294943750.0,
+        "rs_dispositivo": 329494375.0,
+        "rs_quimicos": 196750982.14,
+        "rs_papel": 262334642.86,
+        "compras_rs": 841380000.0,
+        "vazamento": 7158620000.0,
+        "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
+        "share_folha_interna": 0.835119
+      },
+      "por_produto_2025": {
+        "PR004": 52800000.0,
+        "PR066": 329494375.0,
+        "PR051": 196750982.14,
+        "PR036": 262334642.86
+      },
+      "cadeia": {
+        "producao_2025": 1329371336.98,
+        "va_2025": 473569599.91,
+        "rem_2025": 188190025.31,
+        "ocupacoes": 4569.504707
+      },
+      "induzido": {
+        "consumo_2025": 478314015.19,
+        "producao_2025": 714757681.61,
+        "va_2025": 371286895.23,
+        "rem_2025": 144585464.55,
+        "ocupacoes": 4207.644078,
+        "k_realimentacao": 0.181369,
+        "fator_serie_fechada": 1.221551,
+        "va_serie_fechada_2025": 453546032.62
+      },
+      "total_tipo_I": {
+        "va_2025": 8303569599.91,
+        "rem_2025": 797190025.31,
+        "ocupacoes": 8629.504707,
+        "producao_2025": 17159371336.98
+      },
+      "total_tipo_II": {
+        "va_2025": 8674856495.14,
+        "rem_2025": 941775489.87,
+        "ocupacoes": 12837.148785,
+        "producao_2025": 17874129018.59
+      },
+      "fiscal": {
+        "tributos_consumo_brasil": 13700000000.0,
+        "tributos_consumo_federal": 6580000000.0,
+        "tributos_consumo_subnacional_brasil": 7120000000.0,
+        "tributos_consumo_rs": 928000000.0,
+        "tributos_consumo_rs_estadual_municipal": 480000000.0,
+        "irpj_csll": 1227570000.0,
+        "incentivo": 0.0,
+        "retorno_liquido": null,
+        "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
+      }
+    },
+    "0.2": {
+      "alpha": 0.2,
+      "com_exportacao": true,
+      "direto": {
+        "vbp": 15830000000.0,
+        "va": 7830000000.0,
+        "ocupacoes": 4060.0,
+        "remuneracoes": 609000000.0,
+        "bom": 8000000000.0
+      },
+      "compras": {
+        "com_exportacao": true,
+        "alpha": 0.2,
+        "bom": 8000000000.0,
+        "folha_total": 114200000.0,
+        "folha_rs": 52800000.0,
+        "toneladas_rs": 3007.0,
+        "nao_folha": 7885800000.0,
+        "alvo_rs_nao_folha": 1577160000.0,
+        "dispositivo_nacional": 3294943750.0,
+        "rs_dispositivo": 329494375.0,
+        "rs_quimicos": 534713839.29,
+        "rs_papel": 712951785.71,
+        "compras_rs": 1629960000.0,
+        "vazamento": 6370040000.0,
+        "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
+        "share_folha_interna": 0.835119
+      },
+      "por_produto_2025": {
+        "PR004": 52800000.0,
+        "PR066": 329494375.0,
+        "PR051": 534713839.29,
+        "PR036": 712951785.71
+      },
+      "cadeia": {
+        "producao_2025": 2597442393.77,
+        "va_2025": 938184167.15,
+        "rem_2025": 368577269.97,
+        "ocupacoes": 8321.94923
+      },
+      "induzido": {
+        "consumo_2025": 586546361.98,
+        "producao_2025": 876492230.07,
+        "va_2025": 455301268.06,
+        "rem_2025": 177302097.65,
+        "ocupacoes": 5159.744955,
+        "k_realimentacao": 0.181369,
+        "fator_serie_fechada": 1.221551,
+        "va_serie_fechada_2025": 556173908.73
+      },
+      "total_tipo_I": {
+        "va_2025": 8768184167.15,
+        "rem_2025": 977577269.97,
+        "ocupacoes": 12381.94923,
+        "producao_2025": 18427442393.77
+      },
+      "total_tipo_II": {
+        "va_2025": 9223485435.21,
+        "rem_2025": 1154879367.62,
+        "ocupacoes": 17541.694185,
+        "producao_2025": 19303934623.84
+      },
+      "fiscal": {
+        "tributos_consumo_brasil": 13700000000.0,
+        "tributos_consumo_federal": 6580000000.0,
+        "tributos_consumo_subnacional_brasil": 7120000000.0,
+        "tributos_consumo_rs": 928000000.0,
+        "tributos_consumo_rs_estadual_municipal": 480000000.0,
+        "irpj_csll": 1227570000.0,
+        "incentivo": 0.0,
+        "retorno_liquido": null,
+        "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
+      }
+    },
+    "0.35": {
+      "alpha": 0.35,
+      "com_exportacao": true,
+      "direto": {
+        "vbp": 15830000000.0,
+        "va": 7830000000.0,
+        "ocupacoes": 4060.0,
+        "remuneracoes": 609000000.0,
+        "bom": 8000000000.0
+      },
+      "compras": {
+        "com_exportacao": true,
+        "alpha": 0.35,
+        "bom": 8000000000.0,
+        "folha_total": 114200000.0,
+        "folha_rs": 52800000.0,
+        "toneladas_rs": 3007.0,
+        "nao_folha": 7885800000.0,
+        "alvo_rs_nao_folha": 2760030000.0,
+        "dispositivo_nacional": 3294943750.0,
+        "rs_dispositivo": 329494375.0,
+        "rs_quimicos": 1041658125.0,
+        "rs_papel": 1388877500.0,
+        "compras_rs": 2812830000.0,
+        "vazamento": 5187170000.0,
+        "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
+        "share_folha_interna": 0.835119
+      },
+      "por_produto_2025": {
+        "PR004": 52800000.0,
+        "PR066": 329494375.0,
+        "PR051": 1041658125.0,
+        "PR036": 1388877500.0
+      },
+      "cadeia": {
+        "producao_2025": 4499548978.94,
+        "va_2025": 1635106018.01,
+        "rem_2025": 639158136.95,
+        "ocupacoes": 13950.616014
+      },
+      "induzido": {
+        "consumo_2025": 748894882.17,
+        "producao_2025": 1119094052.77,
+        "va_2025": 581322827.31,
+        "rem_2025": 226377047.3,
+        "ocupacoes": 6587.896269,
+        "k_realimentacao": 0.181369,
+        "fator_serie_fechada": 1.221551,
+        "va_serie_fechada_2025": 710115722.89
+      },
+      "total_tipo_I": {
+        "va_2025": 9465106018.01,
+        "rem_2025": 1248158136.95,
+        "ocupacoes": 18010.616014,
+        "producao_2025": 20329548978.94
+      },
+      "total_tipo_II": {
+        "va_2025": 10046428845.33,
+        "rem_2025": 1474535184.26,
+        "ocupacoes": 24598.512284,
+        "producao_2025": 21448643031.71
+      },
+      "fiscal": {
+        "tributos_consumo_brasil": 13700000000.0,
+        "tributos_consumo_federal": 6580000000.0,
+        "tributos_consumo_subnacional_brasil": 7120000000.0,
+        "tributos_consumo_rs": 928000000.0,
+        "tributos_consumo_rs_estadual_municipal": 480000000.0,
+        "irpj_csll": 1227570000.0,
+        "incentivo": 0.0,
+        "retorno_liquido": null,
+        "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
+      }
+    }
+  },
+  "sem_exportacao": {
+    "alpha": 0.2,
+    "com_exportacao": false,
+    "direto": {
+      "vbp": 12560000000.0,
+      "va": 6750000000.0,
+      "ocupacoes": 3060.0,
+      "remuneracoes": 459000000.0,
+      "bom": 5810000000.0
+    },
+    "compras": {
+      "com_exportacao": false,
+      "alpha": 0.2,
+      "bom": 5810000000.0,
+      "folha_total": 95370603.81,
+      "folha_rs": 44094289.68,
+      "toneladas_rs": 2464.763192,
+      "nao_folha": 5714629396.19,
+      "alvo_rs_nao_folha": 1142925879.24,
+      "dispositivo_nacional": 2270231250.0,
+      "rs_dispositivo": 227023125.0,
+      "rs_quimicos": 392529751.82,
+      "rs_papel": 523373002.42,
+      "compras_rs": 1187020168.91,
+      "vazamento": 4622979831.09,
+      "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
+      "share_folha_interna": 0.835119
+    },
+    "por_produto_2025": {
+      "PR004": 44094289.68,
+      "PR066": 227023125.0,
+      "PR051": 392529751.82,
+      "PR036": 523373002.42
+    },
+    "cadeia": {
+      "producao_2025": 1891117333.8,
+      "va_2025": 685067387.16,
+      "rem_2025": 267910466.31,
+      "ocupacoes": 6126.759365
+    },
+    "induzido": {
+      "consumo_2025": 436146279.79,
+      "producao_2025": 651745284.24,
+      "va_2025": 338554574.91,
+      "rem_2025": 131838939.43,
+      "ocupacoes": 3836.701943,
+      "k_realimentacao": 0.181369,
+      "fator_serie_fechada": 1.221551,
+      "va_serie_fechada_2025": 413561820.39
+    },
+    "total_tipo_I": {
+      "va_2025": 7435067387.16,
+      "rem_2025": 726910466.31,
+      "ocupacoes": 9186.759365,
+      "producao_2025": 14451117333.8
+    },
+    "total_tipo_II": {
+      "va_2025": 7773621962.07,
+      "rem_2025": 858749405.74,
+      "ocupacoes": 13023.461308,
+      "producao_2025": 15102862618.03
+    },
+    "fiscal": {
+      "tributos_consumo_brasil": 13700000000.0,
+      "tributos_consumo_federal": 6580000000.0,
+      "tributos_consumo_subnacional_brasil": 7120000000.0,
+      "tributos_consumo_rs": 928000000.0,
+      "tributos_consumo_rs_estadual_municipal": 480000000.0,
+      "irpj_csll": 1069470000.0,
+      "incentivo": 0.0,
+      "retorno_liquido": null,
+      "nota_irpj": "mesma regra da revisão 4: 34% sobre lucro fiscal = 50% do excedente (VAB − remunerações). No cenário sem exportação, a regra é reaplicada ao VAB e à remuneração internos."
+    }
+  },
+  "bloco_II_contratante": {
+    "vab_rs_bi": 8.85,
+    "ocupacoes_rs": 12760.0,
+    "tributos_consumo_rs_bi": 0.928,
+    "vab_brasil_bi": 15.55,
+    "ocupacoes_brasil": 67350.0
+  },
+  "exemplos_folha_premissas": [
+    {
+      "municipio": "Canguçu",
+      "uf": "RS",
+      "pam_t": 21064,
+      "folha_nova_t": 181,
+      "lat": -31.395,
+      "lon": -52.676
+    },
+    {
+      "municipio": "Venâncio Aires",
+      "uf": "RS",
+      "pam_t": 17779,
+      "folha_nova_t": 153,
+      "lat": -29.606,
+      "lon": -52.192
+    },
+    {
+      "municipio": "São Lourenço do Sul",
+      "uf": "RS",
+      "pam_t": 16374,
+      "folha_nova_t": 141,
+      "lat": -31.365,
+      "lon": -51.978
+    },
+    {
+      "municipio": "Santa Cruz do Sul",
+      "uf": "RS",
+      "pam_t": 12610,
+      "folha_nova_t": 108,
+      "lat": -29.718,
+      "lon": -52.426,
+      "sede": true
+    },
+    {
+      "municipio": "Candelária",
+      "uf": "RS",
+      "pam_t": 11462,
+      "folha_nova_t": 98,
+      "lat": -29.669,
+      "lon": -52.789
+    }
+  ],
+  "consumo_familias_rs_preco_basico_mi_2019": 237736.43054240034,
+  "consumo_familias_valores_negativos_cortados_mi_2019": 0.0
+}

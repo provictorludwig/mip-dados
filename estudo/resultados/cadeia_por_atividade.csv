@@ -1,0 +1,53 @@
+codigo,atividade,choque_mi_2025,producao_cadeia_mi_2025,va_cadeia_mi_2025,coef_va
+AT01,"Agricultura, inclusive o apoio à agricultura e a pós-colheita",48.867,57.687,34.046,0.5902
+AT02,"Pecuária, inclusive o apoio à pecuária",3.344,6.693,3.073,0.4592
+AT03,"Produção florestal; pesca e aquicultura",0.379,21.089,15.611,0.7403
+AT04,"Extração de petróleo e gás, inclusive as atividades de apoio",0.000,0.031,0.013,0.4250
+AT05,"Extração de outros produtos minerais",0.000,2.134,0.825,0.3867
+AT06,"Abate e produtos de carne, inclusive os produtos do laticínio e da pesca",0.000,6.849,1.009,0.1474
+AT07,"Fabricação e refino de açúcar e outros produtos alimentares",0.000,15.807,2.138,0.1353
+AT08,"Fabricação de bebidas",0.000,0.106,0.024,0.2225
+AT09,"Fabricação de produtos do fumo",0.000,0.078,0.014,0.1814
+AT10,"Fabricação de produtos têxteis",0.000,0.819,0.261,0.3184
+AT11,"Confecção de artefatos do vestuário e acessórios",0.000,0.156,0.077,0.4957
+AT12,"Fabricação de calçados e de artefatos de couro",0.000,0.457,0.163,0.3561
+AT13,"Fabricação de produtos da madeira",0.000,2.997,0.979,0.3268
+AT14,"Fabricação de celulose, papel e produtos de papel",712.952,772.585,341.832,0.4425
+AT15,"Impressão e reprodução de gravações",0.000,1.589,0.787,0.4954
+AT16,"Refino de petróleo e coquerias",0.000,60.849,7.107,0.1168
+AT17,"Fabricação de biocombustíveis",0.000,0.284,0.011,0.0378
+AT18,"Fabricação de químicos orgânicos e inorgânicos, resinas e elastômeros",0.000,134.226,15.366,0.1145
+AT19,"Fabricação de outros produtos químicos",534.714,559.653,117.860,0.2106
+AT20,"Fabricação de produtos farmoquímicos e farmacêuticos",0.000,0.019,0.007,0.3736
+AT21,"Fabricação de produtos de borracha e de material plástico",0.000,16.235,3.912,0.2410
+AT22,"Fabricação de produtos de minerais não-metálicos",0.000,3.803,1.266,0.3329
+AT23,"Metalurgia",0.000,4.460,0.685,0.1537
+AT24,"Fabricação de produtos de metal, exceto máquinas e equipamentos",0.000,25.819,10.238,0.3965
+AT25,"Fabricação de equipamentos de informática, produtos eletrônicos e ópticos",329.494,377.988,96.444,0.2552
+AT26,"Fabricação de máquinas e equipamentos elétricos",0.000,7.330,2.331,0.3180
+AT27,"Fabricação de máquinas e equipamentos mecânicos",0.000,1.882,0.532,0.2825
+AT28,"Fabricação de automóveis, caminhões e ônibus, exceto peças",0.000,0.306,0.056,0.1837
+AT29,"Fabricação de peças e acessórios para veículos automotores",0.000,3.647,1.082,0.2966
+AT30,"Fabricação de outros equipamentos de transporte, exceto veículos automotores",0.000,0.160,0.062,0.3867
+AT31,"Fabricação de móveis e de produtos de indústrias diversas",0.000,0.526,0.217,0.4128
+AT32,"Manutenção, reparação e instalação de máquinas e equipamentos",0.000,22.684,11.198,0.4936
+AT33,"Energia elétrica, gás natural e outras utilidades",0.000,23.511,9.228,0.3925
+AT34,"Água, esgoto e gestão de resíduos",0.000,2.836,1.761,0.6208
+AT35,"Construção",0.000,2.857,1.215,0.4250
+AT36,"Comércio por atacado e a varejo",0.000,123.678,72.873,0.5892
+AT37,"Transporte terrestre",0.000,106.029,37.755,0.3561
+AT38,"Transporte aquaviário",0.000,4.328,1.525,0.3523
+AT39,"Transporte aéreo",0.000,1.564,0.406,0.2594
+AT40,"Armazenamento, atividades auxiliares dos transportes e correio",0.000,23.469,12.692,0.5408
+AT41,"Alojamento",0.000,1.309,0.738,0.5641
+AT42,"Alimentação",0.000,1.580,0.738,0.4667
+AT43,"Serviços de telecomunicações",0.000,8.564,3.825,0.4467
+AT44,"Outros serviços de informação",0.000,13.648,8.994,0.6590
+AT45,"Intermediação financeira, seguros e previdência complementar",0.000,51.129,33.199,0.6493
+AT46,"Atividades imobiliárias",0.000,10.608,9.705,0.9149
+AT47,"Atividades profissionais, científicas e técnicas",0.000,72.130,46.251,0.6412
+AT48,"Atividades administrativas e serviços complementares",0.000,32.572,22.782,0.6994
+AT49,"Administração, educação, saúde, pesquisa e desenvolvimento públicas, defesa, seguridade social",0.210,1.694,1.268,0.7485
+AT50,"Educação e saúde privadas",0.000,3.118,1.999,0.6410
+AT51,"Artes, cultura, esporte e recreação e outras atividades de serviços",0.000,3.872,2.005,0.5178
+AT52,"Serviços domésticos",0.000,0.000,0.000,1.0000
