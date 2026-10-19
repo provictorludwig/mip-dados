@@ -4,33 +4,30 @@ Relatório executivo técnico para o Governo do Rio Grande do Sul, o Governo Fed
 
 Outubro de 2026. Operação em ano cheio: **2037**. Preços em **R$ constantes de 2025**. Matriz: **MIP-RS 2019**, DEE/SPGG e UFRJ, **117 produtos × 52 atividades**.
 
-O fluxo da planta segue as premissas de 18/10/2026 (revisão 4). Um rascunho posterior, feito por outra ferramenta sobre o mesmo projeto, repete esses fluxos e acrescenta obra, lista municipal e multiplicadores próprios. Esta conta usa a revisão 4 para a planta e calcula a cadeia na MIP-RS. Onde os dois textos divergem, a diferença está registrada na seção 9 e nos limites.
+O fluxo da planta segue as premissas de 18/10/2026 (revisão 4). Receita, valor adicionado e ocupação direta são a âncora aceita. O que esta rodada estima é o que estava em branco ao redor deles: a abertura do custo dos insumos, o CAPEX de conversão, uma hipótese de incentivo, a geografia que o dado público fecha e a leitura salarial. Cada estimativa leva a fonte ao lado.
 
 ---
 
 ## 1. Para o leitor
 
-O objeto medido é a operação, em 2037, de uma planta de produtos de nicotina sem fumaça na fábrica já existente da Philip Morris Brasil em **Santa Cruz do Sul**. Os produtos são sticks de tabaco aquecido (folha reconstituída), e-líquido com nicotina de folha brasileira e sachês só de exportação. O total calculado é **estadual**. O recorte de apresentação é o **COREDE Vale do Rio Pardo**.
-
-Três números de manchete, cenário base:
+O objeto medido é a operação, em 2037, de uma planta de produtos de nicotina sem fumaça na fábrica já existente da Philip Morris Brasil em **Santa Cruz do Sul**. Os produtos são sticks de tabaco aquecido, e-líquido com nicotina de folha brasileira e sachês só de exportação. O total calculado é **estadual**. O recorte de apresentação é o **COREDE Vale do Rio Pardo**.
 
 | Manchete | 2037, R$ de 2025 |
 |---|---:|
 | Emprego direto na planta | **4,06 mil ocupações** |
 | Valor adicionado direto da planta | **R$ 7,83 bilhões** |
-| Valor adicionado da cadeia no RS | **R$ 940 milhões** |
+| Valor adicionado da cadeia no RS | **R$ 499 milhões** |
+| Valor adicionado total no RS, com uma rodada de consumo | **R$ 8,70 bilhões** |
 
-O **conteúdo local de 20%** sobre o custo dos insumos que não são folha é hipótese de trabalho desta rodada, adotada para fechar a conta. Esse percentual descreve a parcela comprada no Rio Grande do Sul. A nota fiscal dessa compra não está no arquivo. A faixa da mesma hipótese vai de **R$ 470 milhões** (10%) a **R$ 1,64 bilhão** (35%) de valor adicionado na cadeia.
+O cenário base é a **abertura estimada** do custo dos insumos. Dela sai um conteúdo local de **9,9%** sobre os R$ 7,89 bilhões que não são folha. A compra no Rio Grande do Sul, folha incluída, é de **R$ 830 milhões**. A faixa uniforme de 10/20/35 permanece ao lado, como sensibilidade: a cadeia vai de R$ 474 milhões a R$ 1,64 bilhão. A abertura estimada fica junto do piso de 10%.
 
-A **adicionalidade de 100%** é premissa de capa. Sob essa premissa, o efeito bruto e o efeito líquido coincidem: a operação entra por inteiro como atividade nova, e a linha de cigarros que já existe na fábrica permanece fora do choque.
+A **adicionalidade de 100%** é premissa de capa. Sob ela, o efeito bruto e o efeito líquido da operação coincidem. A linha de cigarros que já existe na fábrica permanece fora do choque.
 
-Com a camada de consumo das famílias, o valor adicionado no RS chega a **R$ 9,2 bilhões** e as ocupações a **cerca de 17,5 mil**. Dessas ocupações, 4,06 mil são a premissa da planta. As demais aplicam o coeficiente de trabalho publicado na própria família da matriz, na agregação de 16 atividades.
+A obra não entra nessa manchete. O investimento de conversão, estimado em **R$ 1,63 bilhão**, gera um bloco separado de 2026–2027, só sobre a parcela gaúcha de **R$ 484 milhões**.
 
 ## 2. O projeto em uma página
 
-A planta fica em Santa Cruz do Sul, na unidade já existente da Philip Morris Brasil, classificada na CNAE 12.20-4 (fabricação de produtos do fumo). O cenário é de mercado nacional regulado, com 9,9 milhões de usuários no canal legal em 2037, mais exportação para onze países da América Latina. A premissa de demanda trata o mercado atual desses produtos como abastecido pelo canal ilegal, sem fábrica, sem folha brasileira e sem tributo.
-
-Três linhas, em maturidade:
+A planta fica em Santa Cruz do Sul, na unidade já existente, CNAE 12.20-4. O cenário é de mercado nacional regulado, com 9,9 milhões de usuários no canal legal em 2037, mais exportação para onze países da América Latina. A premissa trata o mercado atual desses produtos como abastecido pelo canal ilegal.
 
 | Linha | Destino em 2037 | Volume |
 |---|---|---:|
@@ -38,15 +35,13 @@ Três linhas, em maturidade:
 | Sticks de tabaco aquecido | Mercado interno e exportação | 12,338 bilhões de sticks |
 | Sachês de nicotina oral | Só exportação | 0,138 bilhão de unidades |
 
-A receita ex-fábrica a preço básico, em R$ de 2025, é de **R$ 15,83 bilhões**: R$ 12,56 bilhões no mercado interno e R$ 3,27 bilhões FOB na exportação. Essa receita é o teto contábil da planta. Ela descreve o tamanho da operação. Ela não é o vetor que entra na matriz.
+A receita ex-fábrica a preço básico é de **R$ 15,83 bilhões**: R$ 12,56 bilhões no mercado interno e R$ 3,27 bilhões FOB. Essa receita é o teto contábil da planta. Ela não é o vetor que entra na matriz.
 
-A fábrica compra a folha ao produtor, a preço de porteira. O beneficiamento (CNAE 12.10-7) não é uma etapa separada nesta rodada. Em 2037 a compra no Sul é de **6,51 mil toneladas** (R$ 114 milhões). A parcela gaúcha, 46% pela proporção da PAM, é de **3,007 mil toneladas** e **R$ 52,8 milhões**. Pela regra de 5,5 toneladas por família, essa compra no RS equivale a **547 famílias**. Família-equivalente é escala de compra. Ela fica ao lado das ocupações e não entra na soma de empregos.
+A fábrica compra a folha ao produtor, a preço de porteira. Em 2037 a compra no Sul é de **6,51 mil toneladas** (R$ 114 milhões). A parcela gaúcha, 46% pela proporção da PAM, é de **3,007 mil toneladas** e **R$ 52,8 milhões**. Pela regra de 5,5 toneladas por família, essa compra no RS equivale a **547 famílias**. Família-equivalente é escala de compra. Ela fica ao lado das ocupações e não entra na soma de empregos.
 
-A capacidade de cigarros já instalada (cerca de 15 bilhões de cigarros por ano e cerca de 1,6 mil colaboradores) permanece fora do cenário. A obra, o terreno, o capital de giro, a depreciação e a despesa financeira também ficam fora. Esta rodada é o ano cheio de operação.
+A capacidade de cigarros já instalada (cerca de 15 bilhões de cigarros por ano e cerca de 1,6 mil colaboradores) permanece fora do cenário. A depreciação e a despesa financeira também ficam fora do choque de produção.
 
 ### Ficha por unidade, herdada do v6
-
-A revisão 4 traz a ficha sintética por unidade. Ela é a origem do valor adicionado, das ocupações e da folha. É proxy, não medição de chão de fábrica.
 
 | | E-líquido | Stick | Sachê |
 |---|---:|---:|---:|
@@ -58,13 +53,11 @@ A revisão 4 traz a ficha sintética por unidade. Ela é a origem do valor adici
 | Ocupações por milhão de unidades | 0,92 | 0,097 | 0,20 |
 | Remuneração por mil unidades | R$ 138 | R$ 14,57 | R$ 30 |
 
-A soma das ocupações por linha reproduz as 4,06 mil. O e-líquido concentra o custo de insumos, porque o dispositivo entra no BOM do pod. Por isso a hipótese de composição trata metade desse custo como dispositivo, com conteúdo local baixo (10%), e deixa o restante do bolo de 20% em químicos e embalagem.
-
-O preço de varejo interno que calibra a meta de R$ 13,7 bilhões de tributo é de cerca de R$ 9,73 por mL no e-líquido (R$ 110 por pod) e R$ 0,97 por stick (maço de 20 a R$ 19,45). O preço ex-fábrica interno fica em cerca de R$ 3,99 por mL e R$ 0,36 por stick. O FOB de exportação usa o preço de referência, sem o fator de calibração: R$ 3,075 por mL, R$ 0,278 por stick e R$ 0,575 por sachê. A diferença explica por que o insumo pesa mais na receita externa do que na interna.
+O e-líquido concentra o custo de insumos porque o dispositivo entra no custo do pod. A 0,90 g de folha por mL, com nicotina típica de 2% na folha, a formulação implícita é de cerca de 20 mg de nicotina por mL. Essa leitura calibra o custo de extração. Ela não altera a folha de R$ 114 milhões.
 
 ### A rampa até 2037, só na planta
 
-O arquivo traz a trajetória direta da fábrica. Esta rodada multiplica apenas o ano cheio de 2037. A rampa abaixo não passa pela matriz. Ela mostra que 2037 é maturidade, e que 2028 é outra escala.
+O arquivo traz a trajetória direta da fábrica. Esta rodada multiplica o ano cheio de 2037. A rampa abaixo não passa pela matriz.
 
 | Indicador direto | 2028 | 2032 | 2037 |
 |---|---:|---:|---:|
@@ -74,359 +67,420 @@ O arquivo traz a trajetória direta da fábrica. Esta rodada multiplica apenas o
 | Remunerações | R$ 178 mi | R$ 421 mi | R$ 609 mi |
 | Folha comprada no RS | R$ 16 mi | R$ 35 mi | R$ 53 mi |
 
-A soma de ocupações-ano de 2028 a 2037 no arquivo (28,2 mil) é a soma de dez estoques anuais. Ela não é um quadro de 28 mil postos. A manchete de emprego permanece o estoque de 2037.
+A soma de ocupações-ano de 2028 a 2037 no arquivo (28,2 mil) é a soma de dez estoques anuais. A manchete de emprego permanece o estoque de 2037.
 
-## 3. Premissas contábeis usadas
+## 3. Abertura estimada do custo dos insumos
 
-Os valores abaixo são os da revisão 4, em R$ de 2025, para 2037. Valor adicionado, ocupações e remunerações da planta são **proxy das fichas v6**, aceitos nesta rodada. Eles substituem, até a empresa abrir o quadro real, o que seria um contracheque auditado.
+O arquivo fixa o bolo: insumos de **R$ 8,00 bilhões**, dos quais a folha é **R$ 114 milhões**. O restante, **R$ 7,89 bilhões**, não vinha aberto. Esta seção o abre por engenharia de porte e por preço público, e reparte cada linha entre Rio Grande do Sul, outros estados e importação.
+
+O produto volume × custo unitário da ficha soma R$ 7,995 bilhões. A âncora arredondada do arquivo é R$ 8,00 bilhões. Um fator de 1,0006 leva as linhas que não são folha até a âncora. O fator não é uma casa decimal de preço. É o encaixe do agregado.
+
+### O que a física explica e o que o dispositivo absorve
+
+No pod, a química cabe em pouco. Com densidade de cerca de 1,15 g/mL, nicotina de 20 mg/mL, aroma a 10% da massa e o restante em partes iguais de glicerina e propilenoglicol, os preços industriais de ponto médio (glicerina R$ 12/kg no intervalo R$ 8–16; propilenoglicol R$ 14/kg no intervalo R$ 10–18; aroma R$ 170/kg, equivalente a cerca de US$ 30/kg na PTAX média de 2025) explicam cerca de **R$ 128 milhões** de químicos no e-líquido, incluída a extração de nicotina além da folha (R$ 440/kg de nicotina, margem sobre o custo da folha). São cerca de R$ 0,50 por pod.
+
+O custo de insumos do pod é de cerca de R$ 24. O residual, **R$ 6,29 bilhões** no ano, é o dispositivo e a eletrônica. A R$ 5,59 por dólar (PTAX venda média de 2025), isso é cerca de US$ 4 por pod, no topo da faixa publicada de custo de fabricação de descartável de alta capacidade (US$ 2,50 a US$ 5, Vapor Authority; o exemplo de fornecedor chinês da Keystone põe os materiais, sem mão de obra, em cerca de US$ 2,70). A mão de obra não está neste bolo: ela está nos R$ 609 milhões de remuneração.
+
+No stick, a folha já saiu a R$ 19.500/t. O que sobra por stick é sobretudo papel, filtro e embalagem (**R$ 1,12 bilhão**). Glicerina do bastão (50 mg, ponto médio de 30–70 mg), ligante e aroma somam **R$ 47 milhões**.
+
+### Energia e água
+
+A intensidade de partida é a da manufatura da PMI em 2022: **7,56 GJ por milhão de cigarros-equivalentes** (demonstração assegurada dos indicadores de meio ambiente). A eletricidade era 46% dessa energia de fábrica. Para o stick e o sachê usa-se o ponto médio de 1 a 3 vezes essa intensidade, porque a secagem da folha reconstituída consome mais que o cigarro médio. Para o e-líquido, o ponto médio de 1 a 5 vezes, pela incerteza do análogo. A tarifa industrial é o ponto médio de **R$ 400 a R$ 700 por MWh**, **R$ 550**. O resultado é **72 mil MWh** e **R$ 40 milhões**. Se intensidade e tarifa caminharem juntas para os extremos do intervalo, a conta cabe entre cerca de R$ 15 milhões e R$ 70 milhões. O cenário base usa o meio.
+
+A água usa 3,79 m³ por milhão de cigarros-equivalentes (a mesma fonte PMI, 2022) e os mesmos múltiplos, a **R$ 15/m³** (ponto médio de R$ 10–20, água e esgoto industrial). São cerca de **130 mil m³** e **R$ 2 milhões**. É ordem de grandeza, declarada como tal.
+
+A energia faturada no Rio Grande do Sul entra 100% local. A matriz já vaza, na cadeia da utility, a geração comprada de fora. O coeficiente de 66% de oferta gaúcha do produto eletricidade (PR080) descreve a média do setor. Ele não desconta a fatura da planta.
+
+### A abertura, em R$ de 2025
+
+| Linha | Valor | Parcela RS | Compra no RS | Outros estados | Importado |
+|---|---:|---:|---:|---:|---:|
+| Dispositivo e eletrônico do pod | R$ 6.295 mi | 5% | R$ 315 mi | R$ 629 mi | R$ 5.351 mi |
+| Químicos (glicerina, propilenoglicol, aroma, extração, stick e sachê) | R$ 193 mi | 21% | R$ 40 mi | R$ 94 mi | R$ 59 mi |
+| Papel, filtro e embalagem | R$ 1.186 mi | 26% | R$ 305 mi | R$ 533 mi | R$ 348 mi |
+| Energia | R$ 40 mi | 100% | R$ 40 mi | — | — |
+| Água | R$ 2 mi | 100% | R$ 2 mi | — | — |
+| Frete interno até a planta | R$ 52 mi | 100% | R$ 52 mi | — | — |
+| Manutenção | R$ 119 mi | 20% | R$ 24 mi | R$ 36 mi | R$ 60 mi |
+| **Insumos que não são folha** | **R$ 7.886 mi** | **9,9%** | **R$ 777 mi** | **R$ 1.292 mi** | **R$ 5.817 mi** |
+| Folha no RS | R$ 53 mi | dada | R$ 53 mi | — | — |
+| Folha em SC e no PR | R$ 61 mi | 0% | — | R$ 61 mi | — |
+| **Insumos totais** | **R$ 8.000 mi** | | **R$ 830 mi** | | |
+
+O conteúdo local implícito dos insumos que não são folha é **9,9%**. Com a folha gaúcha, a compra no RS é **R$ 830 milhões**. O vazamento, registrado e não multiplicado, é **R$ 7,17 bilhões**.
+
+A origem usa a MIP-RS 2019 como teto ou piso e aplica um desconto quando o bem é mais específico que a média do produto. No consumo intermediário da matriz, material eletrônico (PR066) é 8,2% gaúcho: o pod fica em 5%, porque o descartável é mais importado que a média da eletrônica. Papel e embalagem (PR036) são 39,7% gaúchos: papel de cigarro e filtro de acetato ficam em 25%. Químicos orgânicos (PR047) são 65% gaúchos, por causa do polo: a glicerina de biodiesel fica em 35%, e o propilenoglicol em 10%, porque a oferta petroquímica está concentrada em outros estados. Químicos diversos (PR051) são 40,3% gaúchos: aroma e sachê ficam abaixo disso. Obra, energia faturada, água e frete interno ficam locais. Manutenção (PR079) é 30,2% gaúcha e 5% importada na média: a peça de máquina da PMI vai a 20% no RS e 50% importada.
+
+Frete interno é a perna doméstica até a planta (contêiner de Rio Grande a Santa Cruz no dispositivo, mais o frete dos insumos a granel). A distribuição ao varejo continua fora do custo dos insumos, na margem do arquivo. Manutenção é 0,6% do custo não agrícola do e-líquido e 6% do stick e do sachê: a linha de stick desgasta máquina própria; o pod chega comprado.
+
+## 4. Premissas contábeis usadas
 
 | Item | Com exportação | Só mercado interno | Papel na conta |
 |---|---:|---:|---|
 | Receita ex-fábrica, preço básico | R$ 15,83 bi | R$ 12,56 bi | Teto contábil. Fica fora do vetor de choque |
-| Insumos (BOM) | R$ 8,00 bi | R$ 5,81 bi | Base das compras. R$ 2,19 bi são da exportação |
-| Valor adicionado direto | R$ 7,83 bi | R$ 6,75 bi | Gaveta direta, uma vez. O interno é receita interna menos insumos internos |
-| Remunerações diretas | R$ 609 mi | R$ 459 mi | R$ 150 mil por ocupação-ano, com encargos. O interno acompanha as 3,06 mil ocupações |
-| Ocupações diretas | 4,06 mil | 3,06 mil | Estoque de 2037. A exportação responde por 1,00 mil |
-| Folha no Sul | 6,51 mil t; R$ 114 mi | cerca de 5,33 mil t | Preço de porteira: R$ 19.500/t na classe reconstituída e R$ 15.000/t na classe nicotina |
-| Folha no RS | 3,007 mil t; R$ 52,8 mi | 2,465 mil t; R$ 44 mi | 46% do Sul. Margem de comércio zero |
-| Insumos que não são folha | R$ 7,89 bi | R$ 5,71 bi | 8,00 − 0,114 no cenário completo |
-| Conteúdo local desses insumos | 20% (faixa 10–35%) | 20% sobre o interno | Hipótese de trabalho |
-| Adicionalidade | 100% | 100% | Premissa de capa. Bruto = líquido só sob ela |
-| CAPEX | fora | fora | Inclusive o anúncio de referência e o lote de R$ 100 milhões citado no plano |
+| Insumos | R$ 8,00 bi | R$ 5,81 bi | Base das compras |
+| Valor adicionado direto | R$ 7,83 bi | R$ 6,75 bi | Gaveta direta, uma vez |
+| Remunerações diretas | R$ 609 mi | R$ 459 mi | R$ 150 mil por ocupação, com encargos. Premissa, não trocada |
+| Ocupações diretas | 4,06 mil | 3,06 mil | Estoque de 2037 |
+| Folha no RS | 3,007 mil t; R$ 52,8 mi | 2,465 mil t; R$ 44 mi | 46% do Sul |
+| Conteúdo local dos insumos que não são folha | **9,9% estimado** | 10,8% na variante interna | Resultado da abertura, não percentual único |
+| Faixa de sensibilidade | 10 / 20 / 35% | | Uniforme, ao lado da abertura |
+| Adicionalidade | 100% | 100% | Premissa de capa |
 
-A separação interno/exportação de receita, insumos e ocupações está no arquivo. O valor adicionado interno segue essa separação: R$ 12,56 bi − R$ 5,81 bi = **R$ 6,75 bi**. A remuneração não vem separada; como a ficha usa R$ 150 mil por ocupação, a parcela interna é 3,06 mil × R$ 150 mil = **R$ 459 milhões**. A folha interna, em valor, usa o peso das fichas (sticks mais caros e mais voltados ao mercado interno): 83,5% do valor da folha. A tonelagem interna usa o peso físico: 82,0% das toneladas, daí as 2,465 mil toneladas no RS.
+O valor adicionado interno é R$ 12,56 bi − R$ 5,81 bi = **R$ 6,75 bi**. A remuneração interna é 3,06 mil × R$ 150 mil = **R$ 459 milhões**.
 
-Cargas tributárias de memória do cenário, também da revisão 4: **39%** do preço de varejo no vape e no sachê e **51%** no tabaco aquecido. A meta de tributos sobre o consumo no Brasil em 2037 é **R$ 13,7 bilhões**. A parcela do consumo no RS é cerca de **6,8%**, o que dá **R$ 0,93 bilhão** de tributos sobre o consumo local, dos quais cerca de **R$ 0,48 bilhão** estaduais e municipais. O IRPJ/CSLL da planta, pela regra do arquivo (34% sobre 50% do excedente), é **R$ 1,23 bilhão**, federal. O incentivo não foi informado.
+Cargas de memória do cenário: **39%** do preço de varejo no vape e no sachê e **51%** no tabaco aquecido. A meta de tributos sobre o consumo no Brasil em 2037 é **R$ 13,7 bilhões**. A parcela do consumo no RS é cerca de **6,8%**, **R$ 0,93 bilhão**, dos quais **R$ 0,48 bilhão** estaduais e municipais. O IRPJ/CSLL da planta, pela regra do arquivo (34% sobre 50% do excedente), é **R$ 1,23 bilhão**, federal.
 
-## 4. Como a conta foi feita
+## 5. Como a conta foi feita
 
-A conta tem três gavetas.
+Três gavetas na operação de 2037, e um bloco de obra que não se soma a elas.
 
-**Gaveta 1, efeito direto.** Valor adicionado, ocupações e remunerações da própria planta, contados uma vez, com os números da tabela acima. O coeficiente médio da atividade “fabricação de produtos do fumo” da matriz de 2019 não é aplicado à receita nova.
+**Gaveta 1, efeito direto.** Valor adicionado, ocupações e remunerações da planta, uma vez, com os números do arquivo.
 
-**Gaveta 2, cadeia.** Só a compra feita no Rio Grande do Sul, a preço básico, vira choque nos setores fornecedores. A matriz propaga esse choque.
+**Gaveta 2, cadeia.** Só a compra feita no Rio Grande do Sul, a preço básico, entra na inversa de Leontief. No cenário base essa compra é a da abertura estimada.
 
-**Gaveta 3, vazamento.** A compra feita fora do RS, no resto do Brasil ou no exterior, é registrada e não é multiplicada.
+**Gaveta 3, vazamento.** Compra fora do RS, registrada e não multiplicada.
 
-A obra fica de fora. Terreno, capital de giro, depreciação e despesa financeira não são consumo intermediário e não entram no choque.
+**Bloco de obra, 2026–2027.** Choque só da parcela gaúcha do CAPEX estimado. Não entra no fluxo anual de 2037. Depreciação não é consumo intermediário. Capital de giro fica fora do choque e é mostrado à parte.
 
-### A matriz
+A matriz é a MIP-RS 2019, DEE/SPGG e UFRJ, 117 produtos × 52 atividades. A inversa foi recalculada da tabela 13 e conferida com a tabela 14: o maior desvio é da ordem de 10⁻¹⁵. O fator de preço é o IPCA (SIDRA 1737): **5.320,25** em dezembro de 2019 e **7.403,29** em dezembro de 2025. φ = 0,7186. Ocupação não se deflaciona.
 
-A referência é a MIP-RS 2019, construída pelo DEE/SPGG e pela UFRJ no projeto MAEP, no nível mais desagregado publicado: **117 produtos e 52 atividades**. A planilha oficial foi baixada de `dee.rs.gov.br/matriz-insumo-produto` (arquivo de 11/09/2024, tabela 117×52, versão 2). A Tabela de Recursos e Usos do mesmo projeto, no mesmo endereço, fornece remuneração, valor adicionado, produção e ocupações na agregação de 16 atividades.
+Remuneração e ocupação da cadeia usam a TRU de 16 atividades do mesmo projeto. Papel, químico e eletrônico herdam a intensidade de toda a indústria de transformação gaúcha de 2019.
 
-A matriz de coeficientes técnicos intersetoriais locais é a tabela 13 (atividades × atividades). A inversa de Leontief foi calculada nesta rodada: **L = (I − A)⁻¹**.
+A camada induzida converte **60%** da massa salarial gerada no RS em consumo das famílias, no perfil da tabela 3, **uma rodada**. O Tipo I é direto mais cadeia. O Tipo II soma essa rodada. Os dois não se somam ao bloco II do contratante.
 
-O maior desvio entre essa inversa e a tabela 14, já publicada na planilha, é da ordem de 10⁻¹⁵. O produto da matriz de participação setorial (tabela 12) pela matriz de coeficientes produto × atividade (tabela 9) reproduz a tabela 13 com desvio da mesma ordem. A produção das 52 atividades, somada nos 16 grupos, reproduz o valor da produção da TRU em cada grupo. A conta é Leontief da matriz oficial, com a inversa recalculada e conferida.
+## 6. Resultados do ano cheio de 2037
 
-O choque nasce em produtos, a preço básico. A participação de cada atividade na produção de cada produto (tabela 12) converte o choque de produto em choque de atividade. A produção da cadeia é x = L f, com f = D g.
-
-### O que entra no choque, no cenário base
-
-| Compra no RS em 2037 | Valor | Produto da MIP | Natureza |
-|---|---:|---|---|
-| Folha de tabaco | R$ 52,8 mi | PR004, outros produtos da lavoura temporária | Dado da revisão 4. Porteira, margem de comércio zero |
-| Dispositivo do e-líquido | R$ 329 mi | PR066, material eletrônico e equipamentos de comunicações | Hipótese de composição |
-| Químicos | R$ 535 mi | PR051, produtos químicos diversos | Hipótese de composição |
-| Embalagem e papel | R$ 713 mi | PR036, papel, papelão e embalagens | Hipótese de composição |
-| **Compra no RS** | **R$ 1,63 bi** | | |
-| **Vazamento (não multiplicado)** | **R$ 6,37 bi** | | Resto do BOM de R$ 8,00 bi |
-
-A regra da composição, rotulada como hipótese, é a seguinte. O dispositivo vale 50% do custo do e-líquido e tem conteúdo local de 10%. Isso fixa os R$ 329 milhões. O bolo autorizado de conteúdo local é 20% de R$ 7,89 bilhões, isto é, R$ 1,58 bilhão de insumos não agrícolas. O que falta para completar esse bolo, R$ 1,25 bilhão, reparte-se entre químicos e embalagem/papel nos pesos 30 e 40. Energia não tem fatura no arquivo; ela permanece dentro do percentual único de 20%, sem uma conta própria. A atividade de fabricação de produtos do fumo (AT09) recebe choque direto zero. A produção que a cadeia gera nessa atividade é de R$ 0,1 milhão, residual de encadeamento.
-
-### Ano-preço
-
-A matriz está em R$ correntes de 2019. O projeto está em R$ de 2025. O fator usa o número-índice do IPCA (IBGE, SIDRA tabela 1737): **5.320,25** em dezembro de 2019 e **7.403,29** em dezembro de 2025.
-
-φ = 5.320,25 / 7.403,29 = 0,7186
-
-fluxo de 2019 = fluxo de 2025 × φ. Resultado de 2025 = resultado de 2019 / φ.
-
-A folha de R$ 52,8 milhões entra na matriz como R$ 38,0 milhões de 2019. O valor adicionado que a matriz devolve é trazido de volta a 2025 pela divisão pelo mesmo fator. Ocupação não se deflaciona: o coeficiente é “ocupações por R$ milhão de produção de 2019”, aplicado à produção já expressa em R$ de 2019.
-
-### Valor adicionado, salário e ocupação da cadeia
-
-O valor adicionado de cada atividade é o da própria MIP: produção a preço básico menos consumo intermediário a preço de consumidor. Esse coeficiente, atividade a atividade, multiplica a produção gerada por L.
-
-Remuneração e ocupação indiretas usam a TRU de 16 atividades do mesmo projeto, porque a planilha 117×52 não publica esses vetores por atividade. Cada atividade herda o coeficiente do seu grupo (remuneração por real de produção; ocupações por R$ milhão de 2019). Dentro da indústria de transformação, papel, químico e eletrônico usam a média de toda a transformação gaúcha de 2019. Essa ponte está nomeada em cada tabela de emprego.
-
-### Camada induzida
-
-Sessenta por cento da massa salarial gerada no RS (direta + indireta) vira consumo das famílias. O perfil é o consumo das famílias da tabela 3 da MIP, produção gaúcha a preço básico, com as parcelas positivas renormalizadas. A massa negativa cortada foi nula. Esse consumo entra de novo em L, **uma rodada**. A manchete para aqui.
-
-A rodada devolve R$ 0,18 de salário novo por real de consumo. A série fechada, se essa realimentação fosse repetida até o fim, multiplicaria o valor adicionado induzido por 1,22. A diferença cabe numa nota: cerca de R$ 100 milhões a mais. A manchete permanece a da rodada única.
-
-O Tipo I deste estudo é direto mais cadeia, sem induzido. O Tipo II soma a rodada de consumo. O bloco II do contratante também é um Tipo I, de outra matriz. Os dois Tipos I se comparam. Eles não se somam, e o Tipo II não se soma ao bloco II.
-
-### Intensidade de trabalho que a matriz aplica
-
-A ponte de emprego usa estes coeficientes da TRU de 2019, em ocupações por R$ milhão de produção daquele ano e em remuneração por real de produção. São os grupos que mais pesam nesta conta.
-
-| Grupo da TRU | Ocupações por R$ milhão de 2019 | Remuneração por real de produção |
-|---|---:|---:|
-| Agropecuária | 20,3 | 0,07 |
-| Indústria de transformação | 2,8 | 0,12 |
-| Comércio | 12,2 | 0,30 |
-| Transporte, armazenagem e correio | 7,2 | 0,20 |
-| Atividades profissionais e administrativas | 10,9 | 0,27 |
-| Alojamento e alimentação | 12,5 | 0,23 |
-| Educação e saúde privadas | 10,0 | 0,32 |
-
-A transformação, que recebe papel, químico e eletrônico, é pouco intensiva em trabalho por real. O comércio e a agropecuária são intensivos. Por isso a cadeia, com R$ 2,60 bilhões de produção em R$ de 2025, lê cerca de 8,3 mil ocupações: a maior parte do valor está na indústria, e uma parte relevante das ocupações está no comércio e na agricultura que essa indústria puxa.
-
-Um exemplo fecha a régua. A folha de R$ 52,8 milhões de 2025 entra como R$ 38 milhões de 2019 no produto de lavoura temporária. A atividade agrícola produz cerca de R$ 58 milhões de 2025 ao longo da cadeia (a compra e um encadeamento curto). Aplicada a média de 20,3 ocupações por R$ milhão de 2019, essa produção agrícola lê cerca de 800 ocupações. As 547 famílias-equivalentes continuam sendo a escala da tonelagem, em outra régua.
-
-## 5. Resultados do ano cheio de 2037
-
-Cenário base: exportação incluída, conteúdo local de 20% nos insumos não agrícolas, uma rodada de consumo. R$ de 2025.
+Cenário base: abertura estimada, exportação incluída, uma rodada de consumo. R$ de 2025.
 
 | Gaveta | Valor adicionado | Remunerações | Ocupações | Produção |
 |---|---:|---:|---:|---:|
 | Direto, planta | R$ 7.830 mi | R$ 609 mi | 4.060 | R$ 15.830 mi (receita) |
-| Cadeia, compras no RS | R$ 938 mi | R$ 369 mi | 8.322 | R$ 2.597 mi |
-| Induzido, uma rodada | R$ 455 mi | R$ 177 mi | 5.160 | R$ 876 mi |
-| **Total no RS (Tipo II)** | **R$ 9.223 mi** | **R$ 1.155 mi** | **17.542** | |
-| Total sem induzido (Tipo I) | R$ 8.768 mi | R$ 978 mi | 12.382 | |
+| Cadeia, compras no RS | R$ 499 mi | R$ 187 mi | 4.555 | R$ 1.297 mi |
+| Induzido, uma rodada | R$ 371 mi | R$ 144 mi | 4.202 | R$ 714 mi |
+| **Total no RS (Tipo II)** | **R$ 8.700 mi** | **R$ 941 mi** | **12.817** | |
+| Total sem induzido (Tipo I) | R$ 8.329 mi | R$ 796 mi | 8.615 | |
 
-A leitura de decisão arredonda a cadeia para **R$ 940 milhões**, o induzido para **R$ 460 milhões** e o total para **R$ 9,2 bilhões**. As ocupações de cadeia e de consumo ficam em **cerca de 8,3 mil** e **cerca de 5,2 mil**. A tabela guarda o milhão do modelo para a soma fechar. A hipótese de 20% move a cadeia entre R$ 474 milhões e R$ 1,64 bilhão, faixa bem mais larga do que o arredondamento.
+A leitura de decisão é: cadeia de **R$ 499 milhões**, induzido de **R$ 371 milhões**, total de **R$ 8,70 bilhões**, cerca de **12,8 mil ocupações**. A compra multiplicada é de R$ 830 milhões. Cada real comprado no RS gera R$ 1,56 de produção gaúcha e R$ 0,60 de valor adicionado.
 
-O **R$ 940 milhões da cadeia** estão ao lado da frase da hipótese: esse valor supõe que 20% do custo não agrícola seja comprado no RS. É hipótese de trabalho, não nota fiscal.
-
-Cada real comprado no RS gera R$ 1,59 de produção gaúcha (o próprio fornecimento mais os fornecedores dos fornecedores) e R$ 0,58 de valor adicionado. A compra multiplicada é de R$ 1,63 bilhão. Os outros R$ 6,37 bilhões de insumos saem do estado e param na gaveta de vazamento.
+A rodada de consumo devolve R$ 0,18 de salário novo por real consumido. A série fechada multiplicaria o valor adicionado induzido por 1,22, cerca de **R$ 80 milhões** a mais. A manchete permanece a da rodada única.
 
 ![Valor adicionado no RS em 2037, por gaveta](figuras/fig1_valor_adicionado.png)
 
 ### Onde a cadeia acrescenta valor
 
-Oito atividades concentram cerca de R$ 780 milhões dos R$ 938 milhões de valor adicionado da cadeia. O restante se espalha em atividades menores.
-
 | Atividade | Valor adicionado da cadeia | Produção da cadeia |
 |---|---:|---:|
-| Celulose, papel e embalagens | R$ 342 mi | R$ 773 mi |
-| Outros produtos químicos | R$ 118 mi | R$ 560 mi |
-| Equipamentos de informática, eletrônicos e ópticos | R$ 96 mi | R$ 378 mi |
-| Comércio por atacado e a varejo | R$ 73 mi | R$ 124 mi |
-| Serviços profissionais, científicos e técnicos | R$ 46 mi | R$ 72 mi |
-| Transporte terrestre | R$ 38 mi | R$ 106 mi |
-| Agricultura | R$ 34 mi | R$ 58 mi |
-| Intermediação financeira e seguros | R$ 33 mi | R$ 51 mi |
+| Celulose, papel e embalagens | R$ 146 mi | R$ 331 mi |
+| Equipamentos de informática e eletrônicos | R$ 92 mi | R$ 361 mi |
+| Comércio | R$ 38 mi | R$ 64 mi |
+| Transporte terrestre | R$ 34 mi | R$ 94 mi |
+| Agricultura | R$ 31 mi | R$ 52 mi |
+| Energia elétrica e gás | R$ 26 mi | R$ 66 mi |
+| Serviços profissionais | R$ 24 mi | R$ 37 mi |
+| Intermediação financeira | R$ 17 mi | R$ 26 mi |
 
-Papel, químico e eletrônico aparecem na frente porque são os três endereços da hipótese de composição. Comércio, transporte, serviços profissionais e finanças aparecem atrás deles, porque a matriz os usa como insumo desses fornecedores. A agricultura entra sobretudo pela folha de R$ 52,8 milhões.
+Papel e eletrônico lideram porque são os dois maiores endereços da compra gaúcha (embalagem do stick e a fração local do dispositivo). Energia, transporte e manutenção aparecem com linha própria, o que a rodada do percentual único não separava. A agricultura entra pela folha de R$ 52,8 milhões.
 
 ![Atividades com maior valor adicionado na cadeia](figuras/fig2_cadeia_por_atividade.png)
 
-As ocupações da cadeia, com o coeficiente da TRU, se distribuem de outro modo, porque comércio e agricultura empregam mais gente por real do que a indústria.
-
-| Atividade | Ocupações da cadeia |
-|---|---:|
-| Celulose, papel e embalagens | 1,6 mil |
-| Outros produtos químicos | 1,1 mil |
-| Comércio | 1,1 mil |
-| Agricultura | 0,8 mil |
-| Eletrônicos e ópticos | 0,8 mil |
-| Serviços profissionais | 0,6 mil |
-| Transporte terrestre | 0,5 mil |
-| Demais atividades | 1,8 mil |
-| **Cadeia** | **8,3 mil** |
-
-### Ocupações
-
 | Origem | Ocupações em 2037 | Como ler |
 |---|---:|---|
-| Planta | 4.060 | Premissa v6. Estoque do ano cheio. É a manchete de emprego |
-| Cadeia | 8.322 | Coeficiente da TRU-16 aplicado à produção gerada por L |
-| Consumo das famílias | 5.160 | O mesmo coeficiente, sobre a rodada de consumo |
-| Famílias-equivalentes da folha no RS | 547 | 3.007 mil t ÷ 5,5 t. Escala de compra. Fora da soma |
-
-Na cadeia, as maiores leituras de ocupação estão em papel (cerca de 1,6 mil), químicos (cerca de 1,1 mil), comércio (cerca de 1,1 mil), agricultura (cerca de 800) e eletrônicos (cerca de 800). A agricultura usa a intensidade média de trabalho de toda a agropecuária gaúcha em 2019, que mistura grãos, fumo e serviços. As 547 famílias-equivalentes medem outra coisa: a tonelagem dividida pela produção média de uma família. As duas leituras ficam lado a lado. Somá-las contaria a folha duas vezes, com réguas diferentes.
+| Planta | 4.060 | Premissa v6. Estoque do ano cheio |
+| Cadeia | 4.555 | Coeficiente da TRU-16 sobre a produção gerada |
+| Consumo das famílias | 4.202 | O mesmo coeficiente, sobre a rodada de consumo |
+| Famílias-equivalentes da folha no RS | 547 | 3.007 t ÷ 5,5 t. Fora da soma |
 
 ![Ocupações no RS em 2037](figuras/fig5_ocupacoes.png)
 
-### Salários que alimentam o consumo
+## 7. Faixa de 10/20/35, ao lado da abertura
 
-A massa salarial do Tipo I no RS é R$ 609 milhões na planta mais R$ 369 milhões na cadeia, R$ 978 milhões. Sessenta por cento disso, R$ 587 milhões, formam o choque de consumo. A cesta gaúcha a preço básico concentra comércio (15%), aluguel imputado (12%), saúde privada (11%), intermediação financeira (7%) e alimentação (6%). A rodada devolve R$ 455 milhões de valor adicionado e R$ 177 milhões de remunerações.
+A faixa é uma sensibilidade uniforme: 10%, 20% ou 35% dos insumos que não são folha são tratados como compra gaúcha, com a composição da rodada anterior (dispositivo, químicos e papel). Ela não substitui a abertura. Serve para o leitor medir a distância.
 
-## 6. Faixa de 10/20/35 e variante sem exportação
+| Cenário | Compra no RS | VAB da cadeia | VAB total com induzido | Ocupações totais |
+|---|---:|---:|---:|---:|
+| **Abertura estimada (base, 9,9%)** | **R$ 0,83 bi** | **R$ 499 mi** | **R$ 8,70 bi** | **12,8 mil** |
+| Conteúdo local uniforme de 10% | R$ 0,84 bi | R$ 474 mi | R$ 8,67 bi | 12,8 mil |
+| Conteúdo local uniforme de 20% | R$ 1,63 bi | R$ 938 mi | R$ 9,22 bi | 17,5 mil |
+| Conteúdo local uniforme de 35% | R$ 2,81 bi | R$ 1,64 bi | R$ 10,05 bi | 24,6 mil |
 
-A folha gaúcha permanece em R$ 52,8 milhões nos três pontos da faixa. O que varia é a parcela dos insumos não agrícolas comprada no RS: 10%, 20% e 35%. A composição do bolo (dispositivo, químicos, papel) guarda as mesmas proporções do cenário base.
-
-| Conteúdo local não agrícola | Compra no RS | Vazamento | VAB da cadeia | VAB total com induzido | Ocupações totais |
-|---|---:|---:|---:|---:|---:|
-| 10% | R$ 0,84 bi | R$ 7,16 bi | R$ 474 mi | R$ 8,67 bi | 12,8 mil |
-| **20% (base)** | **R$ 1,63 bi** | **R$ 6,37 bi** | **R$ 938 mi** | **R$ 9,22 bi** | **17,5 mil** |
-| 35% | R$ 2,81 bi | R$ 5,19 bi | R$ 1,64 bi | R$ 10,05 bi | 24,6 mil |
-
-O valor adicionado direto, R$ 7,83 bilhões, não se move com essa faixa: ele é da planta. Quase toda a variação do total está na cadeia e, em menor grau, no consumo que os salários da cadeia sustentam.
+A abertura fica ao lado dos 10%. O dispositivo importado é o que impede o 20% de ser o caso central. O valor adicionado direto não se move com a faixa.
 
 ### Sem exportação
 
-A variante retira a receita FOB de R$ 3,27 bilhões, os insumos de exportação de R$ 2,19 bilhões e as 1,00 mil ocupações da exportação. O valor adicionado direto cai para R$ 6,75 bilhões e a remuneração direta para R$ 459 milhões. A folha no RS cai para R$ 44 milhões e 2,465 mil toneladas. O conteúdo local de 20% passa a incidir sobre os insumos internos que não são folha.
+A variante retira a receita FOB de R$ 3,27 bilhões, os insumos de exportação de R$ 2,19 bilhões e as 1,00 mil ocupações da exportação. A mesma abertura é aplicada aos volumes internos e reancorada em R$ 5,81 bilhões de insumos.
 
 | | Com exportação | Sem exportação |
 |---|---:|---:|
 | Valor adicionado direto | R$ 7,83 bi | R$ 6,75 bi |
-| Valor adicionado da cadeia | R$ 938 mi | R$ 685 mi |
-| Valor adicionado induzido | R$ 455 mi | R$ 339 mi |
-| **Total no RS** | **R$ 9,22 bi** | **R$ 7,77 bi** |
+| Valor adicionado da cadeia | R$ 499 mi | R$ 403 mi |
+| Valor adicionado induzido | R$ 371 mi | R$ 283 mi |
+| **Total no RS** | **R$ 8,70 bi** | **R$ 7,44 bi** |
 | Ocupações diretas | 4,06 mil | 3,06 mil |
-| Ocupações totais (com coeficiente TRU) | 17,5 mil | 13,0 mil |
-| Compra no RS | R$ 1,63 bi | R$ 1,19 bi |
+| Ocupações totais | 12,8 mil | 9,9 mil |
+| Compra no RS | R$ 830 mi | R$ 659 mi |
 
-A exportação responde, nesta conta, por cerca de R$ 1,5 bilhão do valor adicionado total no RS e por cerca de 4,5 mil ocupações do estoque ampliado. O tributo sobre o consumo no Brasil não muda nessa variante: a exportação já entra imune, e os R$ 13,7 bilhões são a meta do mercado interno.
+O Tipo I com exportação é **R$ 8,33 bilhões** e **8,6 mil ocupações**. É a linha que se compara ao bloco II.
 
-A variante “sem camada induzida” é a linha Tipo I da seção 5: **R$ 8,77 bilhões** e **12,4 mil ocupações** no cenário com exportação. Ela é a linha que se compara ao bloco II do contratante.
+![Sensibilidade de conteúdo local e variante sem exportação](figuras/fig3_faixa_e_exportacao.png)
 
-![Faixa de conteúdo local e variante sem exportação](figuras/fig3_faixa_e_exportacao.png)
+## 8. CAPEX da conversão e a obra de 2026–2027
 
-## 7. Leitura fiscal bruta
+O terreno vale zero: a unidade já existe. O galpão também. O projeto é linha nova de sem fumaça dentro da planta, com operação a partir de 2028 e obra hipotética em 2026–2027.
 
-O incentivo não foi informado. A linha de renúncia fica em zero, e o retorno líquido não é calculado.
+O anúncio argentino de até US$ 500 milhões não é o número desta planta. Ele entra, com os outros, só como calibração.
 
-A leitura abaixo é bruta e separa o que a revisão 4 já quantifica. A alíquota média de cigarro da MIP 2019 não é aplicada sobre a receita nova. As cargas de 39% e 51% são memória do cenário que calibra a meta de R$ 13,7 bilhões.
+| Referência | O que foi anunciado | Uso nesta conta |
+|---|---|---|
+| Papastratos, Grécia, 2017 (PMI) | €300 milhões para converter fábrica de cigarro e chegar a cerca de 20 bilhões de sticks | Régua de conversão: €15 por milhão de sticks ao ano. Escala para 12,3 bilhões e desconto de 15% porque o galpão já existe |
+| Crespellano, Itália (PMI) | €500 milhões para cerca de 30 bilhões de sticks na primeira fase; €1,2 bilhão entre 2013 e 2020 num greenfield que chegou a dezenas de bilhões | Confere a ordem de grandeza do greenfield, que custa pelo menos tanto quanto a conversão |
+| Dresden, Alemanha, 2017 (PMI) | US$ 320 milhões, fábrica nova, capacidade não publicada | Ordem de grandeza, sem virar régua por unidade |
+| Merlo, Argentina | US$ 300 milhões suspensos em 2023 (US$ 180 milhões de ampliação e US$ 120 milhões de máquinas, La Nación); fala posterior de até US$ 500 milhões, sem capacidade publicada | Não é o CAPEX desta planta. Mostra que conversão reparte obra e máquina |
 
-| Canal | 2037 | Esfera | Observação |
-|---|---:|---|---|
-| Tributos sobre o consumo no Brasil | R$ 13,7 bi | Federal R$ 6,58 bi; estados e municípios do Brasil R$ 7,12 bi | Meta de calibração do cenário. Exportação imune |
-| Tributos sobre o consumo local no RS | R$ 0,93 bi | Dos quais cerca de R$ 0,48 bi estaduais e municipais | Cerca de 6,8% do consumo nacional |
-| IRPJ/CSLL da planta | R$ 1,23 bi | Federal | Hipótese: 34% sobre 50% do excedente (VAB − remunerações) |
-| IRPJ/CSLL sem exportação | R$ 1,07 bi | Federal | A mesma regra, sobre o VAB e a remuneração internos |
-| Incentivo / renúncia | R$ 0 | | Não informado |
-| Retorno líquido | não calculado | | Depende do incentivo |
+A conta, em R$ de 2025, usa a PTAX venda média de 2025: **US$ 1 = R$ 5,59** e **€ 1 = R$ 6,31** (BCB, 1.254 cotações).
 
-Com a reforma tributária do consumo (IBS no destino), a sede da fábrica não desloca o tributo sobre o consumo para o Rio Grande do Sul. Esse tributo segue o lugar do consumo. O ganho fiscal gaúcho associado à sede, no que o arquivo permite dizer, está no consumo gaúcho de 6,8%, no valor adicionado fiscal municipal que a operação venha a formar e nos tributos da própria planta. O VAF de Santa Cruz do Sul e a cota-parte municipal não foram calculados nas premissas e não são estimados aqui.
+| Pedaço | Valor | Origem |
+|---|---:|---|
+| Linha de sticks | R$ 992 mi | €157 milhões: 12,3/20 × €300 mi × 0,85 |
+| Linha de e-líquido | R$ 559 mi | Ponto médio de US$ 50–150 milhões para envase e montagem de 271 milhões de pods |
+| Linha de sachê | R$ 84 mi | Ponto médio de US$ 8–25 milhões |
+| **CAPEX da conversão** | **R$ 1,63 bi** | Estimativa |
+| Dos quais máquinas importadas | R$ 1,01 bi | 62%. Hipótese: máquina proprietária da PMI |
+| Obras civis e utilidades no RS | R$ 294 mi | 18%. Menos que um greenfield |
+| Montagem no RS | R$ 137 mi | 8,4% |
+| Engenharia no RS | R$ 52 mi | 3,2% |
+| Montagem e engenharia importadas | R$ 137 mi | O complemento |
+| **Parcela gaúcha, que entra na matriz** | **R$ 484 mi** | 30% do CAPEX |
+| Terreno | R$ 0 | Planta existente |
+| Capital de giro, 45 dias do custo de insumos | R$ 986 mi | Fora do choque |
+| Piso observado na fábrica | R$ 100 mi ou mais | Deck citado nas premissas. Não é o CAPEX do projeto |
 
-O IRPJ/CSLL de R$ 1,23 bilhão é federal. Ele não entra na soma de “retorno do RS”. Somar os R$ 0,93 bilhão de tributos sobre o consumo local com os R$ 1,23 bilhão de IRPJ misturaria esferas.
+O piso de R$ 100 milhões é o que as premissas registram como investimento em curso, sem anúncio público localizado. Ele fica abaixo do CAPEX estimado e não o substitui.
 
-## 8. Onde isso aparece no território
+### Efeito da obra, separado de 2037
 
-A sede é **Santa Cruz do Sul**. O valor adicionado direto de R$ 7,83 bilhões está na planta, nesse município. O recorte pedido para a apresentação é o **COREDE Vale do Rio Pardo**. O modelo desta rodada é estadual: a MIP-RS não abre município. O transbordamento municipal fino fica limitado ao que o arquivo de premissas realmente traz.
+O choque usa só os R$ 484 milhões gaúchos: edificações (PR082), montagem (PR079) e engenharia (PR102). Tipo I, sem a rodada de consumo, para não misturar com o induzido da operação.
 
-O arquivo traz uma regra, não uma lista fechada. A folha nova de cada município produtor do Sul seria a produção de fumo em folha da PAM 2025 (SIDRA, tabela 1612) multiplicada pela fração do ano (0,86% em 2037). As premissas deixam a PAM do COREDE por preencher e citam, como exemplos de imprensa a conferir no SIDRA, cinco municípios gaúchos:
+| Efeito da obra no RS | Valor |
+|---|---:|
+| Produção gerada | R$ 740 mi |
+| Valor adicionado | R$ 342 mi |
+| Remunerações | R$ 125 mi |
+| Ocupações do Leontief da obra | 4,4 mil |
+| Das quais postos temporários na construção | 2,6 mil |
 
-| Município | PAM citada nas premissas | Folha nova em 2037, no exemplo |
+Os 2,6 mil postos são o coeficiente de ocupação da Construção na TRU (11,1 ocupações por R$ milhão de produção de 2019) aplicado à produção de construção que o pedaço local de obra gera. São postos do biênio, temporários. Não entram nas 4,06 mil da planta nem nas 12,8 mil de 2037.
+
+O ISS de Santa Cruz do Sul sobre a obra está na seção fiscal.
+
+## 9. Retorno fiscal da hipótese de referência
+
+O incentivo não foi concedido à Philip Morris Brasil. O que segue é uma política hipotética de referência, para o retorno deixar de ficar em branco.
+
+O programa vigente (Lei 15.642/2021 e Resolução Normativa do FUNDOPEM/INTEGRAR consolidada até a RN 11/2025, Secretaria de Desenvolvimento Econômico) financia parte do ICMS incremental. O teto mensal prático do incentivo básico, fora cooperativa, é **75%** do ICMS incremental, com fruição de até **96 meses**, atualização pelo IPCA e juros de até 2% ao ano para empresa grande. O teto legal citado pela secretaria chega a 90% do ICMS incremental, limitado também a 9% do faturamento bruto incremental. O INTEGRAR abate de 10% a 90% de cada parcela a amortizar, conforme o IDESE do município ou do COREDE, emprego e meio ambiente.
+
+O Regime de Recuperação Fiscal (LC 159/2017, art. 8º, e o Propag) restringe benefício novo que reduza receita. O instrumento que o Estado tem concedido nesse ambiente, o FUNDOPEM Recupera Avança, fica em **30%** do ICMS com financiamento, ou 27% sem financiamento (Plano Rio Grande). Por isso a hipótese usa 30%, não o teto de 75%.
+
+**Hipótese de referência.** Financiamento de **30%** do ICMS incremental atribuível ao consumo no Rio Grande do Sul, por **96 meses**, custo IPCA mais até 2% ao ano, **sem abatimento do INTEGRAR**. Não é benefício protocolado nem aprovado.
+
+O ICMS incentivável é o da operação atribuível ao RS, **R$ 0,48 bilhão**, não os R$ 13,7 bilhões nacionais. Desses R$ 0,48 bilhão, a cota-parte municipal constitucional de 25% é **R$ 120 milhões**, distribuída pela regra de partilha do Estado, e o Tesouro estadual fica com **R$ 360 milhões**. A cota-parte não é receita de Santa Cruz do Sul: o Valor Adicionado Fiscal do município-sede não está calculado.
+
+| Canal em 2037 | Valor | Esfera |
+|---|---:|---|
+| Tributos sobre o consumo no Brasil | R$ 13,7 bi | Federal R$ 6,58 bi; estados e municípios do Brasil R$ 7,12 bi |
+| Tributos sobre o consumo no RS | R$ 0,93 bi | Dos quais R$ 0,45 bi federais e R$ 0,48 bi de ICMS |
+| ICMS estadual, líquido da cota | R$ 360 mi | Estado |
+| Cota-parte municipal do ICMS do consumo no RS | R$ 120 mi | Municípios gaúchos, pela regra de partilha |
+| **Bruto estadual e municipal no RS** | **R$ 480 mi** | Retorno do RS, antes da hipótese |
+| IRPJ/CSLL da planta | R$ 1,23 bi | Federal. Fora do retorno do RS |
+| Diferimento da hipótese (30% de R$ 480 mi) | R$ 144 mi | Caixa adiado, não renúncia permanente |
+| **Líquido de caixa no ano em que a fruição vigora** | **R$ 336 mi** | R$ 480 mi menos R$ 144 mi |
+| Renúncia permanente desta hipótese | R$ 0 | Sem INTEGRAR, o financiado é pago depois |
+| ISS da obra em Santa Cruz do Sul | R$ 4,8 mi | Uma vez, em 2026–2027. Fora do ano de 2037 |
+
+O ISS usa a alíquota de **2%** do item 7.02 da lista de serviços de Santa Cruz do Sul (execução de obra por empreitada) sobre metade da parcela local do CAPEX. A metade é o ponto médio de uma obra em que materiais seguem no ICMS e serviços no ISS. Base de R$ 242 milhões × 2% = **R$ 4,8 milhões**, estimativa, município-sede, biênio da obra.
+
+Se a fruição de 96 meses começa com a operação, em 2028, ela se encerra em 2035. Em 2037, nesse calendário, o diferimento já teria acabado e o líquido do ano cheio volta a ser o bruto de R$ 480 milhões. O R$ 336 milhões é o caixa do ano de porte cheio **enquanto a hipótese estiver vigente**.
+
+Com o IBS no destino, a sede da fábrica não traz para o Rio Grande do Sul o tributo sobre o consumo dos outros estados. A base incentivável continua sendo o consumo gaúcho. A hipótese já está desenhada nessa base estreita. Um ICMS de origem, cobrado em Santa Cruz sobre a venda nacional, seria outra base, maior, e não é a desta conta.
+
+## 10. Onde isso aparece no território
+
+O modelo é estadual. O que segue é regionalização contábil: folha pela PAM, salário pela pendularidade publicada, resto da cadeia no estado. Não é modelo econométrico de spillover. Um spillover de verdade exigiria a matriz de origem e destino do emprego, o endereço do fornecedor e uma estimativa de vizinhança. Esta entrega não faz isso, e o mapa abaixo se chama área de apresentação.
+
+### Os 23 municípios do COREDE Vale do Rio Pardo
+
+Fonte: estatuto do COREDE Vale do Rio Pardo e Plano Estratégico de Desenvolvimento 2022–2030. São 23:
+
+Arroio do Tigre, Boqueirão do Leão, Candelária, Encruzilhada do Sul, Estrela Velha, General Câmara, Herveiras, Ibarama, Lagoa Bonita do Sul, Mato Leitão, Pantano Grande, Passa Sete, Passo do Sobrado, Rio Pardo, Santa Cruz do Sul, Segredo, Sinimbu, Sobradinho, Tunas, Vale do Sol, Vale Verde, Venâncio Aires e Vera Cruz.
+
+### Folha pela PAM 2025
+
+Fonte: IBGE, SIDRA, tabela 1612, produto 2703 (fumo em folha), variável quantidade produzida, ano 2025, consulta em outubro de 2026. A regra do arquivo é produção municipal × 0,86%.
+
+| | PAM 2025 | 0,86% |
 |---|---:|---:|
-| Canguçu | 21.064 t | 181 t |
-| Venâncio Aires | 17.779 t | 153 t |
-| São Lourenço do Sul | 16.374 t | 141 t |
+| Rio Grande do Sul | 349.928 t | 3.009 t |
+| Santa Catarina | 220.728 t | 1.898 t |
+| Paraná | 186.505 t | 1.604 t |
+| Sul | 757.161 t | 6.512 t |
+
+A parcela aceita no RS é **3.007 mil toneladas**. A regra aplicada ao SIDRA soma **3.009 t**. O resíduo é de **2 t**, o arredondamento entre 0,86% da PAM e os 46% de 6,51 mil toneladas escritos no arquivo (a PAM dá 46,2%). As toneladas municipais do RS foram reescaladas por 3.007/3.009 para a soma fechar na âncora. O valor municipal usa R$ 17.561/t, a média do arquivo, e por isso soma os R$ 52,8 milhões.
+
+Os exemplos de imprensa citados nas premissas não batem com o SIDRA 2025, exceto Santa Cruz do Sul. Canguçu está em 26.156 t, não em 21.064. Venâncio Aires em 21.242 t, não em 17.779. São Lourenço do Sul em 21.600 t, não em 16.374. Candelária em 13.500 t, não em 11.462. Santa Cruz do Sul permanece em 12.610 t. A conta usa o SIDRA.
+
+| Município | PAM 2025 | Folha nova em 2037 |
+|---|---:|---:|
+| Canguçu | 26.156 t | 225 t |
+| São Lourenço do Sul | 21.600 t | 186 t |
+| Venâncio Aires | 21.242 t | 183 t |
+| Candelária | 13.500 t | 116 t |
+| Arroio do Tigre | 13.464 t | 116 t |
+| Vale do Sol | 12.974 t | 111 t |
 | Santa Cruz do Sul | 12.610 t | 108 t |
-| Candelária | 11.462 t | 98 t |
+| Vera Cruz | 8.126 t | 70 t |
 
-Esses cinco pontos ilustram os exemplos já escritos. Eles não desenham a área de influência, não esgotam o COREDE e não distribuem salário, emprego indireto nem tributo municipal. A lista de 23 municípios, com quociente locacional, pendularidade e receita de prefeitura por cidade, não está nas premissas. Ela não é produzida aqui.
+No COREDE, as 23 cidades somam **1.243 t** de folha nova, **R$ 22 milhões** e **226 famílias-equivalentes**. É 41% da folha gaúcha. O restante da folha do RS está fora do COREDE, com peso em Canguçu, São Lourenço do Sul e na Metade Sul. A lista completa está em `resultados/folha_municipios.csv`.
 
-Fora da folha, o arquivo não traz fornecedor não agrícola por município nem município de residência dos empregados. O salário direto de R$ 609 milhões é da planta em Santa Cruz do Sul. Quanto desse salário é gasto nos municípios vizinhos depende da pendularidade, que o arquivo aponta como dado a fornecer ou como proxy futura do Censo, e que esta rodada não estima.
+### Salário direto por município de residência
 
-![Sede e exemplos de folha citados nas premissas](figuras/fig6_mapa_exemplos.png)
+O microdado de origem e destino do Censo 2022 não está na divulgação de deslocamento (tabelas 10329 a 10338 trazem tempo e meio de transporte, não o município de trabalho). A tabela publicada usada é a do Censo 2010, reproduzida na Revista Jovens Pesquisadores (UNISC, 2015, tabela 4): pessoas ocupadas cujo trabalho principal ficava em outro município, e as 62.396 ocupadas de Santa Cruz do Sul que trabalhavam no próprio município.
 
-O que se pode dizer ao COREDE, com o que está calculado: o efeito direto industrial está na sede; a compra de folha de R$ 52,8 milhões e 3,007 mil toneladas está espalhada pelo Rio Grande do Sul na proporção da safra, com os exemplos acima; o restante da cadeia (papel, químicos, eletrônico, comércio, transporte) é estadual e não tem endereço municipal nesta rodada.
+O destino desse fluxo de saída não está na tabela. O fator de destino 0,5 é o ponto médio entre zero (ninguém desse fluxo trabalha em Santa Cruz) e um (todo esse fluxo do entorno trabalha em Santa Cruz). O entorno é o eixo citado nas premissas mais os municípios contíguos com fluxo material no Censo 2010: Vera Cruz, Venâncio Aires, Rio Pardo, Candelária, Mato Leitão, Sinimbu, Vale do Sol, Passo do Sobrado, Herveiras, Boqueirão do Leão e General Câmara. Municípios distantes do COREDE não recebem salário da planta por essa regra: o emprego “em outro município” deles não tem destino publicado.
 
-## 9. Comparação com o bloco II do contratante
+No ponto médio, **92%** das 4,06 mil ocupações e dos R$ 609 milhões ficam com residentes de Santa Cruz do Sul. Os outros **8%** são pendulares. No extremo do intervalo, a parcela pendular vai de 0% a 15%.
 
-O bloco II é resultado do modelo inter-regional do contratante (Tipo I, sem consumo das famílias), em 2037, no Rio Grande do Sul: valor adicionado de **R$ 8,85 bilhões**, **12,76 mil ocupações** e tributos sobre o consumo de **R$ 0,928 bilhão**. Ele serve de ordem de grandeza. Ele não entra como choque. Lançá-lo na MIP contaria o indireto duas vezes.
+| Município de residência | Ocupações | Remuneração |
+|---|---:|---:|
+| Santa Cruz do Sul | 3.728 | R$ 559 mi |
+| Vera Cruz | 89 | R$ 13 mi |
+| Rio Pardo | 85 | R$ 13 mi |
+| Venâncio Aires | 65 | R$ 10 mi |
+| Candelária | 35 | R$ 5 mi |
+| Demais do entorno | 58 | R$ 9 mi |
+| **Planta** | **4.060** | **R$ 609 mi** |
 
-| | Este estudo, Tipo I | Bloco II do contratante | Este estudo, Tipo II |
-|---|---:|---:|---:|
-| Valor adicionado no RS | R$ 8,77 bi | R$ 8,85 bi | R$ 9,22 bi |
-| Ocupações no RS | 12,4 mil | 12,76 mil | 17,5 mil |
-| O que está dentro | Direto da planta + cadeia das compras no RS | Direto + indireto do modelo inter-regional | Tipo I + uma rodada de consumo |
+Isso distribui o salário direto. Não distribui a cadeia de papel, químico e eletrônico, que permanece estadual.
 
-A diferença de valor adicionado entre os dois Tipos I é de cerca de 1%. A de ocupações é de cerca de 3%. As premissas avisam que diferenças de 10% a 20% entre matrizes são o esperado. O encaixe mais apertado, neste caso, convive com métodos diferentes: o bloco II parte da receita e de uma matriz inter-regional de 27 unidades da Federação; esta conta parte só da compra gaúcha e da MIP-RS 2019. O tributo de R$ 0,928 bilhão é o mesmo número de premissa usado na seção 7. Ele não foi reestimado pela matriz.
+![Área de apresentação: sede, COREDE e folha](figuras/fig6_mapa_exemplos.png)
 
-O Tipo II fica numa coluna própria. Somá-lo ao bloco II juntaria dois indiretos e ainda poria o consumo das famílias em cima de um modelo que já decidiu deixá-lo de fora.
+## 11. Leitura salarial, sem trocar o direto
 
-Um rascunho feito por outra ferramenta, sobre as mesmas premissas de planta, publicou um Tipo II de R$ 9,35 bilhões e 19,1 mil ocupações, um retorno estadual de R$ 885 milhões e uma obra de R$ 1,5 bilhão. O fluxo da planta daquele texto (receita, valor adicionado, ocupações, folha) coincide com a revisão 4 e é o que esta conta usa. A obra fica fora desta rodada. A lista municipal e o payback de incentivo não têm base no arquivo de premissas. O Tipo II calculado aqui na MIP-RS é o da tabela acima, R$ 9,2 bilhões e cerca de 17,5 mil ocupações, com a hipótese de 20% escrita ao lado do indireto.
+As 4,06 mil ocupações e os R$ 609 milhões permanecem. R$ 150 mil por ocupação, com encargos, é a premissa v6.
+
+O confronto usa duas fontes de folha de pagamento da indústria do fumo, trazidas a R$ de 2025 pelo IPCA.
+
+| Fonte | O que mede | Em R$ do ano | Em R$ de 2025 | Com encargos patronais de 36,8% |
+|---|---|---:|---:|---:|
+| CEMPRE, IBGE, tabela 6450, 2021, Santa Cruz do Sul, divisão 12 | R$ 338 milhões de salários para 3.136 assalariados | R$ 108 mil / pessoa | R$ 130 mil | R$ 178 mil |
+| PIA-Empresa, IBGE, tabela 1849, 2023, Rio Grande do Sul, divisão 12 | R$ 733 milhões para 6.165 pessoas ocupadas em 31/12 | R$ 119 mil / pessoa | R$ 130 mil | R$ 178 mil |
+| Premissa v6 | Ocupação com encargos | | | **R$ 150 mil** |
+
+Os 36,8% são a soma das alíquotas legais que não estão dentro de “salários e outras remunerações”: INSS patronal 20%, RAT 3%, Sistema S e salário-educação cerca de 5,8%, FGTS 8%. É alíquota de referência, não a folha auditada da planta. O 13º já está na rubrica anual do CEMPRE e da PIA.
+
+R$ 150 mil fica cerca de **16% abaixo** dos R$ 178 mil. O sentido do viés é para baixo: a premissa aceita é baixa frente ao custo carregado da indústria do fumo gaúcha em 2021–2023, não alta. Uma planta formal da Philip Morris está mais perto dessa folha do que de uma média que misture informalidade.
+
+Um quadro plausível, calibrado para reproduzir cerca de R$ 10 mil mensais (os R$ 130 mil anuais divididos por 13), em R$ de 2025:
+
+| Função | Parcela das 4,06 mil | Salário mensal de referência |
+|---|---:|---:|
+| Produção e operação | 55% (2,2 mil) | R$ 8,0 mil |
+| Manutenção | 15% (0,6 mil) | R$ 11,5 mil |
+| Administração e suporte | 15% (0,6 mil) | R$ 13,0 mil |
+| Técnicos de processo e qualidade | 8% (0,3 mil) | R$ 15,0 mil |
+| Técnico de campo | 7% (0,3 mil) | R$ 9,5 mil |
+
+A média desse quadro é R$ 9,9 mil por mês, R$ 129 mil no ano com o 13º. É ilustração em volta do CEMPRE. Não é a RAIS por ocupação, que não está publicada nesse corte, e não substitui os R$ 609 milhões.
+
+## 12. Comparação com o bloco II do contratante
+
+O bloco II é o Tipo I do modelo inter-regional do contratante, em 2037, no RS: valor adicionado de **R$ 8,85 bilhões**, **12,76 mil ocupações** e tributos sobre o consumo de **R$ 0,928 bilhão**. Ele não entra como choque.
+
+| | Este estudo, Tipo I, abertura estimada | Bloco II | Este estudo, sensibilidade de 20% | Este estudo, Tipo II |
+|---|---:|---:|---:|---:|
+| Valor adicionado no RS | R$ 8,33 bi | R$ 8,85 bi | R$ 8,77 bi | R$ 8,70 bi |
+| Ocupações no RS | 8,6 mil | 12,76 mil | 12,4 mil | 12,8 mil |
+
+Na abertura estimada, o Tipo I fica cerca de 6% abaixo do bloco II em valor adicionado e bem abaixo em ocupações, porque a compra gaúcha encolheu com o dispositivo importado. A sensibilidade uniforme de 20% continua ao lado do bloco II, como na rodada anterior. As premissas já avisam que diferenças de 10% a 20% entre matrizes são o esperado. O encaixe apertado da rodada de 20% dependia daquela hipótese. Ele não sobrevive à abertura.
+
+O Tipo II da abertura (R$ 8,70 bilhões e 12,8 mil ocupações) não se soma ao bloco II.
 
 ![Ordem de grandeza frente ao bloco II](figuras/fig4_comparacao_bloco_ii.png)
 
-## 10. Limites da conta
+## 13. O que ainda ficou sem estimativa
 
-A conta fecha com o que está no arquivo e com uma hipótese explícita no ponto em que o arquivo está aberto. Os limites abaixo mudam a leitura dos números.
+A conta agora cobre o que era estimável com fonte pública ou com engenharia de porte. Ficou de fora o que depende de documento da empresa ou de dado que não foi publicado:
 
-O conteúdo local de 20% é hipótese de trabalho. A empresa não entregou a abertura das compras por insumo e por origem. A faixa de 10% a 35% desloca o valor adicionado da cadeia de R$ 0,47 bilhão para R$ 1,64 bilhão. Qualquer uso do R$ 940 milhões precisa carregar essa frase.
+O contrato de incentivo não existe nesta conta. A hipótese de 30% por 96 meses não é protocolo, parecer do GATE nem termo de ajuste.
 
-Valor adicionado, ocupações e salários diretos são proxy v6, aceitos para esta rodada. O salário de R$ 150 mil por ocupação inclui encargos e mistura formais e informais no conceito de ocupação das Contas Nacionais. O quadro real da planta substitui esses números quando existir.
+A nota fiscal de insumo e a lista de fornecedores por município não estão no arquivo. A abertura substitui o branco. Ela não substitui o compras da empresa.
 
-As ocupações da cadeia e do consumo usam a média de 16 atividades da TRU de 2019. Papel, químico e eletrônico recebem a intensidade de trabalho de toda a indústria de transformação gaúcha. A agricultura recebe a intensidade de toda a agropecuária. Serviços domésticos, que entram na cesta de consumo, têm um coeficiente alto de ocupações por real, porque o produto dessa atividade é praticamente o próprio salário; eles respondem por cerca de 700 das 5,2 mil ocupações induzidas. O número de emprego indireto é uma leitura da matriz, não um levantamento de fornecedores.
+O projeto de investimento da PMB não foi entregue. O CAPEX de R$ 1,63 bilhão é calibração por anúncio e por porte, com desconto de galpão existente. O piso de R$ 100 milhões em curso é outra informação, do deck, e continua sem objeto e prazo confirmados.
 
-A estrutura produtiva é a de 2019, aplicada a uma operação de 2037 de produtos que quase não existiam nessa matriz. Os coeficientes de papel, químico e eletrônico descrevem a tecnologia média daqueles setores em 2019, não a ficha de engenharia da planta nova.
+O município de moradia de cada empregado e o contracheque por função não foram abertos pelo RH. A pendularidade é proxy de 2010 com fator de destino explícito. O quadro salarial é a média do CEMPRE e da PIA, não a ocupação CBO.
 
-A adicionalidade de 100% é premissa de capa. Com ela, bruto e líquido coincidem. Se parte da folha, do emprego ou da receita apenas deslocar atividade que já existe, o líquido fica menor, e esta rodada não faz esse desconto.
+O Valor Adicionado Fiscal de Santa Cruz do Sul, e portanto a cota-parte que ficaria na sede, depende dos pesos da partilha. A cota de R$ 120 milhões é a do conjunto dos municípios gaúchos.
 
-O incentivo não foi informado. Sem ele não há retorno líquido, nem payback, nem custo fiscal de um programa estadual.
+A matriz origem-destino do Censo 2022 não foi publicada no recorte casa-trabalho por município. Sem ela não há spillover espacial estimado.
 
-A geografia municipal da cadeia não agrícola, a residência dos empregados e o VAF de Santa Cruz do Sul não estão no arquivo. O mapa deste relatório localiza a sede e os exemplos de folha já escritos. Ele não estima área de influência.
+Depreciação, despesa financeira e o capital de giro de R$ 986 milhões estão quantificados ou reconhecidos e ficam fora do choque de produção, porque não são consumo intermediário do ano de operação.
 
-A camada induzida é uma rodada, com 60% da massa salarial convertidos em consumo gaúcho. A série fechada acrescentaria cerca de R$ 100 milhões de valor adicionado. Poupança, imposto sobre o salário e consumo fora do RS estão no 40% que não entra na matriz.
+## 14. Anexo: fórmula, setores e fontes
 
-CAPEX, obra, terreno, capital de giro, depreciação e despesa financeira ficam para outra rodada, quando houver projeto de investimento. Os dez anos de ocupações-ano do arquivo (a soma 2028–2037) não são postos de trabalho. A manchete de emprego é o estoque de 2037.
+### Setores do choque de operação, cenário base, R$ de 2025
 
-## 11. Anexo: setores do choque, fórmula e fontes
+| Código | Produto | Compra no RS |
+|---|---|---:|
+| PR066 | Material eletrônico e equipamentos de comunicações | R$ 315 mi |
+| PR036 | Papel, papelão, embalagens e artefatos | R$ 305 mi |
+| PR086 | Transporte de carga | R$ 52 mi |
+| PR004 | Outros produtos da lavoura temporária (folha) | R$ 53 mi |
+| PR080 | Eletricidade, gás e outras utilidades | R$ 40 mi |
+| PR051 | Produtos químicos diversos | R$ 32 mi |
+| PR079 | Manutenção e instalação de máquinas | R$ 24 mi |
+| PR047 | Produtos químicos orgânicos | R$ 9 mi |
+| PR081 | Água, esgoto e resíduos | R$ 2 mi |
 
-### Setores do choque, cenário base, R$ de 2025
+O choque direto sobre a fabricação de produtos do fumo é zero. A atividade recebe só o encadeamento residual.
 
-| Código | Produto | Compra no RS | Atividade que mais produz esse produto |
-|---|---|---:|---|
-| PR004 | Outros produtos da lavoura temporária e serviços relacionados | R$ 52,8 mi | AT01 Agricultura (cerca de 93% do produto) |
-| PR066 | Material eletrônico e equipamentos de comunicações | R$ 329 mi | AT25 Equipamentos de informática, eletrônicos e ópticos |
-| PR051 | Produtos químicos diversos | R$ 535 mi | AT19 Outros produtos químicos |
-| PR036 | Papel, papelão, embalagens e artefatos de papel | R$ 713 mi | AT14 Celulose, papel e produtos de papel |
-
-A participação setorial reparte uma fração pequena de cada produto com outras atividades. Por isso o choque de folha também encosta em pecuária e floresta, em valores baixos. O choque direto sobre AT09, fabricação de produtos do fumo, é zero.
+O choque de obra, separado, é PR082 edificações R$ 294 milhões, PR079 montagem R$ 137 milhões e PR102 engenharia R$ 52 milhões.
 
 ### Fórmula
 
-g é o vetor de 117 produtos com as compras no RS, em R$ milhões de 2019, a preço básico. D é a matriz 52 × 117 de participação das atividades na produção de cada produto. A é a matriz 52 × 52 de coeficientes técnicos intersetoriais locais. v é o valor adicionado por real de produção de cada atividade.
+g é o vetor de compras no RS, em R$ milhões de 2019, a preço básico. D é a participação das atividades na produção de cada produto. A é a matriz de coeficientes técnicos locais. v é o valor adicionado por real de produção.
 
 f = D g. x = (I − A)⁻¹ f. VAB da cadeia = v · x.
 
 g de 2019 = g de 2025 × (5.320,25 / 7.403,29).
 
-O consumo induzido, numa rodada, é c = 0,60 × (salário direto + salário da cadeia), distribuído pelo perfil de consumo das famílias sobre a produção gaúcha a preço básico. A produção induzida é de novo x = (I − A)⁻¹ D s, com s o vetor desse consumo.
-
-O vazamento é o BOM menos a compra no RS. No cenário base, R$ 8,00 bi − R$ 1,63 bi = R$ 6,37 bi.
-
-### Duas réguas que não se misturam
-
-O arquivo de premissas traz, por real de insumo, um conteúdo importado direto e indireto medido na matriz nacional de 2018: cerca de 65% no vape, 34% no stick e 29% no sachê. Essa régua responde quanto da cadeia, no Brasil inteiro, vaza para o exterior. Ela não diz quanto é comprado no Rio Grande do Sul.
-
-A régua desta rodada é outra: dos insumos que não são folha, 20% são tratados como compra gaúcha a preço básico, com piso de 10% e teto de 35%. O complemento, R$ 6,37 bilhões no cenário base, é vazamento para fora do RS. Desse vazamento, R$ 61 milhões são folha comprada em Santa Catarina e no Paraná (R$ 114 milhões no Sul menos R$ 53 milhões no RS). O restante, cerca de R$ 6,31 bilhões, é insumo não agrícola de outros estados ou do exterior. Esse bloco é registrado e não entra em L.
-
-### Coeficientes de ocupação e de remuneração usados
-
-A ponte de emprego e de salário da cadeia e do consumo usa a TRU-RS 2019, 16 atividades. O coeficiente de ocupação está em postos por R$ milhão de produção de 2019. O de remuneração é adimensional (real de salário por real de produção). A agregação das 52 atividades reproduz, grupo a grupo, o valor da produção publicado na TRU.
-
-| Grupo | Ocupações por R$ milhão de 2019 | Remuneração por real |
-|---|---:|---:|
-| Agropecuária | 20,26 | 0,072 |
-| Indústria extrativa | 4,84 | 0,230 |
-| Indústria de transformação | 2,85 | 0,120 |
-| Eletricidade, gás, água e resíduos | 1,73 | 0,115 |
-| Construção | 11,11 | 0,160 |
-| Comércio | 12,19 | 0,296 |
-| Transporte, armazenagem e correio | 7,16 | 0,203 |
-| Alojamento e alimentação | 12,47 | 0,231 |
-| Informação e comunicação | 3,46 | 0,219 |
-| Atividades financeiras e de seguros | 2,51 | 0,265 |
-| Atividades imobiliárias | 1,08 | 0,016 |
-| Atividades profissionais e administrativas | 10,88 | 0,274 |
-| Administração pública | 7,69 | 0,670 |
-| Educação e saúde privadas | 9,99 | 0,323 |
-| Artes, cultura e outros serviços | 24,23 | 0,250 |
-| Serviços domésticos | 84,11 | 1,012 |
-
-Serviços domésticos têm coeficiente alto porque o valor da produção dessa atividade, nas contas nacionais, é praticamente a remuneração. Eles entram na cesta de consumo e pesam nas ocupações induzidas, com pouco valor adicionado além do salário.
+O consumo induzido, numa rodada, é 60% do salário direto mais o salário da cadeia, no perfil de consumo das famílias. O vazamento é o custo dos insumos menos a compra no RS: R$ 8,00 bi − R$ 0,83 bi = R$ 7,17 bi.
 
 ### Fontes
 
-1. DEE/SPGG e UFRJ. Matriz de Insumo-Produto do Rio Grande do Sul 2019, 117 produtos × 52 atividades, e Tabelas de Recursos e Usos 2019. Publicadas em https://dee.rs.gov.br/matriz-insumo-produto . A inversa usada é a calculada da tabela 13, conferida com a tabela 14 da mesma planilha. A página do GIC/UFRJ (https://www.ie.ufrj.br/gic-gicdata.html) documenta a linha de trabalho; o arquivo efetivamente calculado é o do DEE.
-2. IBGE. IPCA, número-índice, SIDRA tabela 1737, variável 2266. Dezembro de 2019: 5.320,25. Dezembro de 2025: 7.403,29.
-3. Premissas do estudo, revisão 4, 18/10/2026. Fluxo da planta, folha, tributos de memória, bloco II e exemplos municipais de folha.
-4. O script reproduz a conta: `estudo/scripts/calcular_impacto.py`. Ele baixa a planilha oficial para `/tmp` e grava o vetor de choque e os resultados em `estudo/resultados/`. A planilha integral não vai para o repositório.
+1. DEE/SPGG e UFRJ. MIP-RS 2019, 117 × 52, e TRU 2019. https://dee.rs.gov.br/matriz-insumo-produto . Origem da oferta: participação do consumo intermediário local nas tabelas 3, 4 e 5.
+2. IBGE. IPCA, SIDRA 1737. Dezembro de 2019: 5.320,25. Dezembro de 2021: 6.120,04. Dezembro de 2023: 6.773,27. Dezembro de 2025: 7.403,29.
+3. IBGE. PAM, SIDRA 1612, produto 2703, variável 214, 2025.
+4. IBGE. CEMPRE, SIDRA 6450, 2021, Santa Cruz do Sul, CNAE divisão 12. PIA-Empresa, SIDRA 1849, 2023, Rio Grande do Sul, divisão 12.
+5. Banco Central. PTAX venda, média de 2025: dólar R$ 5,5855; euro R$ 6,3085.
+6. PMI. Indicadores de manufatura 2022: 7,56 GJ e 3,79 m³ por milhão de cigarros-equivalentes. Comunicados de Crespellano (2016 e 2017), Papastratos (2017) e Dresden (2017).
+7. PMI Itália. Investimento de €1,2 bilhão em Crespellano entre 2013 e 2020.
+8. La Nación, 28/3/2023, e El Cronista, sobre Merlo. Usados como calibração, não como o CAPEX desta planta.
+9. Vapor Authority e Keystone, estruturas públicas de custo de pod descartável. Preços de glicerina, propilenoglicol e aroma: intervalos industriais, ponto médio declarado.
+10. Secretaria de Desenvolvimento Econômico do RS. FUNDOPEM/INTEGRAR, Lei 15.642/2021 e Resolução Normativa consolidada até a RN 11/2025. Plano Rio Grande, FUNDOPEM Recupera Avança, 30%.
+11. Prefeitura de Santa Cruz do Sul. Lista de serviços, item 7.02, alíquota de 2%.
+12. COREDE Vale do Rio Pardo. Estatuto e Plano Estratégico 2022–2030, lista dos 23 municípios.
+13. Censo Demográfico 2010, via Revista Jovens Pesquisadores, UNISC, v. 5, n. 1, 2015, tabela 4. O Censo 2022 não publica a matriz casa-trabalho por município na divulgação de deslocamento.
+14. Premissas do estudo, revisão 4, 18/10/2026. Fluxo da planta, folha, tributos de memória e bloco II.
+15. Script: `estudo/scripts/calcular_impacto.py`. A planilha da MIP fica em `/tmp` e não entra no repositório.
 
 ### Arquivos de resultado
 
 | Arquivo | Conteúdo |
 |---|---|
-| `resultados/resultados.json` | Cenário base, faixa 10/20/35, variante sem exportação, conferência da inversa |
-| `resultados/resultados_cenarios.csv` | Os mesmos cenários em tabela |
-| `resultados/choque_produtos.csv` | Vetor de choque por produto, cenário base |
-| `resultados/cadeia_por_atividade.csv` | Produção e valor adicionado da cadeia nas 52 atividades |
-| `resultados/coeficientes_tru16.csv` | Coeficientes de remuneração e de ocupação, e a conferência da produção agregada |
+| `resultados/resultados.json` | Cenário base, faixa, variante sem exportação, obra, folha, residência e salário |
+| `resultados/resultados_cenarios.csv` | Cenários em tabela |
+| `resultados/bom_abertura.csv` | Linhas da abertura, com a regra de origem |
+| `resultados/folha_municipios.csv` | PAM 2025 e folha nova, RS, SC e PR |
+| `resultados/choque_produtos.csv` | Vetor de choque do cenário base |
+| `resultados/cadeia_por_atividade.csv` | Produção e valor adicionado da cadeia |
+| `resultados/coeficientes_tru16.csv` | Coeficientes de remuneração e de ocupação |

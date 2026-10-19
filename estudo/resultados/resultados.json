@@ -15,19 +15,20 @@
     "formula": "fluxo_2019 = fluxo_2025 × (IPCA_dez2019 / IPCA_dez2025); resultado_2025 = resultado_2019 / phi"
   },
   "hipoteses": {
-    "conteudo_local_nao_agricola_base": 0.2,
-    "faixa": [
+    "cenario_base": "abertura estimada do BOM",
+    "conteudo_local_nao_agricola_implicito": 0.0985622170007082,
+    "faixa_sensibilidade_uniforme": [
       0.1,
       0.2,
       0.35
     ],
     "propensao_consumo_rs": 0.6,
     "adicionalidade": 1.0,
-    "capex": "fora desta rodada",
+    "capex": "conversão calibrada; choque só da parcela gaúcha, bloco separado",
     "emprego_indireto": "coeficiente de ocupações por R$ milhão de produção da TRU-RS 2019, 16 atividades, aplicado a cada atividade do grupo"
   },
   "base": {
-    "alpha": 0.2,
+    "alpha": 0.098562,
     "com_exportacao": true,
     "direto": {
       "vbp": 15830000000.0,
@@ -38,55 +39,360 @@
     },
     "compras": {
       "com_exportacao": true,
-      "alpha": 0.2,
+      "fator_ancora_nao_folha": 1.000576,
       "bom": 8000000000.0,
       "folha_total": 114200000.0,
       "folha_rs": 52800000.0,
+      "folha_outras_uf": 61400000.0,
       "toneladas_rs": 3007.0,
-      "nao_folha": 7885800000.0,
-      "alvo_rs_nao_folha": 1577160000.0,
-      "dispositivo_nacional": 3294943750.0,
-      "rs_dispositivo": 329494375.0,
-      "rs_quimicos": 534713839.29,
-      "rs_papel": 712951785.71,
-      "compras_rs": 1629960000.0,
-      "vazamento": 6370040000.0,
-      "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
-      "share_folha_interna": 0.835119
+      "nao_folha": 7885770333.42,
+      "alpha": 0.098562,
+      "rs_nao_folha": 777239006.82,
+      "rs_total": 830039006.82,
+      "compras_rs": 830039006.82,
+      "vazamento": 7169960993.18,
+      "importado_nao_folha": 5816676802.23,
+      "outros_estados_nao_folha": 1291854524.37,
+      "linhas": [
+        {
+          "linha": "Dispositivo e eletrônico do pod",
+          "familia": "eliq",
+          "produto": "PR066",
+          "valor": 6294717424.51,
+          "rs": 0.05,
+          "outros_estados": 0.1,
+          "importado": 0.85,
+          "valor_rs": 314735871.23,
+          "valor_uf": 629471742.45,
+          "valor_imp": 5350509810.83,
+          "regra": "5% RS. Teto MIP PR066 no consumo intermediário: 8,2% local. Pod específico, desconto de especificidade; 85% importado."
+        },
+        {
+          "linha": "Glicerina vegetal do e-líquido",
+          "familia": "eliq",
+          "produto": "PR047",
+          "valor": 18731444.04,
+          "rs": 0.35,
+          "outros_estados": 0.5,
+          "importado": 0.15,
+          "valor_rs": 6556005.41,
+          "valor_uf": 9365722.02,
+          "valor_imp": 2809716.61,
+          "regra": "35% RS. Piso abaixo da média MIP de químicos orgânicos (PR047, 65% local): glicerina de biodiesel tem oferta gaúcha, sem ser a média do produto."
+        },
+        {
+          "linha": "Propilenoglicol do e-líquido",
+          "familia": "eliq",
+          "produto": "PR047",
+          "valor": 21853351.38,
+          "rs": 0.1,
+          "outros_estados": 0.7,
+          "importado": 0.2,
+          "valor_rs": 2185335.14,
+          "valor_uf": 15297345.96,
+          "valor_imp": 4370670.28,
+          "regra": "10% RS. Químico orgânico mais específico que a média do PR047; oferta petroquímica concentrada em outros estados."
+        },
+        {
+          "linha": "Aroma do e-líquido",
+          "familia": "eliq",
+          "produto": "PR051",
+          "valor": 60131318.71,
+          "rs": 0.15,
+          "outros_estados": 0.45,
+          "importado": 0.4,
+          "valor_rs": 9019697.81,
+          "valor_uf": 27059093.42,
+          "valor_imp": 24052527.48,
+          "regra": "15% RS. Abaixo do PR051 (químicos diversos, 40,3% local): aroma composto é especialidade, com peso de importação."
+        },
+        {
+          "linha": "Extração de nicotina além da folha",
+          "familia": "eliq",
+          "produto": "PR051",
+          "valor": 27066782.84,
+          "rs": 0.3,
+          "outros_estados": 0.5,
+          "importado": 0.2,
+          "valor_rs": 8120034.85,
+          "valor_uf": 13533391.42,
+          "valor_imp": 5413356.57,
+          "regra": "30% RS. Insumo de extração (solvente e processo), entre o PR047 e o PR051. A folha em si não está nesta linha."
+        },
+        {
+          "linha": "Embalagem do pod",
+          "familia": "eliq",
+          "produto": "PR036",
+          "valor": 54150893.97,
+          "rs": 0.4,
+          "outros_estados": 0.45,
+          "importado": 0.15,
+          "valor_rs": 21660357.59,
+          "valor_uf": 24367902.29,
+          "valor_imp": 8122634.1,
+          "regra": "40% RS. Perto da média MIP do papel e da embalagem (PR036, 39,7% local): caixa e rótulo podem ser impressos no estado."
+        },
+        {
+          "linha": "Químicos do stick",
+          "familia": "stick",
+          "produto": "PR051",
+          "valor": 46911407.76,
+          "rs": 0.25,
+          "outros_estados": 0.45,
+          "importado": 0.3,
+          "valor_rs": 11727851.94,
+          "valor_uf": 21110133.49,
+          "valor_imp": 14073422.33,
+          "regra": "25% RS. Entre a média do PR051 (40%) e um desconto de especialidade do stick (aroma e ligante)."
+        },
+        {
+          "linha": "Papel, filtro e embalagem do stick",
+          "familia": "stick",
+          "produto": "PR036",
+          "valor": 1117485775.5,
+          "rs": 0.25,
+          "outros_estados": 0.45,
+          "importado": 0.3,
+          "valor_rs": 279371443.88,
+          "valor_uf": 502868598.98,
+          "valor_imp": 335245732.65,
+          "regra": "25% RS. Abaixo do PR036 (39,7%): papel de cigarro e filtro de acetato são mais específicos que a média de papel e embalagem; parte do acetato é importada."
+        },
+        {
+          "linha": "Químicos do sachê",
+          "familia": "sach",
+          "produto": "PR051",
+          "valor": 17849146.8,
+          "rs": 0.15,
+          "outros_estados": 0.4,
+          "importado": 0.45,
+          "valor_rs": 2677372.02,
+          "valor_uf": 7139658.72,
+          "valor_imp": 8032116.06,
+          "regra": "15% RS. Sachê de exportação, insumo mais específico e mais importado que a média do PR051."
+        },
+        {
+          "linha": "Papel e embalagem do sachê",
+          "familia": "sach",
+          "produto": "PR036",
+          "valor": 14603847.38,
+          "rs": 0.3,
+          "outros_estados": 0.4,
+          "importado": 0.3,
+          "valor_rs": 4381154.22,
+          "valor_uf": 5841538.95,
+          "valor_imp": 4381154.22,
+          "regra": "30% RS. Entre o PR036 (39,7%) e um desconto de especificidade da lata e do papel do sachê."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "eliq",
+          "produto": "PR080",
+          "valor": 10657545.74,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 10657545.74,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "stick",
+          "produto": "PR080",
+          "valor": 28517197.87,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 28517197.87,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "sach",
+          "produto": "PR080",
+          "valor": 318963.633226,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 318963.633226,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Água",
+          "familia": "eliq",
+          "produto": "PR081",
+          "valor": 524572.706149,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 524572.706149,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Água",
+          "familia": "stick",
+          "produto": "PR081",
+          "valor": 1403638.7,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 1403638.7,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Água",
+          "familia": "sach",
+          "produto": "PR081",
+          "valor": 15699.63857,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 15699.63857,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "eliq",
+          "produto": "PR086",
+          "valor": 25000000.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 25000000.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "stick",
+          "produto": "PR086",
+          "valor": 25000000.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 25000000.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "sach",
+          "produto": "PR086",
+          "valor": 1500000.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 1500000.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "eliq",
+          "produto": "PR079",
+          "valor": 39312964.2,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 7862592.84,
+          "valor_uf": 11793889.26,
+          "valor_imp": 19656482.1,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "stick",
+          "produto": "PR079",
+          "valor": 77829729.01,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 15565945.8,
+          "valor_uf": 23348918.7,
+          "valor_imp": 38914864.5,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "sach",
+          "produto": "PR079",
+          "valor": 2188629.03,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 437725.806792,
+          "valor_uf": 656588.710188,
+          "valor_imp": 1094314.52,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        }
+      ],
+      "mwh": {
+        "eliq": 19366.2,
+        "stick": 51819.6,
+        "sach": 579.6
+      },
+      "m3": {
+        "eliq": 34951.38,
+        "stick": 93522.04,
+        "sach": 1046.04
+      },
+      "pods": 270598591.55,
+      "share_folha_interna": 0.835119,
+      "ajuste": "abertura estimada; conteúdo local implícito, não percentual único"
     },
     "por_produto_2025": {
-      "PR004": 52800000.0,
-      "PR066": 329494375.0,
-      "PR051": 534713839.29,
-      "PR036": 712951785.71
+      "PR066": 314735871.23,
+      "PR047": 8741340.55,
+      "PR051": 31544956.62,
+      "PR036": 305412955.68,
+      "PR080": 39493707.25,
+      "PR081": 1943911.05,
+      "PR086": 51500000.0,
+      "PR079": 23866264.45,
+      "PR004": 52800000.0
     },
     "cadeia": {
-      "producao_2025": 2597442393.77,
-      "va_2025": 938184167.15,
-      "rem_2025": 368577269.97,
-      "ocupacoes": 8321.94923
+      "producao_2025": 1296966148.72,
+      "va_2025": 498881989.23,
+      "rem_2025": 187146442.92,
+      "ocupacoes": 4554.975001
     },
     "induzido": {
-      "consumo_2025": 586546361.98,
-      "producao_2025": 876492230.07,
-      "va_2025": 455301268.06,
-      "rem_2025": 177302097.65,
-      "ocupacoes": 5159.744955,
+      "consumo_2025": 477687865.75,
+      "producao_2025": 713822009.43,
+      "va_2025": 370800852.43,
+      "rem_2025": 144396191.18,
+      "ocupacoes": 4202.135952,
       "k_realimentacao": 0.181369,
       "fator_serie_fechada": 1.221551,
-      "va_serie_fechada_2025": 556173908.73
+      "va_serie_fechada_2025": 452952306.36
     },
     "total_tipo_I": {
-      "va_2025": 8768184167.15,
-      "rem_2025": 977577269.97,
-      "ocupacoes": 12381.94923,
-      "producao_2025": 18427442393.77
+      "va_2025": 8328881989.23,
+      "rem_2025": 796146442.92,
+      "ocupacoes": 8614.975001,
+      "producao_2025": 17126966148.72
     },
     "total_tipo_II": {
-      "va_2025": 9223485435.21,
-      "rem_2025": 1154879367.62,
-      "ocupacoes": 17541.694185,
-      "producao_2025": 19303934623.84
+      "va_2025": 8699682841.67,
+      "rem_2025": 940542634.1,
+      "ocupacoes": 12817.110953,
+      "producao_2025": 17840788158.15
     },
     "fiscal": {
       "tributos_consumo_brasil": 13700000000.0,
@@ -97,6 +403,15 @@
       "irpj_csll": 1227570000.0,
       "incentivo": 0.0,
       "retorno_liquido": null,
+      "icms_rs_incentivavel": 480000000.0,
+      "icms_rs_municipal": 120000000.0,
+      "icms_rs_estadual": 360000000.0,
+      "consumo_federal_no_rs": 448000000.0,
+      "fundopem_percentual": 0.3,
+      "fundopem_prazo_meses": 96,
+      "fundopem_diferido_ano_cheio": 144000000.0,
+      "integrar_abatimento": 0.0,
+      "renuncia_permanente": 0.0,
       "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
     }
   },
@@ -127,7 +442,8 @@
         "compras_rs": 841380000.0,
         "vazamento": 7158620000.0,
         "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
-        "share_folha_interna": 0.835119
+        "share_folha_interna": 0.835119,
+        "linhas": []
       },
       "por_produto_2025": {
         "PR004": 52800000.0,
@@ -172,6 +488,15 @@
         "irpj_csll": 1227570000.0,
         "incentivo": 0.0,
         "retorno_liquido": null,
+        "icms_rs_incentivavel": 480000000.0,
+        "icms_rs_municipal": 120000000.0,
+        "icms_rs_estadual": 360000000.0,
+        "consumo_federal_no_rs": 448000000.0,
+        "fundopem_percentual": 0.3,
+        "fundopem_prazo_meses": 96,
+        "fundopem_diferido_ano_cheio": 144000000.0,
+        "integrar_abatimento": 0.0,
+        "renuncia_permanente": 0.0,
         "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
       }
     },
@@ -201,7 +526,8 @@
         "compras_rs": 1629960000.0,
         "vazamento": 6370040000.0,
         "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
-        "share_folha_interna": 0.835119
+        "share_folha_interna": 0.835119,
+        "linhas": []
       },
       "por_produto_2025": {
         "PR004": 52800000.0,
@@ -246,6 +572,15 @@
         "irpj_csll": 1227570000.0,
         "incentivo": 0.0,
         "retorno_liquido": null,
+        "icms_rs_incentivavel": 480000000.0,
+        "icms_rs_municipal": 120000000.0,
+        "icms_rs_estadual": 360000000.0,
+        "consumo_federal_no_rs": 448000000.0,
+        "fundopem_percentual": 0.3,
+        "fundopem_prazo_meses": 96,
+        "fundopem_diferido_ano_cheio": 144000000.0,
+        "integrar_abatimento": 0.0,
+        "renuncia_permanente": 0.0,
         "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
       }
     },
@@ -275,7 +610,8 @@
         "compras_rs": 2812830000.0,
         "vazamento": 5187170000.0,
         "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
-        "share_folha_interna": 0.835119
+        "share_folha_interna": 0.835119,
+        "linhas": []
       },
       "por_produto_2025": {
         "PR004": 52800000.0,
@@ -320,12 +656,21 @@
         "irpj_csll": 1227570000.0,
         "incentivo": 0.0,
         "retorno_liquido": null,
+        "icms_rs_incentivavel": 480000000.0,
+        "icms_rs_municipal": 120000000.0,
+        "icms_rs_estadual": 360000000.0,
+        "consumo_federal_no_rs": 448000000.0,
+        "fundopem_percentual": 0.3,
+        "fundopem_prazo_meses": 96,
+        "fundopem_diferido_ano_cheio": 144000000.0,
+        "integrar_abatimento": 0.0,
+        "renuncia_permanente": 0.0,
         "nota_irpj": "hipótese da revisão 4, R$ 1,23 bi no ano cheio com exportação."
       }
     }
   },
   "sem_exportacao": {
-    "alpha": 0.2,
+    "alpha": 0.107547,
     "com_exportacao": false,
     "direto": {
       "vbp": 12560000000.0,
@@ -336,55 +681,360 @@
     },
     "compras": {
       "com_exportacao": false,
-      "alpha": 0.2,
+      "fator_ancora_nao_folha": 1.000576,
       "bom": 5810000000.0,
       "folha_total": 95370603.81,
       "folha_rs": 44094289.68,
+      "folha_outras_uf": 51276314.13,
       "toneladas_rs": 2464.763192,
       "nao_folha": 5714629396.19,
-      "alvo_rs_nao_folha": 1142925879.24,
-      "dispositivo_nacional": 2270231250.0,
-      "rs_dispositivo": 227023125.0,
-      "rs_quimicos": 392529751.82,
-      "rs_papel": 523373002.42,
-      "compras_rs": 1187020168.91,
-      "vazamento": 4622979831.09,
-      "ajuste": "residual do bolo repartido 30/70 químicos e 40/70 papel",
-      "share_folha_interna": 0.835119
+      "alpha": 0.107547,
+      "rs_nao_folha": 614590380.28,
+      "rs_total": 658684669.96,
+      "compras_rs": 658684669.96,
+      "vazamento": 5151315330.04,
+      "importado_nao_folha": 4089930928.54,
+      "outros_estados_nao_folha": 1010108087.37,
+      "linhas": [
+        {
+          "linha": "Dispositivo e eletrônico do pod",
+          "familia": "eliq",
+          "produto": "PR066",
+          "valor": 4336737118.15,
+          "rs": 0.05,
+          "outros_estados": 0.1,
+          "importado": 0.85,
+          "valor_rs": 216836855.91,
+          "valor_uf": 433673711.81,
+          "valor_imp": 3686226550.43,
+          "regra": "5% RS. Teto MIP PR066 no consumo intermediário: 8,2% local. Pod específico, desconto de especificidade; 85% importado."
+        },
+        {
+          "linha": "Glicerina vegetal do e-líquido",
+          "familia": "eliq",
+          "produto": "PR047",
+          "valor": 12905003.22,
+          "rs": 0.35,
+          "outros_estados": 0.5,
+          "importado": 0.15,
+          "valor_rs": 4516751.13,
+          "valor_uf": 6452501.61,
+          "valor_imp": 1935750.48,
+          "regra": "35% RS. Piso abaixo da média MIP de químicos orgânicos (PR047, 65% local): glicerina de biodiesel tem oferta gaúcha, sem ser a média do produto."
+        },
+        {
+          "linha": "Propilenoglicol do e-líquido",
+          "familia": "eliq",
+          "produto": "PR047",
+          "valor": 15055837.09,
+          "rs": 0.1,
+          "outros_estados": 0.7,
+          "importado": 0.2,
+          "valor_rs": 1505583.71,
+          "valor_uf": 10539085.96,
+          "valor_imp": 3011167.42,
+          "regra": "10% RS. Químico orgânico mais específico que a média do PR047; oferta petroquímica concentrada em outros estados."
+        },
+        {
+          "linha": "Aroma do e-líquido",
+          "familia": "eliq",
+          "produto": "PR051",
+          "valor": 41427391.29,
+          "rs": 0.15,
+          "outros_estados": 0.45,
+          "importado": 0.4,
+          "valor_rs": 6214108.69,
+          "valor_uf": 18642326.08,
+          "valor_imp": 16570956.52,
+          "regra": "15% RS. Abaixo do PR051 (químicos diversos, 40,3% local): aroma composto é especialidade, com peso de importação."
+        },
+        {
+          "linha": "Extração de nicotina além da folha",
+          "familia": "eliq",
+          "produto": "PR051",
+          "valor": 18647623.7,
+          "rs": 0.3,
+          "outros_estados": 0.5,
+          "importado": 0.2,
+          "valor_rs": 5594287.11,
+          "valor_uf": 9323811.85,
+          "valor_imp": 3729524.74,
+          "regra": "30% RS. Insumo de extração (solvente e processo), entre o PR047 e o PR051. A folha em si não está nesta linha."
+        },
+        {
+          "linha": "Embalagem do pod",
+          "familia": "eliq",
+          "produto": "PR036",
+          "valor": 37307185.7,
+          "rs": 0.4,
+          "outros_estados": 0.45,
+          "importado": 0.15,
+          "valor_rs": 14922874.28,
+          "valor_uf": 16788233.56,
+          "valor_imp": 5596077.85,
+          "regra": "40% RS. Perto da média MIP do papel e da embalagem (PR036, 39,7% local): caixa e rótulo podem ser impressos no estado."
+        },
+        {
+          "linha": "Químicos do stick",
+          "familia": "stick",
+          "produto": "PR051",
+          "valor": 43417475.65,
+          "rs": 0.25,
+          "outros_estados": 0.45,
+          "importado": 0.3,
+          "valor_rs": 10854368.91,
+          "valor_uf": 19537864.04,
+          "valor_imp": 13025242.69,
+          "regra": "25% RS. Entre a média do PR051 (40%) e um desconto de especialidade do stick (aroma e ligante)."
+        },
+        {
+          "linha": "Papel, filtro e embalagem do stick",
+          "familia": "stick",
+          "produto": "PR036",
+          "valor": 1034256138.54,
+          "rs": 0.25,
+          "outros_estados": 0.45,
+          "importado": 0.3,
+          "valor_rs": 258564034.63,
+          "valor_uf": 465415262.34,
+          "valor_imp": 310276841.56,
+          "regra": "25% RS. Abaixo do PR036 (39,7%): papel de cigarro e filtro de acetato são mais específicos que a média de papel e embalagem; parte do acetato é importada."
+        },
+        {
+          "linha": "Químicos do sachê",
+          "familia": "sach",
+          "produto": "PR051",
+          "valor": 0.0,
+          "rs": 0.15,
+          "outros_estados": 0.4,
+          "importado": 0.45,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "15% RS. Sachê de exportação, insumo mais específico e mais importado que a média do PR051."
+        },
+        {
+          "linha": "Papel e embalagem do sachê",
+          "familia": "sach",
+          "produto": "PR036",
+          "valor": 0.0,
+          "rs": 0.3,
+          "outros_estados": 0.4,
+          "importado": 0.3,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "30% RS. Entre o PR036 (39,7%) e um desconto de especificidade da lata e do papel do sachê."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "eliq",
+          "produto": "PR080",
+          "valor": 7342501.83,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 7342501.83,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "stick",
+          "produto": "PR080",
+          "valor": 26393254.93,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 26393254.93,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Energia elétrica e combustível",
+          "familia": "sach",
+          "produto": "PR080",
+          "valor": 0.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+        },
+        {
+          "linha": "Água",
+          "familia": "eliq",
+          "produto": "PR081",
+          "valor": 361403.661595,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 361403.661595,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Água",
+          "familia": "stick",
+          "produto": "PR081",
+          "valor": 1299096.57,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 1299096.57,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Água",
+          "familia": "sach",
+          "produto": "PR081",
+          "valor": 0.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "eliq",
+          "produto": "PR086",
+          "valor": 17223716.43,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 17223716.43,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "stick",
+          "produto": "PR086",
+          "valor": 23138015.74,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 23138015.74,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Frete interno",
+          "familia": "sach",
+          "produto": "PR086",
+          "valor": 0.0,
+          "rs": 1.0,
+          "outros_estados": 0.0,
+          "importado": 0.0,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "eliq",
+          "produto": "PR079",
+          "valor": 27084613.9,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 5416922.78,
+          "valor_uf": 8125384.17,
+          "valor_imp": 13542306.95,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "stick",
+          "produto": "PR079",
+          "valor": 72033019.79,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 14406603.96,
+          "valor_uf": 21609905.94,
+          "valor_imp": 36016509.9,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        },
+        {
+          "linha": "Manutenção",
+          "familia": "sach",
+          "produto": "PR079",
+          "valor": 0.0,
+          "rs": 0.2,
+          "outros_estados": 0.3,
+          "importado": 0.5,
+          "valor_rs": 0.0,
+          "valor_uf": 0.0,
+          "valor_imp": 0.0,
+          "regra": "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+        }
+      ],
+      "mwh": {
+        "eliq": 13343.4,
+        "stick": 47964.0,
+        "sach": 0.0
+      },
+      "m3": {
+        "eliq": 24081.66,
+        "stick": 86563.6,
+        "sach": 0.0
+      },
+      "pods": 186443661.97,
+      "share_folha_interna": 0.835119,
+      "ajuste": "abertura estimada; conteúdo local implícito, não percentual único"
     },
     "por_produto_2025": {
-      "PR004": 44094289.68,
-      "PR066": 227023125.0,
-      "PR051": 392529751.82,
-      "PR036": 523373002.42
+      "PR066": 216836855.91,
+      "PR047": 6022334.84,
+      "PR051": 22662764.71,
+      "PR036": 273486908.91,
+      "PR080": 33735756.76,
+      "PR081": 1660500.24,
+      "PR086": 40361732.17,
+      "PR079": 19823526.74,
+      "PR004": 44094289.68
     },
     "cadeia": {
-      "producao_2025": 1891117333.8,
-      "va_2025": 685067387.16,
-      "rem_2025": 267910466.31,
-      "ocupacoes": 6126.759365
+      "producao_2025": 1027350560.5,
+      "va_2025": 402939958.94,
+      "rem_2025": 147782714.97,
+      "ocupacoes": 3632.465744
     },
     "induzido": {
-      "consumo_2025": 436146279.79,
-      "producao_2025": 651745284.24,
-      "va_2025": 338554574.91,
-      "rem_2025": 131838939.43,
-      "ocupacoes": 3836.701943,
+      "consumo_2025": 364069628.98,
+      "producao_2025": 544039178.64,
+      "va_2025": 282605731.59,
+      "rem_2025": 110051503.33,
+      "ocupacoes": 3202.656351,
       "k_realimentacao": 0.181369,
       "fator_serie_fechada": 1.221551,
-      "va_serie_fechada_2025": 413561820.39
+      "va_serie_fechada_2025": 345217431.6
     },
     "total_tipo_I": {
-      "va_2025": 7435067387.16,
-      "rem_2025": 726910466.31,
-      "ocupacoes": 9186.759365,
-      "producao_2025": 14451117333.8
+      "va_2025": 7152939958.94,
+      "rem_2025": 606782714.97,
+      "ocupacoes": 6692.465744,
+      "producao_2025": 13587350560.5
     },
     "total_tipo_II": {
-      "va_2025": 7773621962.07,
-      "rem_2025": 858749405.74,
-      "ocupacoes": 13023.461308,
-      "producao_2025": 15102862618.03
+      "va_2025": 7435545690.53,
+      "rem_2025": 716834218.3,
+      "ocupacoes": 9895.122095,
+      "producao_2025": 14131389739.14
     },
     "fiscal": {
       "tributos_consumo_brasil": 13700000000.0,
@@ -395,8 +1045,182 @@
       "irpj_csll": 1069470000.0,
       "incentivo": 0.0,
       "retorno_liquido": null,
+      "icms_rs_incentivavel": 480000000.0,
+      "icms_rs_municipal": 120000000.0,
+      "icms_rs_estadual": 360000000.0,
+      "consumo_federal_no_rs": 448000000.0,
+      "fundopem_percentual": 0.3,
+      "fundopem_prazo_meses": 96,
+      "fundopem_diferido_ano_cheio": 144000000.0,
+      "integrar_abatimento": 0.0,
+      "renuncia_permanente": 0.0,
       "nota_irpj": "mesma regra da revisão 4: 34% sobre lucro fiscal = 50% do excedente (VAB − remunerações). No cenário sem exportação, a regra é reaplicada ao VAB e à remuneração internos."
     }
+  },
+  "obra_2026_2027": {
+    "capex_total": 1634714532.58,
+    "capex_rs": 483875501.65,
+    "capex_importado": 1150839030.94,
+    "partes": {
+      "maquinas_importadas": 1013523010.2,
+      "obras_civis_utilidades_rs": 294248615.87,
+      "montagem_rs": 137316020.74,
+      "montagem_importada": 58849723.17,
+      "engenharia_rs": 52310865.04,
+      "engenharia_importada": 78466297.56
+    },
+    "capital_giro_fora_do_choque": 986301369.86,
+    "piso_observado_fabrica": 100000000.0,
+    "iss_santa_cruz": 4838755.02,
+    "producao_2025": 740356286.67,
+    "va_2025": 341755847.54,
+    "rem_2025": 125478246.33,
+    "ocupacoes_leontief": 4356.901637,
+    "postos_temporarios_construcao": 2639.483276,
+    "usd_ptax_2025": 5.585524,
+    "eur_ptax_2025": 6.308451
+  },
+  "folha_municipal": {
+    "ano": 2025,
+    "total_pam_rs_t": 349928.0,
+    "folha_bruta_rs_t": 3009.3808,
+    "fator_fecha_3007": 0.999209,
+    "residuo_t": 2.3808
+  },
+  "residencia": {
+    "fator_destino": 0.5,
+    "fonte": "Censo 2010, tabela de deslocamento para o trabalho reproduzida em Revista Jovens Pesquisadores, UNISC, 2015; fator de destino 0,5 é o ponto médio",
+    "linhas": [
+      {
+        "municipio": "Santa Cruz do Sul",
+        "peso": 0.91829,
+        "ocupacoes": 3728.259257,
+        "remuneracoes": 559238888.56
+      },
+      {
+        "municipio": "Vera Cruz",
+        "peso": 0.022017,
+        "ocupacoes": 89.388356,
+        "remuneracoes": 13408253.37,
+        "outflow_2010": 2992
+      },
+      {
+        "municipio": "Venâncio Aires",
+        "peso": 0.016034,
+        "ocupacoes": 65.099341,
+        "remuneracoes": 9764901.1,
+        "outflow_2010": 2179
+      },
+      {
+        "municipio": "Rio Pardo",
+        "peso": 0.021016,
+        "ocupacoes": 85.325249,
+        "remuneracoes": 12798787.31,
+        "outflow_2010": 2856
+      },
+      {
+        "municipio": "Candelária",
+        "peso": 0.008617,
+        "ocupacoes": 34.984547,
+        "remuneracoes": 5247682.05,
+        "outflow_2010": 1171
+      },
+      {
+        "municipio": "Mato Leitão",
+        "peso": 0.002951,
+        "ocupacoes": 11.980191,
+        "remuneracoes": 1797028.61,
+        "outflow_2010": 401
+      },
+      {
+        "municipio": "Sinimbu",
+        "peso": 0.003356,
+        "ocupacoes": 13.623359,
+        "remuneracoes": 2043503.86,
+        "outflow_2010": 456
+      },
+      {
+        "municipio": "Vale do Sol",
+        "peso": 0.002472,
+        "ocupacoes": 10.038265,
+        "remuneracoes": 1505739.68,
+        "outflow_2010": 336
+      },
+      {
+        "municipio": "Passo do Sobrado",
+        "peso": 0.001759,
+        "ocupacoes": 7.140313,
+        "remuneracoes": 1071046.98,
+        "outflow_2010": 239
+      },
+      {
+        "municipio": "Herveiras",
+        "peso": 0.000125,
+        "ocupacoes": 0.507888,
+        "remuneracoes": 76183.257785,
+        "outflow_2010": 17
+      },
+      {
+        "municipio": "Boqueirão do Leão",
+        "peso": 0.000162,
+        "ocupacoes": 0.657267,
+        "remuneracoes": 98590.09831,
+        "outflow_2010": 22
+      },
+      {
+        "municipio": "General Câmara",
+        "peso": 0.003201,
+        "ocupacoes": 12.995968,
+        "remuneracoes": 1949395.13,
+        "outflow_2010": 435
+      }
+    ]
+  },
+  "leitura_salarial": {
+    "premissa_com_encargos": 150000.0,
+    "cempre_2021_scs_divisao_12_anual": 107812.5,
+    "cempre_2021_pessoas": 3136,
+    "cempre_2025": 130418.625225,
+    "pia_2023_rs_anual": 118845.579886,
+    "pia_2023_pessoas": 6165,
+    "pia_2025": 129900.07679,
+    "encargos_patronais": 0.368,
+    "cempre_2025_com_encargos": 178412.679308,
+    "pia_2025_com_encargos": 177703.305048,
+    "quadro": [
+      {
+        "funcao": "Produção e operação",
+        "parcela": 0.55,
+        "salario_mensal": 8000,
+        "ocupacoes": 2233.0
+      },
+      {
+        "funcao": "Manutenção",
+        "parcela": 0.15,
+        "salario_mensal": 11500,
+        "ocupacoes": 609.0
+      },
+      {
+        "funcao": "Administração e suporte",
+        "parcela": 0.15,
+        "salario_mensal": 13000,
+        "ocupacoes": 609.0
+      },
+      {
+        "funcao": "Técnicos de processo e qualidade",
+        "parcela": 0.08,
+        "salario_mensal": 15000,
+        "ocupacoes": 324.8
+      },
+      {
+        "funcao": "Técnico de campo",
+        "parcela": 0.07,
+        "salario_mensal": 9500,
+        "ocupacoes": 284.2
+      }
+    ],
+    "media_mensal_quadro": 9940.0,
+    "anual_13_quadro": 129220.0
   },
   "bloco_II_contratante": {
     "vab_rs_bi": 8.85,

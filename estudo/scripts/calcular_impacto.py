@@ -11,7 +11,8 @@ Três gavetas, nesta ordem:
   3. Vazamento para fora do RS, registrado e não multiplicado.
 
 A receita ex-fábrica não é o choque. A atividade "fabricação de produtos do fumo"
-não recebe a receita. Obra e CAPEX ficam fora.
+não recebe a receita. O cenário base usa a abertura estimada do BOM. A obra
+entra em bloco separado (2026–2027) e não se soma ao fluxo de 2037.
 """
 
 from __future__ import annotations
@@ -386,8 +387,307 @@ def valor_folha(ml_eliq, n_stick, n_sach) -> float:
     return t_eliq * PRECO_LEAF_NIC + t_stick * PRECO_LEAF_REC + t_sach * PRECO_LEAF_NIC
 
 
+def _folha_partes():
+    folha_int = valor_folha(ELIQ_INT_ML, STICK_INT, 0.0)
+    folha_exp = valor_folha(ELIQ_EXP_ML, STICK_EXP, SACH_EXP)
+    share_int = folha_int / (folha_int + folha_exp)
+    ton_int = toneladas_folha(ELIQ_INT_ML, STICK_INT, 0.0)
+    ton_exp = toneladas_folha(ELIQ_EXP_ML, STICK_EXP, SACH_EXP)
+    share_ton_int = ton_int / (ton_int + ton_exp)
+    return share_int, share_ton_int
+
+
+def abertura_bom(com_exportacao: bool) -> dict:
+    """Abertura estimada do BOM de 2037, em R$ de 2025.
+
+    A âncora é a do arquivo: insumos R$ 8,00 bi, dos quais folha R$ 114,2 mi.
+    As linhas físicas (gramas, kWh, preços) são estimativa com fonte na ficha
+    de cada linha. Um fator único, da ordem de 1,0006, ajusta a soma das linhas
+    de insumo que não são folha à âncora. Não é uma casa decimal inventada:
+    é a diferença entre volume × custo unitário e o agregado arredondado.
+    """
+    share_int, share_ton_int = _folha_partes()
+    familias = {
+        "eliq": {
+            "vol": (ELIQ_INT_ML + ELIQ_EXP_ML) if com_exportacao else ELIQ_INT_ML,
+            "vol_cheio": ELIQ_INT_ML + ELIQ_EXP_ML,
+            "bom_u": BOM_ELIQ,
+            "folha_g": LEAF_G_ELIQ,
+            "preco_folha": PRECO_LEAF_NIC,
+        },
+        "stick": {
+            "vol": (STICK_INT + STICK_EXP) if com_exportacao else STICK_INT,
+            "vol_cheio": STICK_INT + STICK_EXP,
+            "bom_u": BOM_STICK,
+            "folha_g": LEAF_G_STICK,
+            "preco_folha": PRECO_LEAF_REC,
+        },
+        "sach": {
+            "vol": SACH_EXP if com_exportacao else 0.0,
+            "vol_cheio": SACH_EXP,
+            "bom_u": BOM_SACH,
+            "folha_g": LEAF_G_SACH,
+            "preco_folha": PRECO_LEAF_NIC,
+        },
+    }
+    # Não folha de ano cheio, antes do corte de exportação, para o fator de âncora.
+    nf_cheio = 0.0
+    for f in familias.values():
+        bom = f["vol_cheio"] * f["bom_u"]
+        folha = f["vol_cheio"] * f["folha_g"] / 1e6 * f["preco_folha"]
+        nf_cheio += bom - folha
+    nf_ancora = BOM - LEAF_TOTAL
+    fator = nf_ancora / nf_cheio
+
+    ml = familias["eliq"]["vol"]
+    st = familias["stick"]["vol"]
+    sa = familias["sach"]["vol"]
+    # Participação do ano cheio que permanece neste cenário (1 no ano cheio).
+    w = {k: (familias[k]["vol"] / familias[k]["vol_cheio"] if familias[k]["vol_cheio"] else 0.0) for k in familias}
+
+    def linha(nome, valor_cheio, rs, uf, imp, produto, familia, regra):
+        valor = valor_cheio * w[familia] * fator
+        return {
+            "linha": nome,
+            "familia": familia,
+            "produto": produto,
+            "valor": valor,
+            "rs": rs,
+            "outros_estados": uf,
+            "importado": imp,
+            "valor_rs": valor * rs,
+            "valor_uf": valor * uf,
+            "valor_imp": valor * imp,
+            "regra": regra,
+        }
+
+    # Preços e intensidades: ver ficha no relatório. Valores de ano cheio, em R$.
+    vg = (ELIQ_INT_ML + ELIQ_EXP_ML) * 0.5075 / 1000 * 12.0
+    pg = (ELIQ_INT_ML + ELIQ_EXP_ML) * 0.5075 / 1000 * 14.0
+    aroma_e = (ELIQ_INT_ML + ELIQ_EXP_ML) * 0.115 / 1000 * 170.0
+    nic = (ELIQ_INT_ML + ELIQ_EXP_ML) * 0.020 / 1000 * 440.0
+    pods = (ELIQ_INT_ML + ELIQ_EXP_ML) / 11.36
+    emb_e = pods * 0.20
+    gli = (STICK_INT + STICK_EXP) * 5e-5 * 12.0
+    lig = (STICK_INT + STICK_EXP) * 1e-5 * 20.0
+    aroma_s = (STICK_INT + STICK_EXP) * 0.003
+    # Energia: 7,56 GJ por milhão de cigarros-equivalentes (PMI, 2022),
+    # ponto médio do intervalo 1–3× nos sticks e sachês e 1–5× no e-líquido.
+    # Tarifa industrial: ponto médio R$ 550/MWh de um intervalo R$ 400–700.
+    def energia(unidades, mult):
+        mwh = unidades / 1e6 * 7.56 * mult / 3.6
+        return mwh * 550.0, mwh
+
+    en_e, mwh_e = energia(ELIQ_INT_ML + ELIQ_EXP_ML, 3.0)
+    en_s, mwh_s = energia(STICK_INT + STICK_EXP, 2.0)
+    en_a, mwh_a = energia(SACH_EXP, 2.0)
+
+    def agua(unidades, mult):
+        m3 = unidades / 1e6 * 3.79 * mult
+        return m3 * 15.0, m3
+
+    ag_e, m3_e = agua(ELIQ_INT_ML + ELIQ_EXP_ML, 3.0)
+    ag_s, m3_s = agua(STICK_INT + STICK_EXP, 2.0)
+    ag_a, m3_a = agua(SACH_EXP, 2.0)
+
+    # Não folha de ano cheio por família, já na âncora, para a manutenção em %.
+    def nf_familia(cod_vol, bom_u, folha_g, preco):
+        return (cod_vol * bom_u - cod_vol * folha_g / 1e6 * preco) * fator
+
+    nf_e = nf_familia(ELIQ_INT_ML + ELIQ_EXP_ML, BOM_ELIQ, LEAF_G_ELIQ, PRECO_LEAF_NIC)
+    nf_s = nf_familia(STICK_INT + STICK_EXP, BOM_STICK, LEAF_G_STICK, PRECO_LEAF_REC)
+    nf_a = nf_familia(SACH_EXP, BOM_SACH, LEAF_G_SACH, PRECO_LEAF_NIC)
+    mt_e, mt_s, mt_a = 0.006 * nf_e, 0.06 * nf_s, 0.06 * nf_a
+    fr_e, fr_s, fr_a = 25e6, 25e6, 1.5e6
+
+    fixos_e = (vg + pg + aroma_e + nic + emb_e + en_e + ag_e + mt_e + fr_e) * fator
+    # O fator já está nas linhas via `linha`. Os fixos acima estão em ano cheio
+    # SEM o fator; `linha` aplica fator e peso. O dispositivo é o residual da
+    # âncora de não folha do e-líquido.
+    dev = nf_e / fator - (vg + pg + aroma_e + nic + emb_e + en_e + ag_e + mt_e / fator + fr_e)
+    # Manutenção foi definida já com o fator (0,6% do não folha ancorado).
+    # Energia, água, químicos e frete são físicos, sem o fator. Para o residual
+    # fechar a âncora, a manutenção entra sem duplo fator.
+    dev = nf_e - (vg + pg + aroma_e + nic + emb_e + en_e + ag_e + fr_e) * fator - mt_e
+    paper = nf_s - (gli + lig + aroma_s + en_s + ag_s + fr_s) * fator - mt_s
+    resto_a = nf_a - (en_a + ag_a + fr_a) * fator - mt_a
+    chem_a = 0.55 * resto_a
+    emb_a = 0.45 * resto_a
+
+    # `linha` multiplica de novo por fator e pelo peso. As grandezas `dev` e
+    # `paper` já estão ancoradas. Por isso entram com familia e com um caminho
+    # que não reaplicaria o fator. Abaixo as linhas são gravadas já no cenário.
+    def L(nome, valor_ancorado_cheio, rs, uf, imp, produto, familia, regra):
+        valor = valor_ancorado_cheio * w[familia]
+        return {
+            "linha": nome,
+            "familia": familia,
+            "produto": produto,
+            "valor": valor,
+            "rs": rs,
+            "outros_estados": uf,
+            "importado": imp,
+            "valor_rs": valor * rs,
+            "valor_uf": valor * uf,
+            "valor_imp": valor * imp,
+            "regra": regra,
+        }
+
+    # Recalcula device/paper/chem no espaço ancorado de ano cheio (fator uma vez).
+    dev = nf_e - fator * (vg + pg + aroma_e + nic + emb_e + en_e + ag_e + fr_e) - mt_e
+    paper = nf_s - fator * (gli + lig + aroma_s + en_s + ag_s + fr_s) - mt_s
+    resto_a = nf_a - fator * (en_a + ag_a + fr_a) - mt_a
+    chem_a = 0.55 * resto_a
+    emb_a = resto_a - chem_a
+
+    r_disp = "5% RS. Teto MIP PR066 no consumo intermediário: 8,2% local. Pod específico, desconto de especificidade; 85% importado."
+    r_vg = "35% RS. Piso abaixo da média MIP de químicos orgânicos (PR047, 65% local): glicerina de biodiesel tem oferta gaúcha, sem ser a média do produto."
+    r_pg = "10% RS. Químico orgânico mais específico que a média do PR047; oferta petroquímica concentrada em outros estados."
+    r_ar = "15% RS. Abaixo do PR051 (químicos diversos, 40,3% local): aroma composto é especialidade, com peso de importação."
+    r_nic = "30% RS. Insumo de extração (solvente e processo), entre o PR047 e o PR051. A folha em si não está nesta linha."
+    r_emb_e = "40% RS. Perto da média MIP do papel e da embalagem (PR036, 39,7% local): caixa e rótulo podem ser impressos no estado."
+    r_quim_s = "25% RS. Entre a média do PR051 (40%) e um desconto de especialidade do stick (aroma e ligante)."
+    r_pap = "25% RS. Abaixo do PR036 (39,7%): papel de cigarro e filtro de acetato são mais específicos que a média de papel e embalagem; parte do acetato é importada."
+    r_quim_a = "15% RS. Sachê de exportação, insumo mais específico e mais importado que a média do PR051."
+    r_emb_a = "30% RS. Entre o PR036 (39,7%) e um desconto de especificidade da lata e do papel do sachê."
+    r_en = "100% RS. Energia faturada no estado entra local; o vazamento da geração já está na matriz. MIP PR080: 66% da oferta média é gaúcha — não se usa esse percentual para descontar a fatura."
+    r_ag = "100% RS. Água, esgoto e resíduo (PR081) são locais na MIP (99,9%)."
+    r_fr = "100% RS. Frete interno até a planta. MIP do transporte de carga (PR086): 99,2% local."
+    r_mt = "20% RS. MIP da manutenção (PR079): 30,2% local e 5% importado. Peça de máquina da PMI é mais importada que a média; desconto para 20% RS e 50% importado."
+
+    linhas = [
+        L("Dispositivo e eletrônico do pod", dev, 0.05, 0.10, 0.85, "PR066", "eliq", r_disp),
+        L("Glicerina vegetal do e-líquido", fator * vg, 0.35, 0.50, 0.15, "PR047", "eliq", r_vg),
+        L("Propilenoglicol do e-líquido", fator * pg, 0.10, 0.70, 0.20, "PR047", "eliq", r_pg),
+        L("Aroma do e-líquido", fator * aroma_e, 0.15, 0.45, 0.40, "PR051", "eliq", r_ar),
+        L("Extração de nicotina além da folha", fator * nic, 0.30, 0.50, 0.20, "PR051", "eliq", r_nic),
+        L("Embalagem do pod", fator * emb_e, 0.40, 0.45, 0.15, "PR036", "eliq", r_emb_e),
+        L("Químicos do stick", fator * (gli + lig + aroma_s), 0.25, 0.45, 0.30, "PR051", "stick", r_quim_s),
+        L("Papel, filtro e embalagem do stick", paper, 0.25, 0.45, 0.30, "PR036", "stick", r_pap),
+        L("Químicos do sachê", chem_a, 0.15, 0.40, 0.45, "PR051", "sach", r_quim_a),
+        L("Papel e embalagem do sachê", emb_a, 0.30, 0.40, 0.30, "PR036", "sach", r_emb_a),
+        L("Energia elétrica e combustível", fator * en_e, 1.0, 0.0, 0.0, "PR080", "eliq", r_en),
+        L("Energia elétrica e combustível", fator * en_s, 1.0, 0.0, 0.0, "PR080", "stick", r_en),
+        L("Energia elétrica e combustível", fator * en_a, 1.0, 0.0, 0.0, "PR080", "sach", r_en),
+        L("Água", fator * ag_e, 1.0, 0.0, 0.0, "PR081", "eliq", r_ag),
+        L("Água", fator * ag_s, 1.0, 0.0, 0.0, "PR081", "stick", r_ag),
+        L("Água", fator * ag_a, 1.0, 0.0, 0.0, "PR081", "sach", r_ag),
+        L("Frete interno", fr_e, 1.0, 0.0, 0.0, "PR086", "eliq", r_fr),
+        L("Frete interno", fr_s, 1.0, 0.0, 0.0, "PR086", "stick", r_fr),
+        L("Frete interno", fr_a, 1.0, 0.0, 0.0, "PR086", "sach", r_fr),
+        L("Manutenção", mt_e, 0.20, 0.30, 0.50, "PR079", "eliq", r_mt),
+        L("Manutenção", mt_s, 0.20, 0.30, 0.50, "PR079", "stick", r_mt),
+        L("Manutenção", mt_a, 0.20, 0.30, 0.50, "PR079", "sach", r_mt),
+    ]
+    # Frete e manutenção de ano cheio não levam o fator de âncora no valor físico;
+    # o residual do dispositivo e do papel absorve o fator. Conferência abaixo.
+    if com_exportacao:
+        folha_total = LEAF_TOTAL
+        folha_rs = LEAF_RS
+        toneladas_rs = LEAF_TON_RS
+        bom = BOM
+    else:
+        folha_total = LEAF_TOTAL * share_int
+        folha_rs = LEAF_RS * share_int
+        toneladas_rs = LEAF_TON_RS * share_ton_int
+        bom = BOM_INT
+        alvo_nf = bom - folha_total
+        soma_nf = sum(x["valor"] for x in linhas)
+        if soma_nf > 0:
+            aj = alvo_nf / soma_nf
+            for x in linhas:
+                x["valor"] *= aj
+                x["valor_rs"] *= aj
+                x["valor_uf"] *= aj
+                x["valor_imp"] *= aj
+
+    por_produto = {}
+    for x in linhas:
+        por_produto[x["produto"]] = por_produto.get(x["produto"], 0.0) + x["valor_rs"]
+    por_produto["PR004"] = por_produto.get("PR004", 0.0) + folha_rs
+    nao_folha = sum(x["valor"] for x in linhas)
+    rs_nao = sum(x["valor_rs"] for x in linhas)
+    return {
+        "com_exportacao": com_exportacao,
+        "fator_ancora_nao_folha": fator,
+        "bom": bom,
+        "folha_total": folha_total,
+        "folha_rs": folha_rs,
+        "folha_outras_uf": folha_total - folha_rs,
+        "toneladas_rs": toneladas_rs,
+        "nao_folha": nao_folha,
+        "alpha": (rs_nao / nao_folha) if nao_folha else 0.0,
+        "rs_nao_folha": rs_nao,
+        "rs_total": rs_nao + folha_rs,
+        "compras_rs": rs_nao + folha_rs,
+        "vazamento": bom - (rs_nao + folha_rs),
+        "importado_nao_folha": sum(x["valor_imp"] for x in linhas),
+        "outros_estados_nao_folha": sum(x["valor_uf"] for x in linhas),
+        "linhas": linhas,
+        "por_produto": por_produto,
+        "mwh": {"eliq": mwh_e * w["eliq"], "stick": mwh_s * w["stick"], "sach": mwh_a * w["sach"]},
+        "m3": {"eliq": m3_e * w["eliq"], "stick": m3_s * w["stick"], "sach": m3_a * w["sach"]},
+        "pods": pods * w["eliq"],
+        "share_folha_interna": share_int,
+        "ajuste": "abertura estimada; conteúdo local implícito, não percentual único",
+    }
+
+
+def capex_conversao() -> dict:
+    """CAPEX de conversão calibrado por anúncio, não o número de uma planta alheia.
+
+    Sticks: Papastratos (Grécia, 2017), €300 mi para converter fábrica existente
+    e chegar a cerca de 20 bi de sticks. Escala pelo volume de 2037 e desconto
+    de 15% porque o galpão e o terreno em Santa Cruz já existem.
+    E-líquido: ponto médio de US$ 50–150 mi para linhas de envase e montagem
+    de 271 mi de pods. Sachê: ponto médio de US$ 8–25 mi.
+    Câmbio: média da PTAX venda de 2025 (BCB), USD 5,5855 e EUR 6,3085.
+    """
+    usd, eur = 5.585524, 6.308451
+    stick = 300e6 * ((STICK_INT + STICK_EXP) / 20e9) * 0.85 * eur
+    eliq = 100e6 * usd
+    sach = 15e6 * usd
+    total = stick + eliq + sach
+    # Composição da conversão com terreno e galpão já existentes.
+    partes = {
+        "maquinas_importadas": 0.62,
+        "obras_civis_utilidades_rs": 0.18,
+        "montagem_rs": 0.084,
+        "montagem_importada": 0.036,
+        "engenharia_rs": 0.032,
+        "engenharia_importada": 0.048,
+    }
+    valores = {k: total * p for k, p in partes.items()}
+    rs = valores["obras_civis_utilidades_rs"] + valores["montagem_rs"] + valores["engenharia_rs"]
+    imp = total - rs
+    por_produto = {
+        "PR082": valores["obras_civis_utilidades_rs"],
+        "PR079": valores["montagem_rs"],
+        "PR102": valores["engenharia_rs"],
+    }
+    giro = BOM * 45.0 / 365.0
+    return {
+        "total": total,
+        "sticks": stick,
+        "eliq": eliq,
+        "sach": sach,
+        "usd": usd,
+        "eur": eur,
+        "partes": valores,
+        "rs": rs,
+        "importado": imp,
+        "por_produto_rs": por_produto,
+        "capital_giro": giro,
+        "piso_observado": 100e6,
+        "iss_base_servicos": 0.50 * rs,
+        "iss_aliquota": 0.02,
+        "iss": 0.02 * 0.50 * rs,
+        "terreno": 0.0,
+    }
+
+
 def montar_compras(alpha: float, com_exportacao: bool) -> dict:
-    """Compras no RS em R$ de 2025. Folha é dada. O resto segue a hipótese alpha."""
+    """Faixa uniforme 10/20/35. A folha é dada. O resto segue a hipótese alpha."""
     folha_int = valor_folha(ELIQ_INT_ML, STICK_INT, 0.0)
     folha_exp = valor_folha(ELIQ_EXP_ML, STICK_EXP, SACH_EXP)
     share_int = folha_int / (folha_int + folha_exp)
@@ -495,6 +795,7 @@ def propagar(mip, compras_rs: dict) -> dict:
         "rem_2025": float(rem.sum() * 1e6 / PHI),
         "ocupacoes": float(occ.sum()),
         "choque_atividade_2025": f * 1e6 / PHI,
+        "occ_por_atividade": occ,
     }
 
 
@@ -540,6 +841,15 @@ def fiscal(com_exportacao: bool, va: float, rem: float) -> dict:
         "irpj_csll": irpj,
         "incentivo": 0.0,
         "retorno_liquido": None,
+        "icms_rs_incentivavel": 0.48e9,
+        "icms_rs_municipal": 0.12e9,
+        "icms_rs_estadual": 0.36e9,
+        "consumo_federal_no_rs": 0.928e9 - 0.48e9,
+        "fundopem_percentual": 0.30,
+        "fundopem_prazo_meses": 96,
+        "fundopem_diferido_ano_cheio": 0.30 * 0.48e9,
+        "integrar_abatimento": 0.0,
+        "renuncia_permanente": 0.0,
         "nota_irpj": (
             "mesma regra da revisão 4: 34% sobre lucro fiscal = 50% do excedente "
             "(VAB − remunerações). No cenário sem exportação, a regra é reaplicada "
@@ -550,9 +860,15 @@ def fiscal(com_exportacao: bool, va: float, rem: float) -> dict:
     }
 
 
-def cenario(mip, alpha: float, com_exportacao: bool) -> dict:
+def cenario(mip, alpha: float, com_exportacao: bool, modo: str = "estimado") -> dict:
     d = direto(com_exportacao)
-    compras = montar_compras(alpha, com_exportacao)
+    if modo == "uniforme":
+        compras = montar_compras(alpha, com_exportacao)
+        compras["linhas"] = []
+        compras["alpha"] = alpha
+    else:
+        compras = abertura_bom(com_exportacao)
+        alpha = compras["alpha"]
     cadeia = propagar(mip, compras["por_produto"])
     ind = induzido(mip, d["remuneracoes"] + cadeia["rem_2025"])
     fisc = fiscal(com_exportacao, d["va"], d["remuneracoes"])
@@ -660,10 +976,10 @@ def salvar_tabelas(mip, base, faixa, sem_exp):
         "rem_direto_mi,rem_cadeia_mi,rem_induzido_mi,"
         "compras_rs_mi,vazamento_mi,producao_cadeia_mi,producao_induzido_mi"
     )
-    linhas = [cab, linha_cen("base_20_com_exportacao", base)]
+    linhas = [cab, linha_cen("base_abertura_estimada", base)]
     for a, c in faixa.items():
-        linhas.append(linha_cen(f"local_{int(a*100)}_com_exportacao", c))
-    linhas.append(linha_cen("base_20_sem_exportacao", sem_exp))
+        linhas.append(linha_cen(f"sensibilidade_local_{int(a*100)}", c))
+    linhas.append(linha_cen("abertura_sem_exportacao", sem_exp))
     (RESULTADOS / "resultados_cenarios.csv").write_text("\n".join(linhas) + "\n", encoding="utf-8")
 
     linhas = ["grupo_tru16,producao_mip_mi_2019,producao_tru_mi_2019,coef_remuneracao,coef_ocupacoes_por_mi"]
@@ -726,7 +1042,7 @@ def figura_gavetas(base):
             color=NAVY,
         )
     ax.set_ylabel("R$ bilhões de 2025")
-    ax.set_title("Valor adicionado no Rio Grande do Sul em 2037\nCenário base, conteúdo local de 20% nos insumos não agrícolas")
+    ax.set_title("Valor adicionado no Rio Grande do Sul em 2037\nCenário base: abertura estimada do custo dos insumos")
     ax.set_ylim(0, max(vals) * 1.18)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -777,7 +1093,8 @@ def figura_faixa(faixa, sem_exp, base):
     ax.set_xticklabels([f"{a}%" for a in alphas])
     ax.set_xlabel("Conteúdo local dos insumos não agrícolas")
     ax.set_ylabel("R$ bilhões de 2025")
-    ax.set_title("Faixa 10 / 20 / 35")
+    ax.axhline(base["cadeia"]["va_2025"] / 1e9, color=CLAY, lw=1.2, label="Abertura estimada")
+    ax.set_title("Sensibilidade 10 / 20 / 35")
     ax.legend(frameon=False, fontsize=8)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
@@ -864,7 +1181,7 @@ def figura_ocupacoes(base):
     plt.close()
 
 
-def figura_mapa():
+def figura_mapa(pontos=None):
     estilo()
     fig, ax = plt.subplots(figsize=(8.2, 6.2))
     geo_ok = False
@@ -916,34 +1233,43 @@ def figura_mapa():
                 edgecolor="#7FA392",
             )
         )
+    pontos = pontos or []
     desloc = {
-        "Santa Cruz do Sul": (8, -14),
-        "Venâncio Aires": (8, 8),
-        "Candelária": (-78, -4),
-        "Canguçu": (-62, -12),
-        "São Lourenço do Sul": (8, -10),
+        "Santa Cruz do Sul": (8, -12),
+        "Venâncio Aires": (8, 6),
+        "Candelária": (-70, 4),
+        "Canguçu": (-58, -10),
+        "São Lourenço do Sul": (8, -8),
+        "Vale do Sol": (-72, 8),
+        "Rio Pardo": (8, -8),
+        "Vera Cruz": (-64, -8),
     }
-    for p in EXEMPLOS_FOLHA:
-        sede = p.get("sede", False)
+    for p in pontos:
+        if p.get("lon") is None:
+            continue
+        sede = p["municipio"] == "Santa Cruz do Sul"
+        tamanho = 18 + p["folha_t"] * 1.1
         ax.scatter(
             [p["lon"]],
             [p["lat"]],
-            s=90 if sede else 46,
-            color=CLAY if sede else NAVY,
+            s=tamanho,
+            color=CLAY if sede else (TEAL if p.get("corede") else NAVY),
+            alpha=0.85,
             zorder=3,
         )
-        texto = "Santa Cruz do Sul (sede)" if sede else p["municipio"]
-        ax.annotate(
-            texto,
-            (p["lon"], p["lat"]),
-            textcoords="offset points",
-            xytext=desloc.get(p["municipio"], (6, 6)),
-            fontsize=8,
-            color=NAVY,
-        )
+        if p["folha_t"] >= 100 or sede:
+            texto = "Santa Cruz do Sul (sede)" if sede else p["municipio"]
+            ax.annotate(
+                texto,
+                (p["lon"], p["lat"]),
+                textcoords="offset points",
+                xytext=desloc.get(p["municipio"], (5, 5)),
+                fontsize=7.5,
+                color=NAVY,
+            )
     ax.set_title(
-        "Sede e exemplos de compra de folha citados nas premissas\n"
-        "Ilustração dos pontos já escritos no arquivo. Não é área de influência estimada."
+        "Área de apresentação: sede, COREDE e folha estimada em 2037\n"
+        "Bolha proporcional à tonelada. Regionalização contábil, não spillover econométrico."
     )
     ax.set_xlabel("Longitude")
     ax.set_ylabel("Latitude")
@@ -953,6 +1279,176 @@ def figura_mapa():
     fig.tight_layout()
     fig.savefig(FIGURAS / "fig6_mapa_exemplos.png", dpi=160)
     plt.close()
+
+
+COREDE_VRP = [
+    "Arroio do Tigre", "Boqueirão do Leão", "Candelária", "Encruzilhada do Sul",
+    "Estrela Velha", "General Câmara", "Herveiras", "Ibarama", "Lagoa Bonita do Sul",
+    "Mato Leitão", "Pantano Grande", "Passa Sete", "Passo do Sobrado", "Rio Pardo",
+    "Santa Cruz do Sul", "Segredo", "Sinimbu", "Sobradinho", "Tunas", "Vale do Sol",
+    "Vale Verde", "Venâncio Aires", "Vera Cruz",
+]
+
+# Sedes municipais, para o mapa de apresentação. Não é o portão da planta.
+COORDS = {
+    "Santa Cruz do Sul": (-29.718, -52.426),
+    "Vera Cruz": (-29.718, -52.507),
+    "Venâncio Aires": (-29.606, -52.192),
+    "Rio Pardo": (-29.988, -52.378),
+    "Candelária": (-29.669, -52.789),
+    "Vale do Sol": (-29.596, -52.683),
+    "Sinimbu": (-29.528, -52.524),
+    "Mato Leitão": (-29.524, -52.128),
+    "Passo do Sobrado": (-29.748, -52.275),
+    "Herveiras": (-29.455, -52.655),
+    "Boqueirão do Leão": (-29.305, -52.430),
+    "Arroio do Tigre": (-29.333, -53.093),
+    "Sobradinho": (-29.414, -53.029),
+    "Ibarama": (-29.420, -53.136),
+    "Estrela Velha": (-29.177, -53.158),
+    "Segredo": (-29.337, -52.978),
+    "Tunas": (-29.104, -52.953),
+    "Passa Sete": (-29.453, -52.960),
+    "Lagoa Bonita do Sul": (-29.489, -53.014),
+    "Encruzilhada do Sul": (-30.544, -52.522),
+    "Pantano Grande": (-30.192, -52.373),
+    "Vale Verde": (-29.787, -52.185),
+    "General Câmara": (-29.905, -51.760),
+    "Canguçu": (-31.395, -52.676),
+    "São Lourenço do Sul": (-31.365, -51.978),
+    "Dom Feliciano": (-30.704, -52.108),
+    "Camaquã": (-30.851, -51.812),
+    "Pelotas": (-31.765, -52.337),
+    "Barros Cassal": (-29.095, -52.583),
+}
+
+# Censo 2010, trabalho principal em outro município. Revista Jovens Pesquisadores
+# (UNISC), v. 5, n. 1, 2015, tabela 4, a partir do IBGE.
+OUTFLOW_2010 = {
+    "Vera Cruz": 2992, "Venâncio Aires": 2179, "Rio Pardo": 2856, "Candelária": 1171,
+    "Mato Leitão": 401, "Sinimbu": 456, "Vale do Sol": 336, "Passo do Sobrado": 239,
+    "Herveiras": 17, "Boqueirão do Leão": 22, "General Câmara": 435,
+}
+OCUPADOS_NO_PROPRIO_MUNICIPIO_SCS_2010 = 62396
+
+
+def folha_municipal():
+    """PAM 2025, SIDRA 1612, fumo em folha (produto 2703), quantidade produzida."""
+    import urllib.request
+
+    def baixar_uf(n3, nome):
+        destino = TMP / f"pam_{nome}.json"
+        url = (
+            "https://servicodados.ibge.gov.br/api/v3/agregados/1612/periodos/2025/"
+            f"variaveis/214?localidades=N6[N3[{n3}]]&classificacao=81[2703]"
+        )
+        if not (destino.exists() and destino.stat().st_size > 1000):
+            TMP.mkdir(parents=True, exist_ok=True)
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                destino.write_bytes(resp.read())
+        data = json.loads(destino.read_text(encoding="utf-8"))
+        saida = []
+        for s in data[0]["resultados"][0]["series"]:
+            nome_m = s["localidade"]["nome"].split(" - ")[0]
+            uf = s["localidade"]["nome"].split(" - ")[-1]
+            v = s["serie"].get("2025")
+            if v in (None, "-", "...", "X", ""):
+                continue
+            saida.append((uf, nome_m, float(v)))
+        return saida
+
+    registros = baixar_uf(43, "rs") + baixar_uf(42, "sc") + baixar_uf(41, "pr")
+    total_rs = sum(t for uf, _, t in registros if uf == "RS")
+    bruto = [(uf, m, t, t * 0.0086) for uf, m, t in registros]
+    soma_bruta_rs = sum(f for uf, _, _, f in bruto if uf == "RS")
+    fator = (LEAF_TON_RS / soma_bruta_rs) if soma_bruta_rs else 1.0
+    linhas = []
+    for uf, m, t, f in bruto:
+        folha = f * fator if uf == "RS" else f
+        linhas.append({
+            "uf": uf,
+            "municipio": m,
+            "pam_t": t,
+            "folha_regra_t": f,
+            "folha_t": folha,
+            "valor_rs": folha * 17561.0 if uf == "RS" else None,
+            "familias": folha / 5.5 if uf == "RS" else None,
+            "corede": m in COREDE_VRP and uf == "RS",
+            "lat": COORDS.get(m, (None, None))[0],
+            "lon": COORDS.get(m, (None, None))[1],
+        })
+    return {
+        "ano": 2025,
+        "total_pam_rs_t": total_rs,
+        "folha_bruta_rs_t": soma_bruta_rs,
+        "fator_fecha_3007": fator,
+        "residuo_t": soma_bruta_rs - LEAF_TON_RS,
+        "linhas": linhas,
+    }
+
+
+def residencia():
+    """Ponto médio do fator de destino 0–1 sobre a pendularidade publicada de 2010."""
+    fator = 0.5
+    peso_in = fator * sum(OUTFLOW_2010.values())
+    base = OCUPADOS_NO_PROPRIO_MUNICIPIO_SCS_2010 + peso_in
+    linhas = [{
+        "municipio": "Santa Cruz do Sul",
+        "peso": OCUPADOS_NO_PROPRIO_MUNICIPIO_SCS_2010 / base,
+        "ocupacoes": OCC_DIRETO * OCUPADOS_NO_PROPRIO_MUNICIPIO_SCS_2010 / base,
+        "remuneracoes": REM_DIRETO * OCUPADOS_NO_PROPRIO_MUNICIPIO_SCS_2010 / base,
+    }]
+    for m, n in OUTFLOW_2010.items():
+        p = fator * n / base
+        linhas.append({
+            "municipio": m,
+            "peso": p,
+            "ocupacoes": OCC_DIRETO * p,
+            "remuneracoes": REM_DIRETO * p,
+            "outflow_2010": n,
+        })
+    return {
+        "fator_destino": fator,
+        "fonte": "Censo 2010, tabela de deslocamento para o trabalho reproduzida em Revista Jovens Pesquisadores, UNISC, 2015; fator de destino 0,5 é o ponto médio",
+        "linhas": linhas,
+    }
+
+
+def leitura_salarial():
+    """Comparação. Não substitui as 4,06 mil ocupações nem os R$ 609 mi."""
+    ipca_21, ipca_23 = 6120.04, 6773.27
+    cempre_anual_2021 = 338_100_000 / 3136
+    pia_anual_2023 = 732_683_000 / 6165
+    cempre_2025 = cempre_anual_2021 * IPCA_DEZ_2025 / ipca_21
+    pia_2025 = pia_anual_2023 * IPCA_DEZ_2025 / ipca_23
+    encargos = 0.368
+    quadro = [
+        ("Produção e operação", 0.55, 8000),
+        ("Manutenção", 0.15, 11500),
+        ("Administração e suporte", 0.15, 13000),
+        ("Técnicos de processo e qualidade", 0.08, 15000),
+        ("Técnico de campo", 0.07, 9500),
+    ]
+    media_mensal = sum(p * s for _, p, s in quadro)
+    return {
+        "premissa_com_encargos": REM_POR_OCUP,
+        "cempre_2021_scs_divisao_12_anual": cempre_anual_2021,
+        "cempre_2021_pessoas": 3136,
+        "cempre_2025": cempre_2025,
+        "pia_2023_rs_anual": pia_anual_2023,
+        "pia_2023_pessoas": 6165,
+        "pia_2025": pia_2025,
+        "encargos_patronais": encargos,
+        "cempre_2025_com_encargos": cempre_2025 * (1 + encargos),
+        "pia_2025_com_encargos": pia_2025 * (1 + encargos),
+        "quadro": [
+            {"funcao": n, "parcela": p, "salario_mensal": s, "ocupacoes": OCC_DIRETO * p}
+            for n, p, s in quadro
+        ],
+        "media_mensal_quadro": media_mensal,
+        "anual_13_quadro": media_mensal * 13,
+    }
 
 
 def limpar(obj):
@@ -984,9 +1480,13 @@ def main():
         b = mip["tru"]["producao"][i]
         print(f"  {a:12.1f} {b:12.1f} dif {a-b:10.1f}  mip={nome[:28]:28s} tru={tru_n[:36]}")
 
-    base = cenario(mip, TAXA_BASE, True)
-    faixa = {a: cenario(mip, a, True) for a in TAXA_CONTEUDO_LOCAL}
-    sem_exp = cenario(mip, TAXA_BASE, False)
+    base = cenario(mip, TAXA_BASE, True, "estimado")
+    faixa = {a: cenario(mip, a, True, "uniforme") for a in TAXA_CONTEUDO_LOCAL}
+    sem_exp = cenario(mip, TAXA_BASE, False, "estimado")
+    investimento = capex_conversao()
+    obra = propagar(mip, investimento["por_produto_rs"])
+    i_constr = [i for i, c in enumerate(mip["ati_cod"]) if mip["mapa_grupo"][c] == "Construção"]
+    postos_obra = float(obra["occ_por_atividade"][i_constr].sum()) if i_constr else 0.0
 
     print("\n=== BASE 2037 ===")
     for bloco in ("direto", "cadeia", "induzido"):
@@ -1000,6 +1500,11 @@ def main():
             )
     print("tipo I", base["total_tipo_I"]["va_2025"] / 1e9, "tipo II", base["total_tipo_II"]["va_2025"] / 1e9)
     print("compras RS", base["compras"]["compras_rs"] / 1e6, "vazamento", base["compras"]["vazamento"] / 1e6)
+    print("alpha implícito", base["alpha"])
+    print(
+        f"OBRA capex {investimento['total']/1e6:.1f} RS {investimento['rs']/1e6:.1f} "
+        f"VA {obra['va_2025']/1e6:.1f} occ {obra['ocupacoes']:.0f} postos constr {postos_obra:.0f}"
+    )
     print("k induzido", base["induzido"]["k_realimentacao"], "fator", base["induzido"]["fator_serie_fechada"])
     print("sem exp VA tipo II", sem_exp["total_tipo_II"]["va_2025"] / 1e9, "occ", sem_exp["total_tipo_II"]["ocupacoes"])
     for a, c in faixa.items():
@@ -1015,12 +1520,56 @@ def main():
         print(f"  {mip['ati_cod'][i]} {mip['ati_nom'][i][:50]:50s} {base['_f_cadeia'][i]/1e6:8.1f} va_coef {mip['coef_va'][i]:.3f}")
 
     salvar_tabelas(mip, base, faixa, sem_exp)
+    geo = folha_municipal()
+    casa = residencia()
+    salario = leitura_salarial()
+    pontos_mapa = [
+        x for x in geo["linhas"]
+        if x["uf"] == "RS" and x["folha_t"] >= 40 and x["lat"] is not None
+    ]
     figura_gavetas(base)
     figura_setores(mip, base)
     figura_faixa(faixa, sem_exp, base)
     figura_comparacao(base)
     figura_ocupacoes(base)
-    figura_mapa()
+    figura_mapa(pontos_mapa)
+
+    linhas_bom = ["linha,familia,produto,valor_mi,pct_rs,valor_rs_mi,valor_outros_estados_mi,valor_importado_mi,regra"]
+    for x in base["compras"]["linhas"]:
+        linhas_bom.append(
+            f"\"{x['linha']}\",{x['familia']},{x['produto']},{x['valor']/1e6:.3f},{x['rs']:.2f},"
+            f"{x['valor_rs']/1e6:.3f},{x['valor_uf']/1e6:.3f},{x['valor_imp']/1e6:.3f},\"{x['regra']}\""
+        )
+    (RESULTADOS / "bom_abertura.csv").write_text("\n".join(linhas_bom) + "\n", encoding="utf-8")
+
+    linhas_mun = ["uf,municipio,corede,pam_2025_t,folha_regra_t,folha_ajustada_t,valor_mi,familias"]
+    for x in geo["linhas"]:
+        if x["pam_t"] <= 0:
+            continue
+        valor = "" if x["valor_rs"] is None else f"{x['valor_rs']/1e6:.3f}"
+        fam = "" if x["familias"] is None else f"{x['familias']:.1f}"
+        linhas_mun.append(
+            f"{x['uf']},\"{x['municipio']}\",{int(x['corede'])},{x['pam_t']:.0f},"
+            f"{x['folha_regra_t']:.2f},{x['folha_t']:.2f},{valor},{fam}"
+        )
+    (RESULTADOS / "folha_municipios.csv").write_text("\n".join(linhas_mun) + "\n", encoding="utf-8")
+
+    obra_out = {
+        "capex_total": investimento["total"],
+        "capex_rs": investimento["rs"],
+        "capex_importado": investimento["importado"],
+        "partes": investimento["partes"],
+        "capital_giro_fora_do_choque": investimento["capital_giro"],
+        "piso_observado_fabrica": investimento["piso_observado"],
+        "iss_santa_cruz": investimento["iss"],
+        "producao_2025": obra["producao_2025"],
+        "va_2025": obra["va_2025"],
+        "rem_2025": obra["rem_2025"],
+        "ocupacoes_leontief": obra["ocupacoes"],
+        "postos_temporarios_construcao": postos_obra,
+        "usd_ptax_2025": investimento["usd"],
+        "eur_ptax_2025": investimento["eur"],
+    }
 
     saida = {
         "matriz": {
@@ -1039,16 +1588,21 @@ def main():
             "formula": "fluxo_2019 = fluxo_2025 × (IPCA_dez2019 / IPCA_dez2025); resultado_2025 = resultado_2019 / phi",
         },
         "hipoteses": {
-            "conteudo_local_nao_agricola_base": TAXA_BASE,
-            "faixa": list(TAXA_CONTEUDO_LOCAL),
+            "cenario_base": "abertura estimada do BOM",
+            "conteudo_local_nao_agricola_implicito": base["alpha"],
+            "faixa_sensibilidade_uniforme": list(TAXA_CONTEUDO_LOCAL),
             "propensao_consumo_rs": PROPENSAO_CONSUMO_RS,
             "adicionalidade": 1.0,
-            "capex": "fora desta rodada",
+            "capex": "conversão calibrada; choque só da parcela gaúcha, bloco separado",
             "emprego_indireto": "coeficiente de ocupações por R$ milhão de produção da TRU-RS 2019, 16 atividades, aplicado a cada atividade do grupo",
         },
         "base": limpar(base),
         "faixa": {str(a): limpar(c) for a, c in faixa.items()},
         "sem_exportacao": limpar(sem_exp),
+        "obra_2026_2027": limpar(obra_out),
+        "folha_municipal": limpar({k: v for k, v in geo.items() if k != "linhas"}),
+        "residencia": limpar(casa),
+        "leitura_salarial": limpar(salario),
         "bloco_II_contratante": BLOCO_II,
         "exemplos_folha_premissas": EXEMPLOS_FOLHA,
         "consumo_familias_rs_preco_basico_mi_2019": mip["consumo_pos_mi"],
